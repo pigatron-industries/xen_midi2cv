@@ -13,6 +13,8 @@ class MidiInputTask : public Task {
 
 public:
     MidiInputTask(StatusLedTask statusLedTask);
+    void init();
+    void execute();
 
 private:
     StatusLedTask _statusLedTask;

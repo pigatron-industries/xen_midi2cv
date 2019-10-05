@@ -15,7 +15,9 @@ public:
     StatusLedTask(StatusLed statusLed);
     void init();
     void execute();
-    void blink();
+    void blinkRed();
+    void blinkBlue();
+    void blinkGreen();
 
 private:
     StatusLed _statusLed;
