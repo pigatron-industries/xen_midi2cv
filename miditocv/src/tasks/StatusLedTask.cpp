@@ -9,18 +9,32 @@ StatusLedTask::StatusLedTask(StatusLed statusLed) :
 
 void StatusLedTask::init() {
     Task::init();
-    blink(); //blink for testing
+    blinkBlue(); //blink for testing
 }
 
-void StatusLedTask::blink() {
+void StatusLedTask::blinkBlue() {
     _statusLed.blueOn();
-    blinkStart = micros();
+    blinkStartBlue = micros();
+}
+
+void StatusLedTask::blinkRed() {
+    _statusLed.redOn();
+    blinkStartRed = micros();
+}
+
+void StatusLedTask::blinkGreen() {
+    _statusLed.greenOn();
+    blinkStartGreen = micros();
 }
 
 void StatusLedTask::execute() {
-    if (micros() - blinkStart > 100000) {
+    if (micros() - blinkStartBlue > BLINK_TIME) {
         _statusLed.blueOff();
-        delay(1000);
-        blink();   // blink again just for testing
+    }
+    if (micros() - blinkStartRed > BLINK_TIME) {
+        _statusLed.redOff();
+    }
+    if (micros() - blinkStartGreen > BLINK_TIME) {
+        _statusLed.greenOff();
     }
 }
