@@ -12,12 +12,12 @@
 class MidiInputTask : public Task {
 
 public:
-    MidiInputTask(StatusLedTask statusLedTask);
+    MidiInputTask(StatusLedTask& statusLedTask);
     void init();
     void execute();
 
 private:
-    StatusLedTask _statusLedTask;
+    StatusLedTask& _statusLedTask;
 
 };
 

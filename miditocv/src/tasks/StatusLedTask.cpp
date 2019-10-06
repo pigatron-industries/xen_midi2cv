@@ -3,7 +3,7 @@
 #include <Arduino.h>
 
 
-StatusLedTask::StatusLedTask(StatusLed statusLed) :
+StatusLedTask::StatusLedTask(StatusLed& statusLed) :
     _statusLed(statusLed) {
 }
 
@@ -14,27 +14,27 @@ void StatusLedTask::init() {
 
 void StatusLedTask::blinkBlue() {
     _statusLed.blueOn();
-    blinkStartBlue = micros();
+    blinkStartBlue = millis();
 }
 
 void StatusLedTask::blinkRed() {
     _statusLed.redOn();
-    blinkStartRed = micros();
+    blinkStartRed = millis();
 }
 
 void StatusLedTask::blinkGreen() {
     _statusLed.greenOn();
-    blinkStartGreen = micros();
+    blinkStartGreen = millis();
 }
 
 void StatusLedTask::execute() {
-    if (micros() - blinkStartBlue > BLINK_TIME) {
+    if (millis() - blinkStartBlue > BLINK_TIME) {
         _statusLed.blueOff();
     }
-    if (micros() - blinkStartRed > BLINK_TIME) {
+    if (millis() - blinkStartRed > BLINK_TIME) {
         _statusLed.redOff();
     }
-    if (micros() - blinkStartGreen > BLINK_TIME) {
+    if (millis() - blinkStartGreen > BLINK_TIME) {
         _statusLed.greenOff();
     }
 }

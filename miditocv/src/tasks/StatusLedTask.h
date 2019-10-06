@@ -6,13 +6,13 @@
 #include "src/lib/Task.h"
 #include "src/drivers/StatusLed.h"
 
-#define BLINK_TIME 100000
+#define BLINK_TIME 50
 
 
 class StatusLedTask : public Task {
 
 public:
-    StatusLedTask(StatusLed statusLed);
+    StatusLedTask(StatusLed& statusLed);
     void init();
     void execute();
     void blinkRed();
@@ -20,7 +20,7 @@ public:
     void blinkGreen();
 
 private:
-    StatusLed _statusLed;
+    StatusLed& _statusLed;
     unsigned long blinkStartBlue;
     unsigned long blinkStartRed;
     unsigned long blinkStartGreen;

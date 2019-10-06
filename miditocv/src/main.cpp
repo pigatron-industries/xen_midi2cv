@@ -12,7 +12,7 @@
 StatusLed statusLed = StatusLed(LED_RED, LED_BLUE, LED_GREEN);
 
 // USART2 For receiving MIDI - USART_B_RX - STM32 pin: PD6 - Pin 4 - Pin name D52
-HardwareSerial Serial2(PD5, PD6);
+//HardwareSerial Serial2(PD5, PD6);
 
 
 
