@@ -1,4 +1,5 @@
 #include "MidiInputTask.h"
+#include "HardwareSerial.h"
 
 #include <Arduino.h>
 
