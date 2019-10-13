@@ -41,11 +41,11 @@ void MidiInputTask::execute() {
         Serial.println(byte3);
 
         if(command == COMMAND_NOTEON) {
-            _midiEventProcessor.eventNoteOn();
+            _midiEventProcessor.eventNoteOn(channel, byte2, byte3);
         }
 
         if(command == COMMAND_NOTEOFF) {
-            _midiEventProcessor.eventNoteOff();
+            _midiEventProcessor.eventNoteOff(channel, byte2);
         }
     }
 }
