@@ -4,20 +4,18 @@
 #include <inttypes.h>
 
 #include "src/lib/Task.h"
-#include "src/tasks/StatusLedTask.h"
-
-#define BLINK_TIME 100000
+#include "src/processor/MidiEventProcessor.h"
 
 
 class MidiInputTask : public Task {
 
 public:
-    MidiInputTask(StatusLedTask& statusLedTask);
+    MidiInputTask(MidiEventProcessor& midiEventProcessor);
     void init();
     void execute();
 
 private:
-    StatusLedTask& _statusLedTask;
+    MidiEventProcessor& _midiEventProcessor;
 
 };
 

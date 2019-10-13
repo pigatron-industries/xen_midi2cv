@@ -13,8 +13,8 @@
 #define LO_NYBBLE(b) ((b) & 0x0F)
 
 
-MidiInputTask::MidiInputTask(StatusLedTask& statusLedTask) :
-    _statusLedTask(statusLedTask) {
+MidiInputTask::MidiInputTask(MidiEventProcessor& midiEventProcessor) :
+    _midiEventProcessor(midiEventProcessor) {
 }
 
 void MidiInputTask::init() {
@@ -41,11 +41,11 @@ void MidiInputTask::execute() {
         Serial.println(byte3);
 
         if(command == COMMAND_NOTEON) {
-            _statusLedTask.blinkGreen();
+            _midiEventProcessor.eventNoteOn();
         }
 
         if(command == COMMAND_NOTEOFF) {
-          _statusLedTask.blinkRed();
+            _midiEventProcessor.eventNoteOff();
         }
     }
 }

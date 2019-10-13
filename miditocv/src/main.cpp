@@ -1,24 +1,29 @@
 #include <Arduino.h>
 
 #include "src/drivers/StatusLed.h"
+#include "src/drivers/PitchCvDac.h"
+#include "src/processor/MidiEventProcessor.h"
 #include "src/tasks/StatusLedTask.h"
 #include "src/tasks/MidiInputTask.h"
 #include "src/lib/TaskManager.h"
 
 
 // Hardware setup
+#define PITCHCV_DATA_PIN pinNametoDigitalPin(PC_0)
+#define PITCHCV_LATCH_PIN pinNametoDigitalPin(PC_3)
+#define PITCHCV_CLOCK_PIN pinNametoDigitalPin(PC_1)
+#define PITCHCV_CHANNELS 1
 
-// Status LEDs
+
+PitchCvDac pitchCvDac = PitchCvDac(PITCHCV_DATA_PIN, PITCHCV_LATCH_PIN, PITCHCV_CLOCK_PIN, PITCHCV_CHANNELS);
 StatusLed statusLed = StatusLed(LED_RED, LED_BLUE, LED_GREEN);
-
-// USART2 For receiving MIDI - USART_B_RX - STM32 pin: PD6 - Pin 4 - Pin name D52
-//HardwareSerial Serial2(PD5, PD6);
-
-
 
 
 StatusLedTask statusLedTask = StatusLedTask(statusLed);
-MidiInputTask midiInputTask = MidiInputTask(statusLedTask);
+
+
+MidiEventProcessor midiEventProcessor = MidiEventProcessor(statusLedTask, pitchCvDac);
+MidiInputTask midiInputTask = MidiInputTask(midiEventProcessor);
 
 
 void bootstrap() {
