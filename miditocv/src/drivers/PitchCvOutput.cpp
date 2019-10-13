@@ -1,8 +1,8 @@
-#include "PitchCvDac.h"
+#include "PitchCvOutput.h"
 
 #include <Arduino.h>
 
-PitchCvDac::PitchCvDac(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, int size) :
+PitchCvOutput::PitchCvOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, int size) :
         _latchPin(latchPin),
         _clockPin(clockPin),
         _dataPin(dataPin),
@@ -17,17 +17,17 @@ PitchCvDac::PitchCvDac(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, int 
     _factor = MAX_VALUE / (MAX_VOLTAGE - MIN_VOLTAGE);
 }
 
-void PitchCvDac::setValue(int index, uint16_t value) {
+void PitchCvOutput::setValue(int index, uint16_t value) {
     _data[index] = value;
 }
 
-void PitchCvDac::setVoltage(int index, float voltage) {
+void PitchCvOutput::setVoltage(int index, float voltage) {
     float absVoltage = voltage - MIN_VOLTAGE;
     float value = absVoltage * _factor;
     setValue(index, (int)value);
 }
 
-void PitchCvDac::sendData() {
+void PitchCvOutput::sendData() {
     //start sequence
     digitalWrite(_latchPin, LOW);
     digitalWrite(_clockPin, LOW);

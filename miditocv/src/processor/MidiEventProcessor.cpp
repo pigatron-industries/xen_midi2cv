@@ -1,11 +1,9 @@
 #include "MidiEventProcessor.h"
 
-#include <Arduino.h>
 
-
-MidiEventProcessor::MidiEventProcessor(StatusLedTask& statusLedTask, PitchCvDac& pitchCvDac) :
+MidiEventProcessor::MidiEventProcessor(StatusLedTask& statusLedTask, PitchCvOutput& pitchCvOutput) :
     _statusLedTask(statusLedTask),
-    _pitchCvDac(pitchCvDac) {
+    _pitchCvOutput(pitchCvOutput) {
 }
 
 void MidiEventProcessor::eventNoteOn(byte channel, byte note, byte velocity) {

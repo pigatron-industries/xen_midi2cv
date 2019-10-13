@@ -1,5 +1,5 @@
-#ifndef PitchCvDac_h
-#define PitchCvDac_h
+#ifndef PitchCvOutput_h
+#define PitchCvOutput_h
 
 #include <inttypes.h>
 
@@ -11,10 +11,10 @@
 #define MAX_VOLTAGE 10
 
 
-class PitchCvDac {
+class PitchCvOutput {
 
 public:
-    PitchCvDac(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, int size);
+    PitchCvOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, int size);
 
     /**
      * Set a value of a single output. The actual output is not sent until a call to sendData is made.
