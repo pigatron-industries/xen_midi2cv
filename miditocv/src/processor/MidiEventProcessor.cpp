@@ -1,10 +1,16 @@
 #include "MidiEventProcessor.h"
 
 
-MidiEventProcessor::MidiEventProcessor(StatusLedTask& statusLedTask, PitchCvOutput& pitchCvOutput) :
-    _statusLedTask(statusLedTask),
-    _pitchCvOutput(pitchCvOutput) {
-      _channelMapping = new uint8_t[_pitchCvOutput.getSize()];
+MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask, PitchCvOutput& pitchCvOutput) :
+        _config(config),
+        _statusLedTask(statusLedTask),
+        _pitchCvOutput(pitchCvOutput) {
+    _channelMapping = new uint8_t[_pitchCvOutput.getSize()];
+
+    // default channel mappings
+    for(uint8_t i = 0; i < _pitchCvOutput.getSize(); i++) {
+        _channelMapping[i] = _config.getCvChannelMapping(i).from;
+    }
 }
 
 void MidiEventProcessor::eventNoteOn(uint8_t channel, uint8_t note, uint8_t velocity) {

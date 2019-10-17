@@ -1,6 +1,7 @@
 #ifndef MidiEventProcessor_h
 #define MidiEventProcessor_h
 
+#include "src/config/Configuration.h"
 #include "src/drivers/PitchCvOutput.h"
 #include "src/tasks/StatusLedTask.h"
 
@@ -10,12 +11,13 @@
 class MidiEventProcessor {
 
 public:
-    MidiEventProcessor(StatusLedTask& statusLedTask, PitchCvOutput& pitchCvOutput);
+    MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask, PitchCvOutput& pitchCvOutput);
 
     void eventNoteOn(uint8_t channel, uint8_t note, uint8_t velocity);
     void eventNoteOff(uint8_t channel, uint8_t note);
 
 private:
+    Configuration& _config;
     StatusLedTask& _statusLedTask;
     PitchCvOutput& _pitchCvOutput;
 
