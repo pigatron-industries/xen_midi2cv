@@ -14,7 +14,7 @@
 class PitchCvOutput {
 
 public:
-    PitchCvOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, int size);
+    PitchCvOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, uint8_t size);
 
     /**
      * Set a value of a single output. The actual output is not sent until a call to sendData is made.
@@ -30,11 +30,13 @@ public:
      */
     void sendData();
 
+    int getSize() { return _size; }
+
 private:
     uint8_t _dataPin;
     uint8_t _latchPin;
     uint8_t _clockPin;
-    int _size;
+    uint8_t _size;
 
     uint16_t* _data;
 

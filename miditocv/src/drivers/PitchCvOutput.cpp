@@ -2,7 +2,7 @@
 
 #include <Arduino.h>
 
-PitchCvOutput::PitchCvOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, int size) :
+PitchCvOutput::PitchCvOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, uint8_t size) :
         _latchPin(latchPin),
         _clockPin(clockPin),
         _dataPin(dataPin),

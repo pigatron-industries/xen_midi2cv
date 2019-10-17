@@ -1,18 +1,13 @@
 #include <Arduino.h>
 
+#include "hwconfig.h"
+
 #include "src/drivers/StatusLed.h"
 #include "src/drivers/pitchCvOutput.h"
 #include "src/processor/MidiEventProcessor.h"
 #include "src/tasks/StatusLedTask.h"
 #include "src/tasks/MidiInputTask.h"
 #include "src/lib/TaskManager.h"
-
-
-// Hardware setup
-#define PITCHCV_DATA_PIN pinNametoDigitalPin(PC_0)
-#define PITCHCV_LATCH_PIN pinNametoDigitalPin(PC_3)
-#define PITCHCV_CLOCK_PIN pinNametoDigitalPin(PC_1)
-#define PITCHCV_CHANNELS 1
 
 
 PitchCvOutput pitchCvOutput = PitchCvOutput(PITCHCV_DATA_PIN, PITCHCV_LATCH_PIN, PITCHCV_CLOCK_PIN, PITCHCV_CHANNELS);

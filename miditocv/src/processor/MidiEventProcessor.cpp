@@ -4,9 +4,10 @@
 MidiEventProcessor::MidiEventProcessor(StatusLedTask& statusLedTask, PitchCvOutput& pitchCvOutput) :
     _statusLedTask(statusLedTask),
     _pitchCvOutput(pitchCvOutput) {
+      _channelMapping = new uint8_t[_pitchCvOutput.getSize()];
 }
 
-void MidiEventProcessor::eventNoteOn(byte channel, byte note, byte velocity) {
+void MidiEventProcessor::eventNoteOn(uint8_t channel, uint8_t note, uint8_t velocity) {
     _statusLedTask.blinkGreen();
 
     // convert midi channel to Pitch Cv Channel
@@ -18,7 +19,7 @@ void MidiEventProcessor::eventNoteOn(byte channel, byte note, byte velocity) {
     // send trigger and gate output
 }
 
-void MidiEventProcessor::eventNoteOff(byte channel, byte note) {
+void MidiEventProcessor::eventNoteOff(uint8_t channel, uint8_t note) {
     _statusLedTask.blinkRed();
 
     // convert midi channel to Pitch Cv Channel
