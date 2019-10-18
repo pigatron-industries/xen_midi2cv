@@ -2,7 +2,7 @@
 
 #include <Arduino.h>
 
-GateOutput::GateOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, int size) :
+GateOutput::GateOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, uint8_t size) :
         _latchPin(latchPin),
         _clockPin(clockPin),
         _dataPin(dataPin),

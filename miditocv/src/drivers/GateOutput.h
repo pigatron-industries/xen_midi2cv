@@ -6,7 +6,7 @@
 class GateOutput {
 
 public:
-    GateOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, int size);
+    GateOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, uint8_t size);
 
 private:
     uint8_t _dataPin;
