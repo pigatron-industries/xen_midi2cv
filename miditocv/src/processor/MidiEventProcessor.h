@@ -13,8 +13,8 @@ class MidiEventProcessor {
 public:
     MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask, PitchCvOutput& pitchCvOutput);
 
-    void eventNoteOn(uint8_t channel, uint8_t note, uint8_t velocity);
-    void eventNoteOff(uint8_t channel, uint8_t note);
+    void eventNoteOn(uint8_t midiChannel, uint8_t note, uint8_t velocity);
+    void eventNoteOff(uint8_t midiChannel, uint8_t note);
 
 private:
     Configuration& _config;
@@ -23,7 +23,7 @@ private:
 
     uint8_t* _channelMapping;
 
-    uint8_t getOutputChannel(uint8_t midiChannel);
+    uint8_t getCvOutputChannel(uint8_t midiChannel);
 
 };
 
