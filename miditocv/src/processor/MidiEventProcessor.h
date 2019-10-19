@@ -21,9 +21,11 @@ private:
     StatusLedTask& _statusLedTask;
     PitchCvOutput& _pitchCvOutput;
 
-    uint8_t* _channelMapping;
+    uint8_t* _channelMapping; //midi channel -> cv channel
+    uint8_t* _lastNoteChannel; //cv channel -> note number
 
     uint8_t getCvOutputChannel(uint8_t midiChannel);
+    uint8_t getCvOutputChannel(uint8_t midiChannel, uint8_t note);
 
 };
 
