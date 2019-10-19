@@ -8,7 +8,7 @@ MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& sta
         _gateOutput(gateOutput),
         _pitchCvOutput(pitchCvOutput) {
     _channelMapping = new uint8_t[MIDI_CHANNELS];
-    _lastNoteChannel = new uint8_t[_pitchCvOutput.getSize()];
+    _channelNoteMapping = new List[_pitchCvOutput.getSize()];
 
     // get channel mappings from config
     for(uint8_t i = 0; i < MIDI_CHANNELS; i++) {
@@ -70,7 +70,7 @@ uint8_t MidiEventProcessor::getCvOutputChannel(uint8_t midiChannel) {
 
 uint8_t MidiEventProcessor::getCvOutputChannelForNote(uint8_t midiChannel, uint8_t note) {
     for(uint8_t i = 0; i < _pitchCvOutput.getSize(); i++) {
-        if(_lastNoteChannel[i] == note) {
+        if(_channelNoteMapping[i].find(note) != -1) {
             return i;
         }
     }
@@ -79,10 +79,19 @@ uint8_t MidiEventProcessor::getCvOutputChannelForNote(uint8_t midiChannel, uint8
 }
 
 void MidiEventProcessor::saveNoteToChannel(uint8_t cvChannel, uint8_t note) {
-    _lastNoteChannel[cvChannel] = note;
+    _channelNoteMapping[cvChannel].append(note);
+    Serial.println("add");
+    Serial.println(_channelNoteMapping[cvChannel].length);
+    Serial.println(_channelNoteMapping[cvChannel].data[0]);
 }
 
 bool MidiEventProcessor::clearNoteFromChannel(uint8_t cvChannel, uint8_t note) {
-    _lastNoteChannel[cvChannel] = -1;
-    return false;
+    int8_t index = _channelNoteMapping[cvChannel].find(note);
+    if(index != -1) {
+        _channelNoteMapping[cvChannel].remove(index);
+        Serial.println("remove");
+        Serial.println(_channelNoteMapping[cvChannel].length);
+        Serial.println(_channelNoteMapping[cvChannel].data[0]);
+    }
+    return _channelNoteMapping[cvChannel].length > 0;
 }

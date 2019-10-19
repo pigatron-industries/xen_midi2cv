@@ -5,6 +5,7 @@
 #include "src/drivers/PitchCvOutput.h"
 #include "src/drivers/GateOutput.h"
 #include "src/tasks/StatusLedTask.h"
+#include "src/lib/List.h"
 
 #include <Arduino.h>
 
@@ -24,7 +25,7 @@ private:
     PitchCvOutput& _pitchCvOutput;
 
     uint8_t* _channelMapping; //midi channel -> cv channel
-    uint8_t* _lastNoteChannel; //cv channel -> note number //TODO convert to list of notes
+    List* _channelNoteMapping; //cv channel -> note numbers
 
     uint8_t getCvOutputChannel(uint8_t midiChannel);
     uint8_t getCvOutputChannelForNote(uint8_t midiChannel, uint8_t note);

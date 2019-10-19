@@ -48,6 +48,8 @@ void MidiInputTask::execute() {
                 _midiEventProcessor.eventNoteOn(channel, byte2, byte3);
             }
 
+            //TODO if pressure is reduced to zero then treat as note off
+
             if(command == COMMAND_NOTEOFF) {
                 _midiEventProcessor.eventNoteOff(channel, byte2);
             }
