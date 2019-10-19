@@ -12,7 +12,7 @@ private:
     uint8_t _dataPin;
     uint8_t _latchPin;
     uint8_t _clockPin;
-    int _size;
+    uint8_t _size;
 
     bool* _data;
 
