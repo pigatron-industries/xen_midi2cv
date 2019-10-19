@@ -21,9 +21,9 @@ public:
      * @param index The index of the AD420 IC which the output is being set for.
      * @param value The value to set.
      */
-    void setValue(int index, uint16_t value);
+    void setValue(uint8_t index, uint16_t value);
 
-    void setVoltage(int index, float voltage);
+    void setVoltage(uint8_t index, float voltage);
 
     /**
      * Sends all data to the AD420 ICs.

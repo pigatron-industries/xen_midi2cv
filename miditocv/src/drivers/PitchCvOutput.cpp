@@ -17,14 +17,14 @@ PitchCvOutput::PitchCvOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin
     _factor = MAX_VALUE / (MAX_VOLTAGE - MIN_VOLTAGE);
 }
 
-void PitchCvOutput::setValue(int index, uint16_t value) {
+void PitchCvOutput::setValue(uint8_t index, uint16_t value) {
     _data[index] = value;
 }
 
-void PitchCvOutput::setVoltage(int index, float voltage) {
+void PitchCvOutput::setVoltage(uint8_t index, float voltage) {
     float absVoltage = voltage - MIN_VOLTAGE;
     float value = absVoltage * _factor;
-    setValue(index, (int)value);
+    setValue(index, (uint16_t)value);
 }
 
 void PitchCvOutput::sendData() {
@@ -32,11 +32,11 @@ void PitchCvOutput::sendData() {
     digitalWrite(_latchPin, LOW);
     digitalWrite(_clockPin, LOW);
 
-    for(int i = 0; i < _size; i++)
+    for(uint8_t i = 0; i < _size; i++)
     {
         uint16_t value = _data[i];
 
-        for(int j=15; j>=0; j--)
+        for(uint8_t j=15; j>=0; j--)
         {
             // Start with 1 = 00000001
             // Shift left j places = 00010000

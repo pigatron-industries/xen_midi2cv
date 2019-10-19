@@ -2,9 +2,10 @@
 
 #define MIDI_CHANNELS 16
 
-MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask, PitchCvOutput& pitchCvOutput) :
+MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask, GateOutput& gateOutput, PitchCvOutput& pitchCvOutput) :
         _config(config),
         _statusLedTask(statusLedTask),
+        _gateOutput(gateOutput), 
         _pitchCvOutput(pitchCvOutput) {
     _channelMapping = new uint8_t[MIDI_CHANNELS];
     _lastNoteChannel = new uint8_t[_pitchCvOutput.getSize()];

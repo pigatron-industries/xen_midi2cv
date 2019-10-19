@@ -12,13 +12,14 @@
 
 
 // hardware
-PitchCvOutput pitchCvOutput = PitchCvOutput(PITCHCV_DATA_PIN, PITCHCV_LATCH_PIN, PITCHCV_CLOCK_PIN, PITCHCV_CHANNELS);
+GateOutput gateOutput = GateOutput(GATE_DATA_PIN, GATE_LATCH_PIN, GATE_CLOCK_PIN, CV_CHANNELS);
+PitchCvOutput pitchCvOutput = PitchCvOutput(PITCHCV_DATA_PIN, PITCHCV_LATCH_PIN, PITCHCV_CLOCK_PIN, CV_CHANNELS);
 StatusLed statusLed = StatusLed(LED_RED, LED_BLUE, LED_GREEN);
 
 
 StatusLedTask statusLedTask = StatusLedTask(statusLed);
 Configuration config = Configuration();
-MidiEventProcessor midiEventProcessor = MidiEventProcessor(config, statusLedTask, pitchCvOutput);
+MidiEventProcessor midiEventProcessor = MidiEventProcessor(config, statusLedTask, gateOutput, pitchCvOutput);
 MidiInputTask midiInputTask = MidiInputTask(midiEventProcessor);
 
 
