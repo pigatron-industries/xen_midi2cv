@@ -25,27 +25,32 @@ void MidiInputTask::init() {
 void MidiInputTask::execute() {
     while(Serial2.available()) {
         byte byte1 = Serial2.read();
-        byte byte2 = Serial2.read();
-        byte byte3 = Serial2.read();
-        byte command = HI_NYBBLE(byte1);
-        byte channel = LO_NYBBLE(byte1);
+        if(byte1 >= 0x80) {
+            while(!Serial2.available()){}
+            byte byte2 = Serial2.read();
+            while(!Serial2.available()){}
+            byte byte3 = Serial2.read();
 
-        Serial.println("");
-        Serial.println("Command");
-        Serial.println(command);
-        Serial.println("Channel");
-        Serial.println(channel);
-        Serial.println("Data 1");
-        Serial.println(byte2);
-        Serial.println("Data 2");
-        Serial.println(byte3);
+            byte command = HI_NYBBLE(byte1);
+            byte channel = LO_NYBBLE(byte1);
 
-        if(command == COMMAND_NOTEON) {
-            _midiEventProcessor.eventNoteOn(channel, byte2, byte3);
-        }
+            // Serial.println("");
+            // Serial.println("Command");
+            // Serial.println(command);
+            // Serial.println("Channel");
+            // Serial.println(channel);
+            // Serial.println("Data 1");
+            // Serial.println(byte2);
+            // Serial.println("Data 2");
+            // Serial.println(byte3);
 
-        if(command == COMMAND_NOTEOFF) {
-            _midiEventProcessor.eventNoteOff(channel, byte2);
+            if(command == COMMAND_NOTEON) {
+                _midiEventProcessor.eventNoteOn(channel, byte2, byte3);
+            }
+
+            if(command == COMMAND_NOTEOFF) {
+                _midiEventProcessor.eventNoteOff(channel, byte2);
+            }
         }
     }
 }

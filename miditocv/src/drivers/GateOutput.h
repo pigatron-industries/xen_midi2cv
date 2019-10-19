@@ -3,7 +3,7 @@
 
 #include <inttypes.h>
 
-#define CLOCKINTERVAL 0.5 //us
+#define CLOCKINTERVAL 1 //us
 
 class GateOutput {
 

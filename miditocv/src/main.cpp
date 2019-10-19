@@ -25,6 +25,9 @@ MidiInputTask midiInputTask = MidiInputTask(midiEventProcessor);
 
 void bootstrap() {
     Serial.begin(115200);
+    Serial.println("");
+    Serial.println("start");
+    Serial.println("");
 
     Task* tasks[] = { &statusLedTask, &midiInputTask };
     TaskManager taskManager(tasks, 2);

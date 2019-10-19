@@ -14,6 +14,10 @@ GateOutput::GateOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, uint
     digitalWrite(_latchPin, LOW);
     digitalWrite(_dataPin, LOW);
     _data = new bool[_size];
+    for(uint8_t i; i < _size; i++) {
+        _data[i] = LOW;
+    }
+    sendData();
 }
 
 void GateOutput::setValue(uint8_t index, bool value) {
@@ -26,8 +30,7 @@ void GateOutput::sendData() {
     digitalWrite(_latchPin, LOW);
     digitalWrite(_clockPin, LOW);
 
-    for(uint8_t i = 0; i < _size; i++)
-    {
+    for(int8_t i=_size-1; i>=0; i--) {
         digitalWrite(_dataPin, _data[i]);
         delayMicroseconds(CLOCKINTERVAL);
         digitalWrite(_clockPin, HIGH);

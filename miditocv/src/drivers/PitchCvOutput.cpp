@@ -32,12 +32,10 @@ void PitchCvOutput::sendData() {
     digitalWrite(_latchPin, LOW);
     digitalWrite(_clockPin, LOW);
 
-    for(uint8_t i = 0; i < _size; i++)
-    {
+    for(uint8_t i = 0; i < _size; i++) {
         uint16_t value = _data[i];
 
-        for(uint8_t j=15; j>=0; j--)
-        {
+        for(int8_t j=15; j>=0; j--) {
             // Start with 1 = 00000001
             // Shift left j places = 00010000
             // And with value to isolate bit e.g. 00010000 & 01010101 = 00010000
