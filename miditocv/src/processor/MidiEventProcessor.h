@@ -24,10 +24,12 @@ private:
     PitchCvOutput& _pitchCvOutput;
 
     uint8_t* _channelMapping; //midi channel -> cv channel
-    uint8_t* _lastNoteChannel; //cv channel -> note number
+    uint8_t* _lastNoteChannel; //cv channel -> note number //TODO convert to list of notes
 
     uint8_t getCvOutputChannel(uint8_t midiChannel);
-    uint8_t getCvOutputChannel(uint8_t midiChannel, uint8_t note);
+    uint8_t getCvOutputChannelForNote(uint8_t midiChannel, uint8_t note);
+    void saveNoteToChannel(uint8_t cvChannel, uint8_t note);
+    bool clearNoteFromChannel(uint8_t cvChannel, uint8_t note);
 
 };
 
