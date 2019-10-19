@@ -79,19 +79,15 @@ uint8_t MidiEventProcessor::getCvOutputChannelForNote(uint8_t midiChannel, uint8
 }
 
 void MidiEventProcessor::saveNoteToChannel(uint8_t cvChannel, uint8_t note) {
-    _channelNoteMapping[cvChannel].append(note);
-    Serial.println("add");
-    Serial.println(_channelNoteMapping[cvChannel].length);
-    Serial.println(_channelNoteMapping[cvChannel].data[0]);
+    if(_channelNoteMapping[cvChannel].find(note) == -1) {
+        _channelNoteMapping[cvChannel].append(note);
+    }
 }
 
 bool MidiEventProcessor::clearNoteFromChannel(uint8_t cvChannel, uint8_t note) {
     int8_t index = _channelNoteMapping[cvChannel].find(note);
     if(index != -1) {
         _channelNoteMapping[cvChannel].remove(index);
-        Serial.println("remove");
-        Serial.println(_channelNoteMapping[cvChannel].length);
-        Serial.println(_channelNoteMapping[cvChannel].data[0]);
     }
     return _channelNoteMapping[cvChannel].length > 0;
 }
