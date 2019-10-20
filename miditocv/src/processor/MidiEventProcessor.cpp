@@ -1,12 +1,16 @@
 #include "MidiEventProcessor.h"
 
+#include <Arduino.h>
+
 #define MIDI_CHANNELS 16
 
-MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask, GateOutput& gateOutput, PitchCvOutput& pitchCvOutput) :
+MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask, GateOutput& gateOutput,
+                                       PitchCvOutput& pitchCvOutput, MidiToPitchConverter& midiToPitchConverter) :
         _config(config),
         _statusLedTask(statusLedTask),
         _gateOutput(gateOutput),
-        _pitchCvOutput(pitchCvOutput) {
+        _pitchCvOutput(pitchCvOutput),
+        _midiToPitchConverter(midiToPitchConverter) {
     _channelMapping = new uint8_t[MIDI_CHANNELS];
     _channelNoteMapping = new List[_pitchCvOutput.getSize()];
 
@@ -16,7 +20,7 @@ MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& sta
     }
 }
 
-void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, uint8_t note, uint8_t velocity) {
+void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t velocity) {
 
     uint8_t cvChannel = getCvOutputChannel(midiChannel);
     if(cvChannel == -1) {
@@ -25,17 +29,21 @@ void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, uint8_t note, uint8_t 
 
     saveNoteToChannel(cvChannel, note);
 
-    //TODO convert note number to Pitch CV Output
+    // pitch cv
+    float pitch = _midiToPitchConverter.convert(note, 0); //TODO set channel bend
+    _pitchCvOutput.setVoltage(cvChannel, pitch);
+    _pitchCvOutput.sendData();
 
     //TODO convert velocity to Cv Output
 
+    //gate
     _gateOutput.setValue(cvChannel, HIGH);
     _gateOutput.sendData();
 
     _statusLedTask.blinkGreen();
 }
 
-void MidiEventProcessor::eventNoteOff(uint8_t midiChannel, uint8_t note) {
+void MidiEventProcessor::eventNoteOff(uint8_t midiChannel, int8_t note) {
 
     uint8_t cvChannel = getCvOutputChannelForNote(midiChannel, note);
     if(cvChannel == -1) {
@@ -45,8 +53,10 @@ void MidiEventProcessor::eventNoteOff(uint8_t midiChannel, uint8_t note) {
     bool notesStillPressed = clearNoteFromChannel(cvChannel, note);
 
     if(!notesStillPressed) {
+        //gate
         _gateOutput.setValue(cvChannel, LOW);
         _gateOutput.sendData();
+
         //TODO turn off trigger output
         _statusLedTask.blinkRed();
     }

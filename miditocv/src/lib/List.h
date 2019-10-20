@@ -9,20 +9,20 @@
 class List {
 
 public:
-    uint8_t length;
-    uint8_t data[LIST_MAX_LENGTH];
+    int8_t length;
+    int8_t data[LIST_MAX_LENGTH];
 
     List() {
         length = 0;
     }
 
-    void append(uint8_t item) {
+    void append(int8_t item) {
         if (length < LIST_MAX_LENGTH) {
             data[length++] = item;
         }
     }
 
-    void remove(uint8_t index) {
+    void remove(int8_t index) {
         if (index >= length) {
             return;
         }
@@ -31,11 +31,11 @@ public:
         length--;
     }
 
-    uint8_t get(uint8_t index) {
+    uint8_t get(int8_t index) {
         return data[index];
     }
 
-    int8_t find(uint8_t item) {
+    int8_t find(int8_t item) {
         for(uint8_t i = 0; i < length; i++) {
             if(data[i] == item) {
                 return i;

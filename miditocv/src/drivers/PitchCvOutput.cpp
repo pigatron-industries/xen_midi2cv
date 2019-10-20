@@ -32,7 +32,7 @@ void PitchCvOutput::sendData() {
     digitalWrite(_latchPin, LOW);
     digitalWrite(_clockPin, LOW);
 
-    for(uint8_t i = 0; i < _size; i++) {
+    for(int8_t i=_size-1; i>=0; i--) {
         uint16_t value = _data[i];
 
         for(int8_t j=15; j>=0; j--) {

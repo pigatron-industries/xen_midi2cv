@@ -19,7 +19,8 @@ StatusLed statusLed = StatusLed(LED_RED, LED_BLUE, LED_GREEN);
 
 StatusLedTask statusLedTask = StatusLedTask(statusLed);
 Configuration config = Configuration();
-MidiEventProcessor midiEventProcessor = MidiEventProcessor(config, statusLedTask, gateOutput, pitchCvOutput);
+MidiToPitchConverter midiToPitchConverter = MidiToPitchConverter(config);
+MidiEventProcessor midiEventProcessor = MidiEventProcessor(config, statusLedTask, gateOutput, pitchCvOutput, midiToPitchConverter);
 MidiInputTask midiInputTask = MidiInputTask(midiEventProcessor);
 
 
