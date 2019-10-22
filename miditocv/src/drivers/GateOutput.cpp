@@ -14,7 +14,7 @@ GateOutput::GateOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, uint
     digitalWrite(_latchPin, LOW);
     digitalWrite(_dataPin, LOW);
     _data = new bool[_size];
-    for(uint8_t i; i < _size; i++) {
+    for(uint8_t i=0; i < _size; i++) {
         _data[i] = LOW;
     }
     sendData();
