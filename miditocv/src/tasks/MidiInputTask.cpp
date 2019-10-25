@@ -13,7 +13,12 @@
 #define COMMAND_PITCH_BEND 0xE
 #define COMMAND_SYSTEM 0xF
 
+#define SYSTEM_EXCLUSIVE 0x0
 #define SYSTEM_CLOCK 0x8
+
+#define SYSTEM_EXCLUSIVE_ID 0x7D
+#define SYSTEM_EXCLUSIVE_END 0xF7
+
 
 
 
@@ -30,20 +35,22 @@ void MidiInputTask::init() {
     Serial2.begin(31250);
 }
 
+byte MidiInputTask::getByte() {
+    while(!Serial2.available()){}
+    return Serial2.read();
+}
+
 void MidiInputTask::execute() {
     while(Serial2.available()) {
-        byte byte1 = Serial2.read();
+        byte byte1 = getByte();
         if(byte1 >= 0x80) {
 
             byte command = HI_NYBBLE(byte1);
             byte channel = LO_NYBBLE(byte1);
 
             if(command != COMMAND_SYSTEM) {
-
-                while(!Serial2.available()){}
-                byte byte2 = Serial2.read();
-                while(!Serial2.available()){}
-                byte byte3 = Serial2.read();
+                byte byte2 = getByte();
+                byte byte3 = getByte();
 
                 // Serial.println("");
                 // Serial.println("Command");
@@ -56,8 +63,6 @@ void MidiInputTask::execute() {
                 // Serial.println(byte3);
 
                 if(command == COMMAND_NOTEON) {
-                    // Serial.println("Note on ");
-                    // Serial.println(byte2);
                     _midiEventProcessor.eventNoteOn(channel, byte2, byte3);
                 }
 
@@ -67,9 +72,17 @@ void MidiInputTask::execute() {
 
             } else { // command == COMMAND_SYSTEM
 
-                // if(channel == SYSTEM_CLOCK) {
-                //     //Serial.println("clock");
-                // }
+                if(channel == SYSTEM_CLOCK) {
+                    //Serial.println("clock");
+                }
+                else if(channel == SYSTEM_EXCLUSIVE) {
+                    byte id = getByte();
+                    if(id = SYSTEM_EXCLUSIVE_ID) {
+                        memset(sysexBuffer, 0, SYSEX_BUFFER_SIZE);
+                        size_t size = Serial.readBytesUntil(SYSTEM_EXCLUSIVE_END, sysexBuffer, SYSEX_BUFFER_SIZE);
+                        _midiEventProcessor.eventSystemConfig(sysexBuffer, size);
+                    }
+                }
             }
         }
     }

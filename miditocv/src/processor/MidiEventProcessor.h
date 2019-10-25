@@ -19,6 +19,8 @@ public:
     void eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t velocity);
     void eventNoteOff(uint8_t midiChannel, int8_t note);
 
+    void eventSystemConfig(uint8_t* message, size_t size);
+
 private:
     Configuration& _config;
     StatusLedTask& _statusLedTask;

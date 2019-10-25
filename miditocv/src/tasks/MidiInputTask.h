@@ -6,6 +6,8 @@
 #include "src/lib/Task.h"
 #include "src/processor/MidiEventProcessor.h"
 
+#define SYSEX_BUFFER_SIZE 100
+
 
 class MidiInputTask : public Task {
 
@@ -16,6 +18,10 @@ public:
 
 private:
     MidiEventProcessor& _midiEventProcessor;
+
+    uint8_t getByte();
+
+    uint8_t sysexBuffer[SYSEX_BUFFER_SIZE];
 
 };
 

@@ -101,3 +101,7 @@ bool MidiEventProcessor::clearNoteFromChannel(uint8_t cvChannel, uint8_t note) {
     }
     return _channelNoteMapping[cvChannel].length > 0;
 }
+
+void MidiEventProcessor::eventSystemConfig(uint8_t* message, size_t size) {
+    _config.
+}

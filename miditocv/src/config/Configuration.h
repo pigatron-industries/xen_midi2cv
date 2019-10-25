@@ -14,6 +14,8 @@ class Configuration {
 public:
     Configuration();
 
+    void resetDefault();
+
     /**
      * Returns an array of 2 channel numbers.
      * If the channels are the same then this designates a single channel mapping.
@@ -22,6 +24,8 @@ public:
     ChannelMapping getCvChannelMapping(uint8_t midiChannel);
 
 private:
+
+    ChannelMapping channelMappings[16];
 
 };
 
