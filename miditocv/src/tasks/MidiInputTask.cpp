@@ -1,6 +1,8 @@
 #include "MidiInputTask.h"
 #include "HardwareSerial.h"
 
+#include "src/lib/base64/Base64.h"
+
 #include <Arduino.h>
 
 
@@ -70,20 +72,47 @@ void MidiInputTask::execute() {
                     _midiEventProcessor.eventNoteOff(channel, byte2);
                 }
 
+                if(command == COMMAND_CONTROL_CHANGE) {
+                }
+
             } else { // command == COMMAND_SYSTEM
 
                 if(channel == SYSTEM_CLOCK) {
                     //Serial.println("clock");
                 }
                 else if(channel == SYSTEM_EXCLUSIVE) {
-                    byte id = getByte();
-                    if(id = SYSTEM_EXCLUSIVE_ID) {
-                        memset(sysexBuffer, 0, SYSEX_BUFFER_SIZE);
-                        size_t size = Serial.readBytesUntil(SYSTEM_EXCLUSIVE_END, sysexBuffer, SYSEX_BUFFER_SIZE);
-                        _midiEventProcessor.eventSystemConfig(sysexBuffer, size);
-                    }
+                    Serial.println("sysex");
+                    //byte id = getByte();
+                    // Serial.println("sysex id");
+                    // Serial.println(id);
+                    // if(id == SYSTEM_EXCLUSIVE_ID) {
+                        handleSysex();
+                    //}
                 }
             }
         }
     }
+}
+
+void MidiInputTask::handleSysex() {
+    memset(sysexBuffer, 0, SYSEX_BUFFER_SIZE);
+    size_t size = Serial2.readBytesUntil(SYSTEM_EXCLUSIVE_END, sysexBuffer, SYSEX_BUFFER_SIZE);
+
+    Serial.println("base64 sysex received:");
+    for(int i = 0; i < size; i++) {
+        Serial.print(sysexBuffer[i], HEX);
+        Serial.print(" ");
+    }
+    Serial.println();
+
+    int decodedSize = base64_decode((char*)sysexBufferDecoded, (char*)sysexBuffer, size);
+
+    Serial.println("decoded sysex:");
+    for(int i = 0; i < decodedSize; i++) {
+        Serial.print(sysexBufferDecoded[i], HEX);
+        Serial.print(" ");
+    }
+    Serial.println();
+
+    _midiEventProcessor.eventSystemConfig(sysexBufferDecoded, decodedSize);
 }

@@ -19,9 +19,11 @@ public:
 private:
     MidiEventProcessor& _midiEventProcessor;
 
-    uint8_t getByte();
-
     uint8_t sysexBuffer[SYSEX_BUFFER_SIZE];
+    uint8_t sysexBufferDecoded[SYSEX_BUFFER_SIZE];
+
+    uint8_t getByte();
+    void handleSysex();
 
 };
 
