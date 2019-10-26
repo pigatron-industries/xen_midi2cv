@@ -1,0 +1,19 @@
+syntax = "proto2";
+
+import "nanopb.proto";
+
+package xen;
+
+message ChannelMapping {
+    required int32 midiChannel = 1;
+    required int32 cvChannelFrom = 2;
+    required int32 cvChannelTo = 3;
+}
+
+message ChannelConfig {
+    repeated ChannelMapping channelMapping = 1 [(nanopb).max_count = 16];
+}
+
+message WrapperMessage {
+    optional ChannelConfig channelConfig = 1;
+}

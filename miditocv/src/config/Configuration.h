@@ -3,6 +3,9 @@
 
 #include <inttypes.h>
 
+#include "src/protobuf/ConfigMessage.pb.h"
+
+
 struct ChannelMapping {
     uint8_t from;
     uint8_t to;
@@ -15,6 +18,7 @@ public:
     Configuration();
 
     void resetDefault();
+    void configUpdateMessage(uint8_t* encodedMessage, size_t size);
 
     /**
      * Returns an array of 2 channel numbers.
@@ -23,9 +27,10 @@ public:
      */
     ChannelMapping getCvChannelMapping(uint8_t midiChannel);
 
+
 private:
 
-    ChannelMapping channelMappings[16];
+    xen_WrapperMessage config;
 
 };
 
