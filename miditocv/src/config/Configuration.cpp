@@ -21,6 +21,20 @@ void Configuration::resetDefault() {
         config.channelConfig.channelMapping[i].cvChannelTo = i;
     }
     config.channelConfig.channelMapping_count = CV_CHANNELS;
+
+    config.scale.cents_count = 12;
+    config.scale.cents[0] = 100;
+    config.scale.cents[1] = 200;
+    config.scale.cents[2] = 300;
+    config.scale.cents[3] = 400;
+    config.scale.cents[4] = 500;
+    config.scale.cents[5] = 600;
+    config.scale.cents[6] = 700;
+    config.scale.cents[7] = 800;
+    config.scale.cents[8] = 900;
+    config.scale.cents[9] = 1000;
+    config.scale.cents[10] = 1100;
+    config.scale.cents[11] = 1200;
 }
 
 
