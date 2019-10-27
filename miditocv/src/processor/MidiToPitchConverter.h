@@ -13,7 +13,7 @@ public:
     float convert(int8_t note, int8_t bend);
 
 private:
-    Configuration _config;
+    Configuration& _config;
 
 };
 
