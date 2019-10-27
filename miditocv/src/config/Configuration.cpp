@@ -21,9 +21,9 @@ ChannelMapping Configuration::getCvChannelMapping(uint8_t midiChannel) {
 
 
 void Configuration::configUpdateMessage(uint8_t* encodedMessage, size_t size) {
-    xen_WrapperMessage message = xen_WrapperMessage_init_zero;
+    xen_ConfigWrapper wrapper = xen_ConfigWrapper_init_zero;
     pb_istream_t stream = pb_istream_from_buffer(encodedMessage, size);
-    bool status = pb_decode(&stream, xen_WrapperMessage_fields, &message);
+    bool status = pb_decode(&stream, xen_ConfigWrapper_fields, &wrapper);
 
     if (!status) {
         Serial.println("Decoding config failed");
@@ -31,5 +31,5 @@ void Configuration::configUpdateMessage(uint8_t* encodedMessage, size_t size) {
         return;
     }
 
-    Serial.println(message.channelConfig.channelMapping[0].midiChannel);
+    Serial.println(wrapper.channelConfig.channelMapping[0].midiChannel);
 }

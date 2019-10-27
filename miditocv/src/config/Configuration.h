@@ -30,7 +30,7 @@ public:
 
 private:
 
-    xen_WrapperMessage config;
+    xen_ConfigWrapper config;
 
 };
 
