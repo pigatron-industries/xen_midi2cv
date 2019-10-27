@@ -31,6 +31,7 @@ private:
     int8_t* _channelMapping; //midi channel -> cv channel
     List* _channelNoteMapping; //cv channel -> note numbers
 
+    void resetChannelMappings();
     int8_t getCvOutputChannel(int8_t midiChannel);
     int8_t getCvOutputChannelForNote(int8_t midiChannel, int8_t note);
     void saveNoteToChannel(int8_t cvChannel, int8_t note);

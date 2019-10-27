@@ -26,9 +26,12 @@ MidiInputTask midiInputTask = MidiInputTask(midiEventProcessor);
 
 void bootstrap() {
     Serial.begin(115200);
-    Serial.println("");
-    Serial.println("start");
-    Serial.println("");
+    Serial.println();
+    Serial.println("======================================");
+    Serial.println("*     Pigatron Industries Midi2Cv    *");
+    Serial.println("======================================");
+    Serial.println();
+    config.printConfig();
 
     Task* tasks[] = { &statusLedTask, &midiInputTask };
     TaskManager taskManager(tasks, 2);

@@ -37,12 +37,27 @@ xen_ChannelMapping* Configuration::getCvChannelMapping(uint8_t midiChannel) {
 void Configuration::configUpdateMessage(uint8_t* encodedMessage, size_t size) {
     pb_istream_t stream = pb_istream_from_buffer(encodedMessage, size);
     bool status = pb_decode(&stream, xen_ConfigWrapper_fields, &config);
-
     if (!status) {
         Serial.println("Decoding config failed");
         Serial.println(PB_GET_ERROR(&stream));
         return;
     }
 
-    Serial.println(config.channelConfig.channelMapping[0].midiChannel);
+    printConfig();
+}
+
+
+void Configuration::printConfig() {
+    Serial.println("System configured:");
+    Serial.println();
+    Serial.println("     Channel Mappings");
+    for(int i = 0; i < config.channelConfig.channelMapping_count; i++) {
+        Serial.print("          MIDI: ");
+        Serial.print(config.channelConfig.channelMapping[i].midiChannel);
+        Serial.print(" -> CV: ");
+        Serial.print(config.channelConfig.channelMapping[i].cvChannelFrom);
+        Serial.print(" - ");
+        Serial.print(config.channelConfig.channelMapping[i].cvChannelTo);
+        Serial.println();
+    }
 }

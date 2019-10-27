@@ -17,6 +17,7 @@ class Configuration {
 public:
     Configuration();
 
+    void printConfig();
     void resetDefault();
     void configUpdateMessage(uint8_t* encodedMessage, size_t size);
 

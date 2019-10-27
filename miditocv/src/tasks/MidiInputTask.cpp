@@ -81,13 +81,7 @@ void MidiInputTask::execute() {
                     //Serial.println("clock");
                 }
                 else if(channel == SYSTEM_EXCLUSIVE) {
-                    Serial.println("sysex");
-                    //byte id = getByte();
-                    // Serial.println("sysex id");
-                    // Serial.println(id);
-                    // if(id == SYSTEM_EXCLUSIVE_ID) {
-                        handleSysex();
-                    //}
+                    handleSysex();
                 }
             }
         }
@@ -98,21 +92,14 @@ void MidiInputTask::handleSysex() {
     memset(sysexBuffer, 0, SYSEX_BUFFER_SIZE);
     size_t size = Serial2.readBytesUntil(SYSTEM_EXCLUSIVE_END, sysexBuffer, SYSEX_BUFFER_SIZE);
 
-    Serial.println("base64 sysex received:");
+    Serial.println("System config message recieved:");
+    Serial.print("     ");
     for(int i = 0; i < size; i++) {
-        Serial.print(sysexBuffer[i], HEX);
-        Serial.print(" ");
+        Serial.print((char)sysexBuffer[i]);
     }
+    Serial.println();
     Serial.println();
 
     int decodedSize = base64_decode((char*)sysexBufferDecoded, (char*)sysexBuffer, size);
-
-    Serial.println("decoded sysex:");
-    for(int i = 0; i < decodedSize; i++) {
-        Serial.print(sysexBufferDecoded[i], HEX);
-        Serial.print(" ");
-    }
-    Serial.println();
-
     _midiEventProcessor.eventSystemConfig(sysexBufferDecoded, decodedSize);
 }
