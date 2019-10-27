@@ -11,18 +11,28 @@ MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& sta
         _gateOutput(gateOutput),
         _pitchCvOutput(pitchCvOutput),
         _midiToPitchConverter(midiToPitchConverter) {
-    _channelMapping = new uint8_t[MIDI_CHANNELS];
+    _channelMapping = new int8_t[MIDI_CHANNELS];
     _channelNoteMapping = new List[_pitchCvOutput.getSize()];
 
-    // get channel mappings from config
+    // get initial channel mappings from config
     for(uint8_t i = 0; i < MIDI_CHANNELS; i++) {
-        _channelMapping[i] = _config.getCvChannelMapping(i).from;
+        xen_ChannelMapping* channelConfig = _config.getCvChannelMapping(i);
+        if(channelConfig != NULL) {
+            _channelMapping[i] = channelConfig->cvChannelFrom;
+        } else {
+            _channelMapping[i] = -1;
+        }
     }
 }
 
+
 void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t velocity) {
 
-    uint8_t cvChannel = getCvOutputChannel(midiChannel);
+    int8_t cvChannel = getCvOutputChannel(midiChannel);
+
+    Serial.println(midiChannel);
+    Serial.println(cvChannel);
+
     if(cvChannel == -1) {
         return;
     }
@@ -43,9 +53,10 @@ void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t v
     _statusLedTask.blinkGreen();
 }
 
+
 void MidiEventProcessor::eventNoteOff(uint8_t midiChannel, int8_t note) {
 
-    uint8_t cvChannel = getCvOutputChannelForNote(midiChannel, note);
+    int8_t cvChannel = getCvOutputChannelForNote(midiChannel, note);
     if(cvChannel == -1) {
         return;
     }
@@ -63,13 +74,16 @@ void MidiEventProcessor::eventNoteOff(uint8_t midiChannel, int8_t note) {
 }
 
 
-uint8_t MidiEventProcessor::getCvOutputChannel(uint8_t midiChannel) {
+int8_t MidiEventProcessor::getCvOutputChannel(int8_t midiChannel) {
     uint8_t currentCvChannel = _channelMapping[midiChannel];
-    ChannelMapping channelConfig = _config.getCvChannelMapping(midiChannel); //TODO handle no channel mapping
+    xen_ChannelMapping* channelConfig = _config.getCvChannelMapping(midiChannel);
+    if(channelConfig == NULL) {
+        return -1;
+    }
 
-    if(channelConfig.from < channelConfig.to) {
-        if(currentCvChannel == channelConfig.to) {
-            _channelMapping[midiChannel] = channelConfig.from;
+    if(channelConfig->cvChannelFrom < channelConfig->cvChannelTo) {
+        if(currentCvChannel == channelConfig->cvChannelTo) {
+            _channelMapping[midiChannel] = channelConfig->cvChannelFrom;
         } else {
             _channelMapping[midiChannel]++;
         }
@@ -78,7 +92,8 @@ uint8_t MidiEventProcessor::getCvOutputChannel(uint8_t midiChannel) {
     return currentCvChannel;
 }
 
-uint8_t MidiEventProcessor::getCvOutputChannelForNote(uint8_t midiChannel, uint8_t note) {
+
+int8_t MidiEventProcessor::getCvOutputChannelForNote(int8_t midiChannel, int8_t note) {
     for(uint8_t i = 0; i < _pitchCvOutput.getSize(); i++) {
         if(_channelNoteMapping[i].find(note) != -1) {
             return i;
@@ -88,19 +103,22 @@ uint8_t MidiEventProcessor::getCvOutputChannelForNote(uint8_t midiChannel, uint8
     return -1;
 }
 
-void MidiEventProcessor::saveNoteToChannel(uint8_t cvChannel, uint8_t note) {
+
+void MidiEventProcessor::saveNoteToChannel(int8_t cvChannel, int8_t note) {
     if(_channelNoteMapping[cvChannel].find(note) == -1) {
         _channelNoteMapping[cvChannel].append(note);
     }
 }
 
-bool MidiEventProcessor::clearNoteFromChannel(uint8_t cvChannel, uint8_t note) {
+
+bool MidiEventProcessor::clearNoteFromChannel(int8_t cvChannel, int8_t note) {
     int8_t index = _channelNoteMapping[cvChannel].find(note);
     if(index != -1) {
         _channelNoteMapping[cvChannel].remove(index);
     }
     return _channelNoteMapping[cvChannel].length > 0;
 }
+
 
 void MidiEventProcessor::eventSystemConfig(uint8_t* message, size_t size) {
     _config.configUpdateMessage(message, size);

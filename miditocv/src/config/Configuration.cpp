@@ -3,27 +3,40 @@
 #include <Arduino.h>
 
 #include "src/lib/nanopb/pb_decode.h"
+#include "src/hwconfig.h"
 
 
 
 Configuration::Configuration() {
+    resetDefault();
 }
 
 
 void Configuration::resetDefault() {
-    //TODO
+    config = xen_ConfigWrapper_init_zero;
+
+    for(int i = 0; i < CV_CHANNELS; i++) {
+        config.channelConfig.channelMapping[i].midiChannel = i;
+        config.channelConfig.channelMapping[i].cvChannelFrom = i;
+        config.channelConfig.channelMapping[i].cvChannelTo = i;
+    }
+    config.channelConfig.channelMapping_count = CV_CHANNELS;
 }
 
 
-ChannelMapping Configuration::getCvChannelMapping(uint8_t midiChannel) {
-    return ChannelMapping{midiChannel, midiChannel};
+xen_ChannelMapping* Configuration::getCvChannelMapping(uint8_t midiChannel) {
+    for(int i = 0; i < config.channelConfig.channelMapping_count; i++) {
+        if(config.channelConfig.channelMapping[i].midiChannel == midiChannel) {
+            return &config.channelConfig.channelMapping[i];
+        }
+    }
+    return NULL;
 }
 
 
 void Configuration::configUpdateMessage(uint8_t* encodedMessage, size_t size) {
-    xen_ConfigWrapper wrapper = xen_ConfigWrapper_init_zero;
     pb_istream_t stream = pb_istream_from_buffer(encodedMessage, size);
-    bool status = pb_decode(&stream, xen_ConfigWrapper_fields, &wrapper);
+    bool status = pb_decode(&stream, xen_ConfigWrapper_fields, &config);
 
     if (!status) {
         Serial.println("Decoding config failed");
@@ -31,5 +44,5 @@ void Configuration::configUpdateMessage(uint8_t* encodedMessage, size_t size) {
         return;
     }
 
-    Serial.println(wrapper.channelConfig.channelMapping[0].midiChannel);
+    Serial.println(config.channelConfig.channelMapping[0].midiChannel);
 }

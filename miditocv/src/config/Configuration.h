@@ -25,7 +25,7 @@ public:
      * If the channels are the same then this designates a single channel mapping.
      * If they are different then it is a range of channels to rotate through.
      */
-    ChannelMapping getCvChannelMapping(uint8_t midiChannel);
+    xen_ChannelMapping* getCvChannelMapping(uint8_t midiChannel);
 
 
 private:

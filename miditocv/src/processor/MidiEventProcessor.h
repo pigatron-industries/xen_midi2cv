@@ -28,13 +28,13 @@ private:
     PitchCvOutput& _pitchCvOutput;
     MidiToPitchConverter _midiToPitchConverter;
 
-    uint8_t* _channelMapping; //midi channel -> cv channel
+    int8_t* _channelMapping; //midi channel -> cv channel
     List* _channelNoteMapping; //cv channel -> note numbers
 
-    uint8_t getCvOutputChannel(uint8_t midiChannel);
-    uint8_t getCvOutputChannelForNote(uint8_t midiChannel, uint8_t note);
-    void saveNoteToChannel(uint8_t cvChannel, uint8_t note);
-    bool clearNoteFromChannel(uint8_t cvChannel, uint8_t note);
+    int8_t getCvOutputChannel(int8_t midiChannel);
+    int8_t getCvOutputChannelForNote(int8_t midiChannel, int8_t note);
+    void saveNoteToChannel(int8_t cvChannel, int8_t note);
+    bool clearNoteFromChannel(int8_t cvChannel, int8_t note);
 
 };
 
