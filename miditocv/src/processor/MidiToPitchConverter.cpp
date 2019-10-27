@@ -1,5 +1,6 @@
 #include "MidiToPitchConverter.h"
 
+#include <Arduino.h>
 #include "math.h"
 
 #define SCALE_NOTESPEROCTAVE 12
@@ -12,8 +13,8 @@ MidiToPitchConverter::MidiToPitchConverter(Configuration& config) :
 
 
 float MidiToPitchConverter::convert(int8_t note, int8_t bend) {
-    float octaveNum = floor(note / SCALE_NOTESPEROCTAVE);
-    float noteNum = note - (octaveNum * SCALE_NOTESPEROCTAVE);
-    float cents = octaveNum * SCALE_OCTAVECENTS + (noteNum * SCALE_NOTECENTS);
+    float octaveNum = floor(note / _config.getNoteCount());
+    float noteNum = note - (octaveNum * _config.getNoteCount());
+    float cents = octaveNum * _config.getOctaveCents() + _config.getNoteCents(noteNum);
     return cents / 1200;
 }

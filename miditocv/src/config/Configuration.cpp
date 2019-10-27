@@ -48,6 +48,25 @@ xen_ChannelMapping* Configuration::getCvChannelMapping(uint8_t midiChannel) {
 }
 
 
+float Configuration::getNoteCents(int8_t noteNum) {
+    if(noteNum == 0) {
+        return 0;
+    } else {
+        return config.scale.cents[noteNum-1];
+    }
+}
+
+
+float Configuration::getOctaveCents() {
+    return config.scale.cents[config.scale.cents_count-1];
+}
+
+
+int8_t Configuration::getNoteCount() {
+    return config.scale.cents_count;
+}
+
+
 void Configuration::configUpdateMessage(uint8_t* encodedMessage, size_t size) {
     pb_istream_t stream = pb_istream_from_buffer(encodedMessage, size);
     bool status = pb_decode(&stream, xen_ConfigWrapper_fields, &config);
@@ -74,4 +93,20 @@ void Configuration::printConfig() {
         Serial.print(config.channelConfig.channelMapping[i].cvChannelTo);
         Serial.println();
     }
+
+    Serial.println();
+    Serial.println("     Scale");
+    Serial.print("          Notes/octave: ");
+    Serial.println(getNoteCount());
+    Serial.print("          Octave size: ");
+    Serial.println(getOctaveCents());
+    for(int i = 0; i < config.scale.cents_count; i++) {
+        Serial.print("          ");
+        Serial.print(i);
+        Serial.print(" -> ");
+        Serial.print(getNoteCents(i));
+        Serial.println();
+    }
+
+    Serial.println();
 }
