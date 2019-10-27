@@ -68,12 +68,21 @@ int8_t Configuration::getNoteCount() {
 
 
 void Configuration::configUpdateMessage(uint8_t* encodedMessage, size_t size) {
+    xen_ConfigWrapper configMessage = xen_ConfigWrapper_init_zero;
     pb_istream_t stream = pb_istream_from_buffer(encodedMessage, size);
-    bool status = pb_decode(&stream, xen_ConfigWrapper_fields, &config);
+    bool status = pb_decode(&stream, xen_ConfigWrapper_fields, &configMessage);
     if (!status) {
         Serial.println("Decoding config failed");
         Serial.println(PB_GET_ERROR(&stream));
         return;
+    }
+
+    if(configMessage.has_channelConfig) {
+        config.channelConfig = configMessage.channelConfig;
+    }
+
+    if(configMessage.has_scale) {
+        config.scale = configMessage.scale;
     }
 
     printConfig();
