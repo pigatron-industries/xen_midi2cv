@@ -61,6 +61,11 @@ void MidiEventProcessor::eventNoteOff(uint8_t midiChannel, int8_t note) {
 }
 
 
+void MidiEventProcessor::eventNotePressure(uint8_t midiChannel, int8_t note, int8_t pressure) {
+    // TODO find channel and update velocity output
+}
+
+
 void MidiEventProcessor::eventControlChange(uint8_t midiChannel, int8_t controlNumber, int8_t value) {
     // TODO figure out how to map control number to output channel
 }

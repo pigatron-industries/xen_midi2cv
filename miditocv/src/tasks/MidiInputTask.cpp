@@ -72,6 +72,10 @@ void MidiInputTask::execute() {
                     _midiEventProcessor.eventNoteOff(channel, byte2);
                 }
 
+                if(command == COMMAND_POLY_PRESSURE) {
+                    _midiEventProcessor.eventNotePressure(channel, byte2, byte3);
+                }
+
                 if(command == COMMAND_CONTROL_CHANGE) {
                     _midiEventProcessor.eventControlChange(channel, byte2, byte3);
                 }
