@@ -61,6 +61,11 @@ void MidiEventProcessor::eventNoteOff(uint8_t midiChannel, int8_t note) {
 }
 
 
+void MidiEventProcessor::eventControlChange(uint8_t midiChannel, int8_t controlNumber, int8_t value) {
+    // TODO figure out how to map control number to output channel
+}
+
+
 int8_t MidiEventProcessor::getCvOutputChannel(int8_t midiChannel) {
     uint8_t currentCvChannel = _channelMapping[midiChannel];
     xen_ChannelMapping* channelConfig = _config.getCvChannelMapping(midiChannel);

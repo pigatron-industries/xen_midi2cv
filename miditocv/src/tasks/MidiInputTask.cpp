@@ -73,6 +73,7 @@ void MidiInputTask::execute() {
                 }
 
                 if(command == COMMAND_CONTROL_CHANGE) {
+                    _midiEventProcessor.eventControlChange(channel, byte2, byte3);
                 }
 
             } else { // command == COMMAND_SYSTEM
