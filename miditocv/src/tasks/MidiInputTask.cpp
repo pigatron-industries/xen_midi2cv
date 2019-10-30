@@ -66,18 +66,15 @@ void MidiInputTask::execute() {
 
                 if(command == COMMAND_NOTEON) {
                     _midiEventProcessor.eventNoteOn(channel, byte2, byte3);
-                }
-
-                if(command == COMMAND_NOTEOFF || (command == COMMAND_POLY_PRESSURE && byte3 == 0)) {
+                } else if(command == COMMAND_NOTEOFF || (command == COMMAND_POLY_PRESSURE && byte3 == 0)) {
                     _midiEventProcessor.eventNoteOff(channel, byte2);
-                }
-
-                if(command == COMMAND_POLY_PRESSURE) {
+                } else if(command == COMMAND_POLY_PRESSURE) {
                     _midiEventProcessor.eventNotePressure(channel, byte2, byte3);
-                }
-
-                if(command == COMMAND_CONTROL_CHANGE) {
+                } else if(command == COMMAND_CONTROL_CHANGE) {
                     _midiEventProcessor.eventControlChange(channel, byte2, byte3);
+                } else if(command == COMMAND_PITCH_BEND) {
+                    
+                    _midiEventProcessor.eventPitchBend(channel, pitch);
                 }
 
             } else { // command == COMMAND_SYSTEM

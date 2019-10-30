@@ -71,6 +71,11 @@ void MidiEventProcessor::eventControlChange(uint8_t midiChannel, int8_t controlN
 }
 
 
+void MidiEventProcessor::eventPitchBend(uint8_t channel, int16_t pitch) {
+    // TODO apply pitch bend to all notes in channel
+}
+
+
 int8_t MidiEventProcessor::getCvOutputChannel(int8_t midiChannel) {
     uint8_t currentCvChannel = _channelMapping[midiChannel];
     xen_ChannelMapping* channelConfig = _config.getCvChannelMapping(midiChannel);
