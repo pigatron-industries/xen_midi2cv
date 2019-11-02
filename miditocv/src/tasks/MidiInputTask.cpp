@@ -2,6 +2,7 @@
 #include "HardwareSerial.h"
 
 #include "src/lib/base64/Base64.h"
+#include "src/hwconfig.h"
 
 #include <Arduino.h>
 
@@ -34,7 +35,7 @@ MidiInputTask::MidiInputTask(MidiEventProcessor& midiEventProcessor) :
 
 void MidiInputTask::init() {
     Task::init();
-    Serial2.begin(31250);
+    Serial2.begin(MIDI_BAUD);
 }
 
 byte MidiInputTask::getByte() {

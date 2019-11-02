@@ -25,7 +25,7 @@ MidiInputTask midiInputTask = MidiInputTask(midiEventProcessor);
 
 
 void bootstrap() {
-    Serial.begin(115200);
+    Serial.begin(SERIAL_BAUD);
     Serial.println();
     Serial.println("======================================");
     Serial.println("*     Pigatron Industries Midi2Cv    *");
