@@ -10,7 +10,8 @@ class MidiToPitchConverter {
 public:
     MidiToPitchConverter(Configuration& config);
 
-    float convert(int8_t note, int8_t bend);
+    float convertNote(int8_t note);
+    float convertBend(int16_t bend);
 
 private:
     Configuration& _config;

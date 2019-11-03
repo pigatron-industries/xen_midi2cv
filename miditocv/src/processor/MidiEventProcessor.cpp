@@ -12,13 +12,14 @@ MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& sta
         _pitchCvOutput(pitchCvOutput),
         _midiToPitchConverter(midiToPitchConverter) {
     _channelMapping = new int8_t[MIDI_CHANNELS];
+    _channelPitchBend = new float[MIDI_CHANNELS];
     _channelNoteMapping = new List[_pitchCvOutput.getSize()];
+    _channelNotePitch = new float[_pitchCvOutput.getSize()];
     resetChannelMappings();
 }
 
 
 void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t velocity) {
-
     int8_t cvChannel = getCvOutputChannel(midiChannel);
     if(cvChannel == -1) {
         return;
@@ -27,8 +28,9 @@ void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t v
     saveNoteToChannel(cvChannel, note);
 
     // pitch cv
-    float pitch = _midiToPitchConverter.convert(note, 0); //TODO set channel bend
-    _pitchCvOutput.setVoltage(cvChannel, pitch);
+    float notePitch = _midiToPitchConverter.convertNote(note); //TODO set channel bend
+    _channelNotePitch[cvChannel] = notePitch;
+    _pitchCvOutput.setVoltage(cvChannel, notePitch + _channelPitchBend[midiChannel]);
     _pitchCvOutput.sendData();
 
     //TODO convert velocity to Cv Output
@@ -42,7 +44,6 @@ void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t v
 
 
 void MidiEventProcessor::eventNoteOff(uint8_t midiChannel, int8_t note) {
-
     int8_t cvChannel = getCvOutputChannelForNote(midiChannel, note);
     if(cvChannel == -1) {
         return;
@@ -71,8 +72,18 @@ void MidiEventProcessor::eventControlChange(uint8_t midiChannel, int8_t controlN
 }
 
 
-void MidiEventProcessor::eventPitchBend(uint8_t channel, int16_t pitch) {
-    // TODO apply pitch bend to all notes in channel
+void MidiEventProcessor::eventPitchBend(uint8_t midiChannel, int16_t bend) {
+    _channelPitchBend[midiChannel] = _midiToPitchConverter.convertBend(bend);
+
+    xen_ChannelMapping* channelConfig = _config.getCvChannelMapping(midiChannel);
+    if(channelConfig == NULL) {
+        return;
+    }
+
+    for(int8_t cvChannel = channelConfig->cvChannelFrom; cvChannel <= channelConfig->cvChannelTo; cvChannel++) {
+        _pitchCvOutput.setVoltage(cvChannel, _channelNotePitch[cvChannel] + _channelPitchBend[midiChannel]);
+        _pitchCvOutput.sendData();
+    }
 }
 
 

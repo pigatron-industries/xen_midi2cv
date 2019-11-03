@@ -20,7 +20,7 @@ public:
     void eventNoteOff(uint8_t midiChannel, int8_t note);
     void eventControlChange(uint8_t midiChannel, int8_t controlNumber, int8_t value);
     void eventNotePressure(uint8_t midiChannel, int8_t note, int8_t pressure);
-    void eventPitchBend(uint8_t channel, int16_t pitch);
+    void eventPitchBend(uint8_t channel, int16_t bend);
 
     void eventSystemConfig(uint8_t* message, size_t size);
 
@@ -32,7 +32,9 @@ private:
     MidiToPitchConverter _midiToPitchConverter;
 
     int8_t* _channelMapping; //midi channel -> cv channel
-    List* _channelNoteMapping; //cv channel -> note numbers
+    float* _channelPitchBend; //midi channel -> pitch bend
+    List* _channelNoteMapping; //cv channel -> note numbers currently held
+    float* _channelNotePitch; //cv channek -> last output pitch
 
     void resetChannelMappings();
     int8_t getCvOutputChannel(int8_t midiChannel);

@@ -9,9 +9,13 @@ MidiToPitchConverter::MidiToPitchConverter(Configuration& config) :
 }
 
 
-float MidiToPitchConverter::convert(int8_t note, int8_t bend) {
+float MidiToPitchConverter::convertNote(int8_t note) {
     float octaveNum = floor(note / _config.getNoteCount());
     float noteNum = note - (octaveNum * _config.getNoteCount());
     float cents = octaveNum * _config.getOctaveCents() + _config.getNoteCents(noteNum);
     return cents / 1200;
+}
+
+float MidiToPitchConverter::convertBend(int16_t bend) {
+    return (float(bend) / 8192) / 12;
 }

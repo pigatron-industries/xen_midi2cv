@@ -74,7 +74,7 @@ void MidiInputTask::execute() {
                 } else if(command == COMMAND_CONTROL_CHANGE) {
                     _midiEventProcessor.eventControlChange(channel, byte2, byte3);
                 } else if(command == COMMAND_PITCH_BEND) {
-                    
+                    int16_t pitch = ((byte3 * 128) + byte2) - 8192;
                     _midiEventProcessor.eventPitchBend(channel, pitch);
                 }
 
