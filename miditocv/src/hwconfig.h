@@ -4,6 +4,11 @@
 #define GATE_LATCH_PIN pinNametoDigitalPin(PD_6)
 #define GATE_CLOCK_PIN pinNametoDigitalPin(PD_5)
 
+// TODO define trigger pins
+#define TRIG_DATA_PIN pinNametoDigitalPin(PD_7)
+#define TRIG_LATCH_PIN pinNametoDigitalPin(PD_6)
+#define TRIG_CLOCK_PIN pinNametoDigitalPin(PD_5)
+
 #define PITCHCV_DATA_PIN pinNametoDigitalPin(PE_2)
 #define PITCHCV_CLOCK_PIN pinNametoDigitalPin(PE_4)
 #define PITCHCV_LATCH_PIN pinNametoDigitalPin(PE_5)
