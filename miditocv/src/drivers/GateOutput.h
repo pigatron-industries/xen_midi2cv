@@ -13,6 +13,9 @@ public:
     void setValue(uint8_t index, bool value);
     void sendData();
 
+    uint8_t getSize() { return _size; };
+    bool* getData() { return _data; };
+
 private:
     uint8_t _dataPin;
     uint8_t _latchPin;

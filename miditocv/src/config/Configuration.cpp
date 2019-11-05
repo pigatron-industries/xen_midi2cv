@@ -119,3 +119,7 @@ void Configuration::printConfig() {
 
     Serial.println();
 }
+
+unsigned long Configuration::getTriggerTime() {
+    return 5000;
+}
