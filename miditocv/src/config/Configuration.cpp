@@ -87,6 +87,10 @@ void Configuration::configUpdateMessage(uint8_t* encodedMessage, size_t size) {
         config.scale = configMessage.scale;
     }
 
+    if(configMessage.has_triggerTime) {
+        config.triggerTime = configMessage.triggerTime;
+    }
+
     printConfig();
 }
 
