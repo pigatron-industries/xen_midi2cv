@@ -35,6 +35,8 @@ void Configuration::resetDefault() {
     config.scale.cents[9] = 1000;
     config.scale.cents[10] = 1100;
     config.scale.cents[11] = 1200;
+
+    config.triggerTime = 5000;
 }
 
 
@@ -121,5 +123,5 @@ void Configuration::printConfig() {
 }
 
 unsigned long Configuration::getTriggerTime() {
-    return 5000;
+    return config.triggerTime;
 }
