@@ -22,8 +22,9 @@ Configuration config = Configuration();
 
 StatusLedTask statusLedTask = StatusLedTask(statusLed);
 TriggerOutputTask triggerOutputTask = TriggerOutputTask(config, triggerOutput);
+
 MidiToPitchConverter midiToPitchConverter = MidiToPitchConverter(config);
-MidiEventProcessor midiEventProcessor = MidiEventProcessor(config, statusLedTask, gateOutput, pitchCvOutput, midiToPitchConverter);
+MidiEventProcessor midiEventProcessor = MidiEventProcessor(config, statusLedTask, gateOutput, triggerOutputTask, pitchCvOutput, midiToPitchConverter);
 MidiInputTask midiInputTask = MidiInputTask(midiEventProcessor);
 
 

@@ -5,6 +5,7 @@
 #include "src/drivers/PitchCvOutput.h"
 #include "src/drivers/GateOutput.h"
 #include "src/tasks/StatusLedTask.h"
+#include "src/tasks/TriggerOutputTask.h"
 #include "src/processor/MidiToPitchConverter.h"
 #include "src/lib/List.h"
 
@@ -13,8 +14,9 @@
 class MidiEventProcessor {
 
 public:
-    MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask, GateOutput& gateOutput, PitchCvOutput& pitchCvOutput,
-                       MidiToPitchConverter& midiToPitchConverter);
+    MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask,
+                       GateOutput& gateOutput, TriggerOutputTask& triggerOutputTask,
+                       PitchCvOutput& pitchCvOutput, MidiToPitchConverter& midiToPitchConverter);
 
     void eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t velocity);
     void eventNoteOff(uint8_t midiChannel, int8_t note);
@@ -28,6 +30,7 @@ private:
     Configuration& _config;
     StatusLedTask& _statusLedTask;
     GateOutput& _gateOutput;
+    TriggerOutputTask& _triggerOutputTask;
     PitchCvOutput& _pitchCvOutput;
     MidiToPitchConverter _midiToPitchConverter;
 

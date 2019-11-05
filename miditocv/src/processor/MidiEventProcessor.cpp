@@ -4,11 +4,13 @@
 
 #define MIDI_CHANNELS 16
 
-MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask, GateOutput& gateOutput,
+MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask,
+                                       GateOutput& gateOutput, TriggerOutputTask& triggerOutputTask,
                                        PitchCvOutput& pitchCvOutput, MidiToPitchConverter& midiToPitchConverter) :
         _config(config),
         _statusLedTask(statusLedTask),
         _gateOutput(gateOutput),
+        _triggerOutputTask(triggerOutputTask),
         _pitchCvOutput(pitchCvOutput),
         _midiToPitchConverter(midiToPitchConverter) {
     _channelMapping = new int8_t[MIDI_CHANNELS];
@@ -38,6 +40,10 @@ void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t v
     //gate
     _gateOutput.setValue(cvChannel, HIGH);
     _gateOutput.sendData();
+
+    //trigger
+    _triggerOutputTask.trigger(cvChannel);
+    _triggerOutputTask.sendData();
 
     _statusLedTask.blinkGreen();
 }
