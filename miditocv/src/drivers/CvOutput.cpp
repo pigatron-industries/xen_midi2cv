@@ -1,6 +1,10 @@
 
 #include "CvOutput.h"
 
+#define MIN_VALUE 0
+#define MAX_VALUE 4095
+#define MAX_VOLTAGE_RANGE 10
+#define FACTOR = (MAX_VALUE / VOLTAGE_RANGE)
 
 CvOutput::CvOutput(SPIClass* spi, uint8_t convertPin, uint8_t* selectPins, uint8_t devices) :
         _devices(devices) {
@@ -12,4 +16,9 @@ CvOutput::CvOutput(SPIClass* spi, uint8_t convertPin, uint8_t* selectPins, uint8
 
 void CvOutput::setValue(uint8_t index, uint16_t value) {
     // TODO
+}
+
+void PitchCvOutput::setVoltage(uint8_t index, float voltage) {
+    float value = voltage * FACTOR;
+    setValue(index, (uint16_t)value);
 }

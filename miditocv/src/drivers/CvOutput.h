@@ -20,6 +20,13 @@ public:
      */
     void setValue(uint8_t index, uint16_t value);
 
+    /**
+     * Voltage can be 0 to 10.
+     * Depending on actual pin configuration this could be
+     * mapped to voltage ranges -10v>0v -5v>5v 0v>10v
+     */
+    void setVoltage(uint8_t index, float voltage);
+
 private:
     MAX11300* _max11300;
     uint8_t _devices;
