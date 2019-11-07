@@ -12,7 +12,11 @@
 #define PITCHCV_CLOCK_PIN pinNametoDigitalPin(PE_4)
 #define PITCHCV_LATCH_PIN pinNametoDigitalPin(PE_5)
 
+#define CV_CNVT_PIN 0
+#define CV_SELECT_PINS {0, 0}
+
 #define CV_CHANNELS 8
+#define CV_DEVICES 2
 
 #define MIDI_BAUD 31250
 #define SERIAL_BAUD 115200

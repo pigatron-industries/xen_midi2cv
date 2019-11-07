@@ -6,12 +6,14 @@
 
 MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask,
                                        GateOutput& gateOutput, TriggerOutputTask& triggerOutputTask,
-                                       PitchCvOutput& pitchCvOutput, MidiToPitchConverter& midiToPitchConverter) :
+                                       PitchCvOutput& pitchCvOutput, CvOutput& cvOutput,
+                                       MidiToPitchConverter& midiToPitchConverter) :
         _config(config),
         _statusLedTask(statusLedTask),
         _gateOutput(gateOutput),
         _triggerOutputTask(triggerOutputTask),
         _pitchCvOutput(pitchCvOutput),
+        _cvOutput(cvOutput),
         _midiToPitchConverter(midiToPitchConverter) {
     _channelMapping = new int8_t[MIDI_CHANNELS];
     _channelPitchBend = new float[MIDI_CHANNELS];
@@ -35,7 +37,9 @@ void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t v
     _pitchCvOutput.setVoltage(cvChannel, notePitch + _channelPitchBend[midiChannel]);
     _pitchCvOutput.sendData();
 
-    //TODO convert velocity to Cv Output
+    // velocity cv
+    float velocityVoltage = _midiToPitchConverter.convertVelocity(velocity);
+    _pitchCvOutput.setVoltage(cvChannel, velocityVoltage);
 
     //gate
     _gateOutput.setValue(cvChannel, HIGH);
