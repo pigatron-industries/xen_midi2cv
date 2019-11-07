@@ -12,6 +12,7 @@ public:
 
     float convertNote(int8_t note);
     float convertBend(int16_t bend);
+    float convertVelocity(uint8_t velocity);
 
 private:
     Configuration& _config;
