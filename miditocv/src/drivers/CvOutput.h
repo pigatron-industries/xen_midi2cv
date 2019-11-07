@@ -13,10 +13,16 @@ public:
      * selectPins - list of pins connected to select each MAX11300 device.
      * size - Number of MAX11300 dvices connected.
      */
-    CvOutput(SPIClass* spi, uint8_t convertPin, uint8_t* selectPins, uint8_t size);
+    CvOutput(SPIClass* spi, uint8_t convertPin, uint8_t* selectPins, uint8_t devices);
+
+    /**
+     * Only uses the first 12-bits of value to set the output.
+     */
+    void setValue(uint8_t index, uint16_t value);
 
 private:
     MAX11300* _max11300;
+    uint8_t _devices;
 
 };
 
