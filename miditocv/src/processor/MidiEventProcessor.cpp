@@ -39,7 +39,7 @@ void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t v
 
     // velocity cv
     float velocityVoltage = _midiToPitchConverter.convertVelocity(velocity);
-    _pitchCvOutput.setVoltage(cvChannel, velocityVoltage);
+    _cvOutput.setVoltage(cvChannel, velocityVoltage);
 
     //gate
     _gateOutput.setValue(cvChannel, HIGH);

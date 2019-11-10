@@ -12,8 +12,11 @@
 #define PITCHCV_CLOCK_PIN pinNametoDigitalPin(PE_4)
 #define PITCHCV_LATCH_PIN pinNametoDigitalPin(PE_5)
 
-#define CV_CNVT_PIN 0
-#define CV_SELECT_PINS {0, 0}
+#define CV_MOSI_PIN pinNametoDigitalPin(PF_2)
+#define CV_MISO_PIN pinNametoDigitalPin(PF_1)
+#define CV_SCLK_PIN pinNametoDigitalPin(PF_0)
+#define CV_SELECT_PINS {pinNametoDigitalPin(PD_0), pinNametoDigitalPin(PD_1)}
+#define CV_CNVT_PIN pinNametoDigitalPin(PG_0)
 
 #define CV_CHANNELS 8
 #define CV_DEVICES 2
