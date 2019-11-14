@@ -20,6 +20,7 @@
 
 #define CV_CHANNELS 8
 #define CV_DEVICES 2
+#define CV_CONTROLS 40
 
 #define MIDI_BAUD 31250
 #define SERIAL_BAUD 115200

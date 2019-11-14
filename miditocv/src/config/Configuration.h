@@ -39,6 +39,11 @@ private:
 
     xen_ConfigWrapper config;
 
+    void defaultChannelConfig();
+    void defaultControllerConfig();
+    void defaultPercussionConfig();
+    void defaultScale();
+
 };
 
 #endif

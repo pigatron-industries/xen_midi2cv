@@ -8,7 +8,10 @@ message ConfigWrapper {
     optional ChannelConfig channelConfig = 1;
     optional Scale scale = 2;
     optional int32 triggerTime = 3;
+    optional ControllerConfig controllerConfig = 4;
+    optional PercussionChannelConfig percussionChannelConfig = 5;
 }
+
 
 message ChannelConfig {
     repeated ChannelMapping channelMapping = 1 [(nanopb).max_count = 16];
@@ -19,6 +22,24 @@ message ChannelMapping {
     required int32 cvChannelFrom = 2;
     required int32 cvChannelTo = 3;
 }
+
+
+message ControllerConfig {
+    repeated ControllerMapping controllerMapping = 1 [(nanopb).max_count = 24];
+}
+
+message ControllerMapping {
+    required int32 midiChannel = 1;
+    required int32 midiController = 2;
+    required int32 cvIndex = 3;
+}
+
+
+message PercussionChannelConfig {
+    required int32 midiChannel = 1;
+    repeated int32 midiNotes = 2 [(nanopb).max_count = 16];
+}
+
 
 message Scale {
     repeated int32 cents = 1 [(nanopb).max_count = 48];

@@ -12,34 +12,6 @@ Configuration::Configuration() {
 }
 
 
-void Configuration::resetDefault() {
-    config = xen_ConfigWrapper_init_zero;
-
-    for(int i = 0; i < CV_CHANNELS; i++) {
-        config.channelConfig.channelMapping[i].midiChannel = i;
-        config.channelConfig.channelMapping[i].cvChannelFrom = i;
-        config.channelConfig.channelMapping[i].cvChannelTo = i;
-    }
-    config.channelConfig.channelMapping_count = CV_CHANNELS;
-
-    config.scale.cents_count = 12;
-    config.scale.cents[0] = 100;
-    config.scale.cents[1] = 200;
-    config.scale.cents[2] = 300;
-    config.scale.cents[3] = 400;
-    config.scale.cents[4] = 500;
-    config.scale.cents[5] = 600;
-    config.scale.cents[6] = 700;
-    config.scale.cents[7] = 800;
-    config.scale.cents[8] = 900;
-    config.scale.cents[9] = 1000;
-    config.scale.cents[10] = 1100;
-    config.scale.cents[11] = 1200;
-
-    config.triggerTime = 5000;
-}
-
-
 xen_ChannelMapping* Configuration::getCvChannelMapping(uint8_t midiChannel) {
     for(int i = 0; i < config.channelConfig.channelMapping_count; i++) {
         if(config.channelConfig.channelMapping[i].midiChannel == midiChannel) {
@@ -81,6 +53,10 @@ void Configuration::configUpdateMessage(uint8_t* encodedMessage, size_t size) {
 
     if(configMessage.has_channelConfig) {
         config.channelConfig = configMessage.channelConfig;
+    }
+
+    if(configMessage.has_controllerConfig) {
+        config.controllerConfig = configMessage.controllerConfig;
     }
 
     if(configMessage.has_scale) {
@@ -128,4 +104,76 @@ void Configuration::printConfig() {
 
 unsigned long Configuration::getTriggerTime() {
     return config.triggerTime;
+}
+
+
+/******************************************************************************
+ *                          Default Configuration                             *
+ ******************************************************************************/
+
+void Configuration::resetDefault() {
+    config = xen_ConfigWrapper_init_zero;
+    defaultChannelConfig();
+    defaultPercussionConfig();
+    defaultControllerConfig();
+    defaultScale();
+    config.triggerTime = 5000;
+}
+
+
+void Configuration::defaultChannelConfig() {
+    for(int cvChannel = 0; cvChannel < CV_CHANNELS; cvChannel++) {
+        config.channelConfig.channelMapping[cvChannel].midiChannel = cvChannel;
+        config.channelConfig.channelMapping[cvChannel].cvChannelFrom = cvChannel;
+        config.channelConfig.channelMapping[cvChannel].cvChannelTo = cvChannel;
+    }
+    config.channelConfig.channelMapping_count = CV_CHANNELS;
+}
+
+
+void Configuration::defaultControllerConfig() {
+    int cvIndex = 0;
+    for(int cvChannel = 0; cvChannel < CV_CHANNELS; cvChannel++) {
+        config.controllerConfig.controllerMapping[cvIndex].midiChannel = cvChannel;
+        config.controllerConfig.controllerMapping[cvIndex].midiController = 0; //TODO;
+        config.controllerConfig.controllerMapping[cvIndex].cvIndex = cvIndex + CV_CHANNELS;
+        cvIndex++;
+    }
+    for(int cvChannel = 0; cvChannel < CV_CHANNELS; cvChannel++) {
+        config.controllerConfig.controllerMapping[cvIndex].midiChannel = cvChannel;
+        config.controllerConfig.controllerMapping[cvIndex].midiController = 0; //TODO;
+        config.controllerConfig.controllerMapping[cvIndex].cvIndex = cvIndex + CV_CHANNELS;
+        cvIndex++;
+    }
+    for(int cvController = 0; cvController < 16; cvController++) {
+        config.controllerConfig.controllerMapping[cvIndex].midiChannel = config.percussionChannelConfig.midiChannel;
+        config.controllerConfig.controllerMapping[cvIndex].midiController = 0; //TODO different for each one
+        config.controllerConfig.controllerMapping[cvIndex].cvIndex = cvIndex + CV_CHANNELS;
+        cvIndex++;
+    }
+}
+
+
+void Configuration::defaultPercussionConfig() {
+    config.percussionChannelConfig.midiChannel = 10;
+    for(int note = 0; note < CV_CHANNELS; note++) {
+        config.percussionChannelConfig.midiNotes[note] = note+1;
+    }
+}
+
+
+void Configuration::defaultScale() {
+    config.scale.cents_count = 12;
+    config.scale.cents[0] = 100;
+    config.scale.cents[1] = 200;
+    config.scale.cents[2] = 300;
+    config.scale.cents[3] = 400;
+    config.scale.cents[4] = 500;
+    config.scale.cents[5] = 600;
+    config.scale.cents[6] = 700;
+    config.scale.cents[7] = 800;
+    config.scale.cents[8] = 900;
+    config.scale.cents[9] = 1000;
+    config.scale.cents[10] = 1100;
+    config.scale.cents[11] = 1200;
 }
