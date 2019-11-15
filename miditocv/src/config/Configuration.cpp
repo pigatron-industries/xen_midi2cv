@@ -151,14 +151,16 @@ void Configuration::defaultControllerConfig() {
         config.controllerConfig.controllerMapping[cvIndex].cvIndex = cvIndex + CV_CHANNELS;
         cvIndex++;
     }
+    config.controllerConfig.controllerMapping_count = cvIndex;
 }
 
 
 void Configuration::defaultPercussionConfig() {
     config.percussionChannelConfig.midiChannel = 10;
     for(int note = 0; note < CV_CHANNELS; note++) {
-        config.percussionChannelConfig.midiNotes[note] = note+1;
+        config.percussionChannelConfig.midiNotes[note] = note+1; //TODO suitable defualts for midi notes
     }
+    config.percussionChannelConfig.midiNotes_count = CV_CHANNELS;
 }
 
 

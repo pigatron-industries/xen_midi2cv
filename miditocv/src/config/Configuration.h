@@ -6,12 +6,6 @@
 #include "src/protobuf/ConfigMessage.pb.h"
 
 
-struct ChannelMapping {
-    uint8_t from;
-    uint8_t to;
-};
-
-
 class Configuration {
 
 public:

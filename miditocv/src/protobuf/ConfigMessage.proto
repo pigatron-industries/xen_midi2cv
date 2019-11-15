@@ -25,7 +25,7 @@ message ChannelMapping {
 
 
 message ControllerConfig {
-    repeated ControllerMapping controllerMapping = 1 [(nanopb).max_count = 24];
+    repeated ControllerMapping controllerMapping = 1 [(nanopb).max_count = 32];
 }
 
 message ControllerMapping {
