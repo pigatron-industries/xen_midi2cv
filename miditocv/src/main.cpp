@@ -8,8 +8,8 @@
 #include "src/drivers/CvOutput.h"
 #include "src/drivers/CvOutputService.h"
 #include "src/programs/midi/MidiEventProcessor.h"
+#include "src/programs/midi/MidiInputTask.h"
 #include "src/tasks/StatusLedTask.h"
-#include "src/tasks/MidiInputTask.h"
 #include "src/tasks/TriggerOutputTask.h"
 #include "src/lib/TaskManager.h"
 
