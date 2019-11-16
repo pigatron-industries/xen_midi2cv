@@ -10,7 +10,8 @@ public:
 	virtual void init();
 	virtual void execute() = 0;
 	void run();
-	bool isEnded() { return ended; }
+	bool isEnabled() { return enabled; }
+	void setEnabled(bool _enabled);
 
 protected:
 
@@ -25,7 +26,7 @@ private:
 	unsigned long interval;           // wait time interval until next execution
 	unsigned long lastExecutionTime;  // previous time of execution
 	unsigned long lastExecutionDiff;  // length of time between executions
-	bool ended;
+	bool enabled;
 
 };
 
