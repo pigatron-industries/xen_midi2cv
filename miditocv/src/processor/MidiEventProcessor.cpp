@@ -1,9 +1,8 @@
 #include "MidiEventProcessor.h"
 
-#include "src/hwconfig.h"
 #include <Arduino.h>
 
-#define MIDI_CHANNELS 16
+
 
 MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask,
                                        CvOutputService& cvOutputService,
@@ -12,10 +11,6 @@ MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& sta
         _statusLedTask(statusLedTask),
         _cvOutputService(cvOutputService),
         _midiToPitchConverter(midiToPitchConverter) {
-    _channelMapping = new int8_t[MIDI_CHANNELS];
-    _channelPitchBend = new float[MIDI_CHANNELS];
-    _channelNoteMapping = new List[CV_CHANNELS];
-    _channelNotePitch = new float[CV_CHANNELS];
     resetChannelMappings();
 }
 

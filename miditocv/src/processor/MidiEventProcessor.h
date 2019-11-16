@@ -7,8 +7,11 @@
 #include "src/processor/CvOutputService.h"
 #include "src/processor/MidiToPitchConverter.h"
 #include "src/lib/List.h"
+#include "src/hwconfig.h"
 
 #include <inttypes.h>
+
+#define MIDI_CHANNELS 16
 
 class MidiEventProcessor {
 
@@ -31,10 +34,10 @@ private:
     CvOutputService& _cvOutputService;
     MidiToPitchConverter _midiToPitchConverter;
 
-    int8_t* _channelMapping; //midi channel -> cv channel
-    float* _channelPitchBend; //midi channel -> pitch bend
-    List* _channelNoteMapping; //cv channel -> note numbers currently held
-    float* _channelNotePitch; //cv channek -> last output pitch
+    int8_t _channelMapping[MIDI_CHANNELS]; //midi channel -> cv channel
+    float _channelPitchBend[MIDI_CHANNELS]; //midi channel -> pitch bend
+    List _channelNoteMapping[CV_CHANNELS]; //cv channel -> note numbers currently held
+    float _channelNotePitch[CV_CHANNELS]; //cv channek -> last output pitch
 
     void resetChannelMappings();
     int8_t getCvOutputChannel(int8_t midiChannel);
