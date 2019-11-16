@@ -4,7 +4,7 @@
 #include "src/config/Configuration.h"
 #include "src/tasks/StatusLedTask.h"
 #include "src/tasks/TriggerOutputTask.h"
-#include "src/processor/CvOutputService.h"
+#include "src/drivers/CvOutputService.h"
 #include "src/processor/MidiToPitchConverter.h"
 #include "src/lib/List.h"
 #include "src/hwconfig.h"
