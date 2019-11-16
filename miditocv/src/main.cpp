@@ -7,7 +7,7 @@
 #include "src/drivers/pitchCvOutput.h"
 #include "src/drivers/CvOutput.h"
 #include "src/drivers/CvOutputService.h"
-#include "src/processor/MidiEventProcessor.h"
+#include "src/programs/midi/MidiEventProcessor.h"
 #include "src/tasks/StatusLedTask.h"
 #include "src/tasks/MidiInputTask.h"
 #include "src/tasks/TriggerOutputTask.h"

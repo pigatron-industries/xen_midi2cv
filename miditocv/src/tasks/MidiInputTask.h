@@ -4,7 +4,7 @@
 #include <inttypes.h>
 
 #include "src/lib/Task.h"
-#include "src/processor/MidiEventProcessor.h"
+#include "src/programs/midi/MidiEventProcessor.h"
 
 #define SYSEX_BUFFER_SIZE 100
 

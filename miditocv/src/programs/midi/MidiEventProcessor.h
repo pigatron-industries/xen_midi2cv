@@ -5,7 +5,7 @@
 #include "src/tasks/StatusLedTask.h"
 #include "src/tasks/TriggerOutputTask.h"
 #include "src/drivers/CvOutputService.h"
-#include "src/processor/MidiToPitchConverter.h"
+#include "src/programs/midi/MidiToPitchConverter.h"
 #include "src/lib/List.h"
 #include "src/hwconfig.h"
 
