@@ -21,6 +21,7 @@ public:
      * If they are different then it is a range of channels to rotate through.
      */
     xen_ChannelMapping* getCvChannelMapping(uint8_t midiChannel);
+    xen_ControllerMapping* getCvControllerMapping(int8_t midiChannel, int8_t midiController);
 
     float getNoteCents(int8_t note);
     float getOctaveCents();

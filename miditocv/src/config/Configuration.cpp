@@ -22,6 +22,17 @@ xen_ChannelMapping* Configuration::getCvChannelMapping(uint8_t midiChannel) {
 }
 
 
+xen_ControllerMapping* Configuration::getCvControllerMapping(int8_t midiChannel, int8_t midiController) {
+    for(int i = 0; i < config.controllerConfig.controllerMapping_count; i++) {
+        if(config.controllerConfig.controllerMapping[i].midiChannel == midiChannel &&
+          config.controllerConfig.controllerMapping[i].midiController == midiController) {
+              return &config.controllerConfig.controllerMapping[i];
+        }
+    }
+    return NULL;
+}
+
+
 float Configuration::getNoteCents(int8_t noteNum) {
     if(noteNum == 0) {
         return 0;
