@@ -20,7 +20,7 @@ public:
     void setPitchValue(int8_t index, float value);
     void setGateValue(int8_t index, bool value);
     void setTrigger(int8_t index);
-    void setControllerValue(int8_t index, float value);
+    void setControlValue(int8_t index, float value);
 
 private:
     Configuration& _config;

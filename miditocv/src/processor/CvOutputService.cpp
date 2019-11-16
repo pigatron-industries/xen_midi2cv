@@ -29,6 +29,6 @@ void CvOutputService::setTrigger(int8_t index) {
 }
 
 
-void CvOutputService::setControllerValue(int8_t index, float value) {
+void CvOutputService::setControlValue(int8_t index, float value) {
     _cvOutput.setVoltage(index, value);
 }

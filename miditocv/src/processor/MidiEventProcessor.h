@@ -2,11 +2,9 @@
 #define MidiEventProcessor_h
 
 #include "src/config/Configuration.h"
-#include "src/drivers/PitchCvOutput.h"
-#include "src/drivers/GateOutput.h"
-#include "src/drivers/CvOutput.h"
 #include "src/tasks/StatusLedTask.h"
 #include "src/tasks/TriggerOutputTask.h"
+#include "src/processor/CvOutputService.h"
 #include "src/processor/MidiToPitchConverter.h"
 #include "src/lib/List.h"
 
@@ -16,8 +14,7 @@ class MidiEventProcessor {
 
 public:
     MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask,
-                       GateOutput& gateOutput, TriggerOutputTask& triggerOutputTask,
-                       PitchCvOutput& pitchCvOutput, CvOutput& cvOutput,
+                       CvOutputService& cvOutputService,
                        MidiToPitchConverter& midiToPitchConverter);
 
     void eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t velocity);
@@ -31,10 +28,7 @@ public:
 private:
     Configuration& _config;
     StatusLedTask& _statusLedTask;
-    GateOutput& _gateOutput;
-    TriggerOutputTask& _triggerOutputTask;
-    PitchCvOutput& _pitchCvOutput;
-    CvOutput& _cvOutput;
+    CvOutputService& _cvOutputService;
     MidiToPitchConverter _midiToPitchConverter;
 
     int8_t* _channelMapping; //midi channel -> cv channel

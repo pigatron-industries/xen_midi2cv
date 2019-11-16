@@ -1,24 +1,21 @@
 #include "MidiEventProcessor.h"
 
+#include "src/hwconfig.h"
 #include <Arduino.h>
 
 #define MIDI_CHANNELS 16
 
 MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask,
-                                       GateOutput& gateOutput, TriggerOutputTask& triggerOutputTask,
-                                       PitchCvOutput& pitchCvOutput, CvOutput& cvOutput,
+                                       CvOutputService& cvOutputService,
                                        MidiToPitchConverter& midiToPitchConverter) :
         _config(config),
         _statusLedTask(statusLedTask),
-        _gateOutput(gateOutput),
-        _triggerOutputTask(triggerOutputTask),
-        _pitchCvOutput(pitchCvOutput),
-        _cvOutput(cvOutput),
+        _cvOutputService(cvOutputService),
         _midiToPitchConverter(midiToPitchConverter) {
     _channelMapping = new int8_t[MIDI_CHANNELS];
     _channelPitchBend = new float[MIDI_CHANNELS];
-    _channelNoteMapping = new List[_pitchCvOutput.getSize()];
-    _channelNotePitch = new float[_pitchCvOutput.getSize()];
+    _channelNoteMapping = new List[CV_CHANNELS];
+    _channelNotePitch = new float[CV_CHANNELS];
     resetChannelMappings();
 }
 
@@ -34,20 +31,17 @@ void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t v
     // pitch cv
     float notePitch = _midiToPitchConverter.convertNote(note); //TODO set channel bend
     _channelNotePitch[cvChannel] = notePitch;
-    _pitchCvOutput.setVoltage(cvChannel, notePitch + _channelPitchBend[midiChannel]);
-    _pitchCvOutput.sendData();
+    _cvOutputService.setPitchValue(cvChannel, notePitch + _channelPitchBend[midiChannel]);
 
     // velocity cv
     float velocityVoltage = _midiToPitchConverter.convertVelocity(velocity);
-    _cvOutput.setVoltage(cvChannel, velocityVoltage);
+    _cvOutputService.setControlValue(cvChannel, velocityVoltage);
 
     //gate
-    _gateOutput.setValue(cvChannel, HIGH);
-    _gateOutput.sendData();
+    _cvOutputService.setGateValue(cvChannel, HIGH);
 
     //trigger
-    _triggerOutputTask.trigger(cvChannel);
-    _triggerOutputTask.sendData();
+    _cvOutputService.setTrigger(cvChannel);
 
     _statusLedTask.blinkGreen();
 }
@@ -63,8 +57,7 @@ void MidiEventProcessor::eventNoteOff(uint8_t midiChannel, int8_t note) {
 
     if(!notesStillPressed) {
         //gate
-        _gateOutput.setValue(cvChannel, LOW);
-        _gateOutput.sendData();
+        _cvOutputService.setGateValue(cvChannel, LOW);
 
         //TODO turn off trigger output
         _statusLedTask.blinkRed();
@@ -91,8 +84,7 @@ void MidiEventProcessor::eventPitchBend(uint8_t midiChannel, int16_t bend) {
     }
 
     for(int8_t cvChannel = channelConfig->cvChannelFrom; cvChannel <= channelConfig->cvChannelTo; cvChannel++) {
-        _pitchCvOutput.setVoltage(cvChannel, _channelNotePitch[cvChannel] + _channelPitchBend[midiChannel]);
-        _pitchCvOutput.sendData();
+        _cvOutputService.setPitchValue(cvChannel, _channelNotePitch[cvChannel] + _channelPitchBend[midiChannel]);
     }
 }
 
@@ -117,7 +109,7 @@ int8_t MidiEventProcessor::getCvOutputChannel(int8_t midiChannel) {
 
 
 int8_t MidiEventProcessor::getCvOutputChannelForNote(int8_t midiChannel, int8_t note) {
-    for(uint8_t i = 0; i < _pitchCvOutput.getSize(); i++) {
+    for(uint8_t i = 0; i < CV_CHANNELS; i++) {
         if(_channelNoteMapping[i].find(note) != -1) {
             return i;
         }

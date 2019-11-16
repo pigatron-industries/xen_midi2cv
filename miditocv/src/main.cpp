@@ -7,6 +7,7 @@
 #include "src/drivers/pitchCvOutput.h"
 #include "src/drivers/CvOutput.h"
 #include "src/processor/MidiEventProcessor.h"
+#include "src/processor/CvOutputService.h"
 #include "src/tasks/StatusLedTask.h"
 #include "src/tasks/MidiInputTask.h"
 #include "src/tasks/TriggerOutputTask.h"
@@ -26,9 +27,12 @@ Configuration config = Configuration();
 StatusLedTask statusLedTask = StatusLedTask(statusLed);
 TriggerOutputTask triggerOutputTask = TriggerOutputTask(config, triggerOutput);
 
+CvOutputService cvOutputService = CvOutputService(config, gateOutput,
+                          triggerOutputTask, pitchCvOutput, cvOutput);
+
 MidiToPitchConverter midiToPitchConverter = MidiToPitchConverter(config);
 MidiEventProcessor midiEventProcessor = MidiEventProcessor(config, statusLedTask,
-    gateOutput, triggerOutputTask, pitchCvOutput, cvOutput, midiToPitchConverter);
+    cvOutputService, midiToPitchConverter);
 MidiInputTask midiInputTask = MidiInputTask(midiEventProcessor);
 
 
