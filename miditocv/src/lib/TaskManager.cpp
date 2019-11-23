@@ -25,7 +25,7 @@ void TaskManager::run()
 		for(int i = 0; i < numTasks; i++)
 		{
 			Task *tp = *tpp;
-			if(!tp->isEnabled())
+			if(tp->isEnabled())
 			{
 				tp->run();
 			}
