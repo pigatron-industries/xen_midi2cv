@@ -53,17 +53,20 @@ void MidiInputTask::execute() {
 
             if(command != COMMAND_SYSTEM) {
                 byte byte2 = getByte();
-                byte byte3 = getByte();
+                byte byte3 = 0;
+                if(command != COMMAND_CHAN_PRESSURE && command != COMMAND_PROGRAM_CHANGE) {
+                  byte byte3 = getByte();
+                }
 
-                // Serial.println("");
-                // Serial.println("Command");
-                // Serial.println(command);
-                // Serial.println("Channel");
-                // Serial.println(channel);
-                // Serial.println("Data 1");
-                // Serial.println(byte2);
-                // Serial.println("Data 2");
-                // Serial.println(byte3);
+                Serial.println("");
+                Serial.println("Command");
+                Serial.println(command);
+                Serial.println("Channel");
+                Serial.println(channel);
+                Serial.println("Data 1");
+                Serial.println(byte2);
+                Serial.println("Data 2");
+                Serial.println(byte3);
 
                 if(command == COMMAND_NOTEON) {
                     _midiEventProcessor.eventNoteOn(channel, byte2, byte3);
@@ -71,6 +74,8 @@ void MidiInputTask::execute() {
                     _midiEventProcessor.eventNoteOff(channel, byte2);
                 } else if(command == COMMAND_POLY_PRESSURE) {
                     _midiEventProcessor.eventNotePressure(channel, byte2, byte3);
+                } else if(command == COMMAND_CHAN_PRESSURE) {
+                      _midiEventProcessor.eventChannelPressure(channel, byte2);
                 } else if(command == COMMAND_CONTROL_CHANGE) {
                     _midiEventProcessor.eventControlChange(channel, byte2, byte3);
                 } else if(command == COMMAND_PITCH_BEND) {
