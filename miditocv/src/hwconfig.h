@@ -8,9 +8,10 @@
 #define TRIG_LATCH_PIN pinNametoDigitalPin(PE_3)
 #define TRIG_CLOCK_PIN pinNametoDigitalPin(PE_8)
 
-#define PITCHCV_DATA_PIN pinNametoDigitalPin(PE_2)
-#define PITCHCV_CLOCK_PIN pinNametoDigitalPin(PE_4)
-#define PITCHCV_LATCH_PIN pinNametoDigitalPin(PE_5)
+#define PITCHCV_DATA_PIN pinNametoDigitalPin(PF_8)
+#define PITCHCV_CLOCK_PIN pinNametoDigitalPin(PF_7)
+#define PITCHCV_LATCH_PIN pinNametoDigitalPin(PF_9)
+
 
 #define CV_MOSI_PIN pinNametoDigitalPin(PF_2)
 #define CV_MISO_PIN pinNametoDigitalPin(PF_1)

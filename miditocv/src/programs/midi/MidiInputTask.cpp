@@ -55,18 +55,18 @@ void MidiInputTask::execute() {
                 byte byte2 = getByte();
                 byte byte3 = 0;
                 if(command != COMMAND_CHAN_PRESSURE && command != COMMAND_PROGRAM_CHANGE) {
-                  byte byte3 = getByte();
+                    byte3 = getByte();
                 }
 
-                Serial.println("");
-                Serial.println("Command");
-                Serial.println(command);
-                Serial.println("Channel");
-                Serial.println(channel);
-                Serial.println("Data 1");
-                Serial.println(byte2);
-                Serial.println("Data 2");
-                Serial.println(byte3);
+                // Serial.println("");
+                // Serial.println("Command");
+                // Serial.println(command);
+                // Serial.println("Channel");
+                // Serial.println(channel);
+                // Serial.println("Data 1");
+                // Serial.println(byte2);
+                // Serial.println("Data 2");
+                // Serial.println(byte3);
 
                 if(command == COMMAND_NOTEON) {
                     _midiEventProcessor.eventNoteOn(channel, byte2, byte3);
