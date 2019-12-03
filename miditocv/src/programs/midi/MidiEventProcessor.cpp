@@ -76,19 +76,38 @@ void MidiEventProcessor::eventNoteOff(uint8_t midiChannel, int8_t note) {
         //gate
         _cvOutputService.setGateValue(cvChannel, LOW);
 
-        //TODO turn off trigger output
         _statusLedTask.blinkRed();
     }
 }
 
 
 void MidiEventProcessor::eventNotePressure(uint8_t midiChannel, int8_t note, int8_t pressure) {
-    // TODO find channel and update velocity output
+    int8_t cvChannel = getCvOutputChannelForNote(midiChannel, note);
+    if(cvChannel == -1) {
+        return;
+    }
+
+    // velocity cv
+    float velocityVoltage = _midiToPitchConverter.convertVelocity(pressure);
+    _cvOutputService.setControlValue(cvChannel, CVBANK_NOTEVELOCITY, velocityVoltage);
 }
 
+
 void MidiEventProcessor::eventChannelPressure(uint8_t midiChannel, int8_t pressure) {
-    // TODO change pressure of all notes
+    xen_ChannelMapping* channelConfig = _config.getCvChannelMapping(midiChannel);
+    if(channelConfig == NULL) {
+        return;
+    }
+
+    for(int8_t cvChannel = channelConfig->cvChannelFrom; cvChannel < channelConfig->cvChannelTo; cvChannel++) {
+        if(_channelNoteMapping[cvChannel].length > 0) {
+            // velocity cv
+            float velocityVoltage = _midiToPitchConverter.convertVelocity(pressure);
+            _cvOutputService.setControlValue(cvChannel, CVBANK_NOTEVELOCITY, velocityVoltage);
+        }
+    }
 }
+
 
 void MidiEventProcessor::eventControlChange(uint8_t midiChannel, int8_t controlNumber, int8_t value) {
     // TODO figure out how to map control number to output channel
