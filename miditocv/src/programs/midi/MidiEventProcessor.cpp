@@ -2,7 +2,10 @@
 
 #include <Arduino.h>
 
-
+#define CVBANK_NOTEVELOCITY 0
+#define CVBANK_PERCUSSIONVELOCITY 2
+#define TRIGBANK_NOTE 0
+#define TRIGBANK_PERCUSSION 1
 
 MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask,
                                        CvOutputService& cvOutputService,
@@ -34,13 +37,13 @@ void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t v
 
     // velocity cv
     float velocityVoltage = _midiToPitchConverter.convertVelocity(velocity);
-    _cvOutputService.setControlValue(cvChannel, velocityVoltage);
+    _cvOutputService.setControlValue(cvChannel, CVBANK_NOTEVELOCITY, velocityVoltage);
 
     //gate
     _cvOutputService.setGateValue(cvChannel, HIGH);
 
     //trigger
-    _cvOutputService.setTrigger(cvChannel);
+    _cvOutputService.setTrigger(cvChannel, TRIGBANK_NOTE);
 
     _statusLedTask.blinkGreen();
 }
@@ -53,12 +56,11 @@ void MidiEventProcessor::eventPercussionTrigger(int8_t note, uint8_t velocity) {
     }
 
     // velocity cv
-    // float velocityVoltage = _midiToPitchConverter.convertVelocity(velocity);
-    // _cvOutputService.setControlValue(cvChannel, velocityVoltage);
+    float velocityVoltage = _midiToPitchConverter.convertVelocity(velocity);
+    _cvOutputService.setControlValue(cvChannel, CVBANK_PERCUSSIONVELOCITY, velocityVoltage);
 
     //trigger
-    //_cvOutputService.setTrigger(cvChannel);
-
+    _cvOutputService.setTrigger(cvChannel, TRIGBANK_PERCUSSION);
 }
 
 

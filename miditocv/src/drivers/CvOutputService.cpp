@@ -1,5 +1,6 @@
 #include "CvOutputService.h"
 
+#include "src/hwconfig.h"
 
 CvOutputService::CvOutputService(Configuration& config, GateOutput& gateOutput,
                                  TriggerOutputTask& triggerOutputTask,
@@ -24,11 +25,15 @@ void CvOutputService::setGateValue(int8_t index, bool value) {
 }
 
 
-void CvOutputService::setTrigger(int8_t index) {
-    _triggerOutputTask.trigger(index);
+void CvOutputService::setTrigger(int8_t channel, int8_t bank) {
+    _triggerOutputTask.trigger(getIndex(channel, bank));
 }
 
 
-void CvOutputService::setControlValue(int8_t index, float value) {
-    _cvOutput.setVoltage(index, value);
+void CvOutputService::setControlValue(int8_t channel, int8_t bank, float value) {
+    _cvOutput.setVoltage(getIndex(channel, bank), value);
+}
+
+int8_t CvOutputService::getIndex(int8_t channel, int8_t bank) {
+    return (bank * CV_CHANNELS) + channel;
 }

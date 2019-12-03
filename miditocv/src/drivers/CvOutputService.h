@@ -17,10 +17,10 @@ public:
                     TriggerOutputTask& triggerOutputTask,
                     PitchCvOutput& pitchCvOutput, CvOutput& cvOutput);
 
-    void setPitchValue(int8_t index, float value);
-    void setGateValue(int8_t index, bool value);
-    void setTrigger(int8_t index);
-    void setControlValue(int8_t index, float value);
+    void setPitchValue(int8_t channel, float value);
+    void setGateValue(int8_t channel, bool value);
+    void setTrigger(int8_t channel, int8_t bank);
+    void setControlValue(int8_t channel, int8_t bank, float value);
 
 private:
     Configuration& _config;
@@ -28,6 +28,8 @@ private:
     TriggerOutputTask& _triggerOutputTask;
     PitchCvOutput& _pitchCvOutput;
     CvOutput& _cvOutput;
+
+    int8_t getIndex(int8_t channel, int8_t bank);
 
 };
 
