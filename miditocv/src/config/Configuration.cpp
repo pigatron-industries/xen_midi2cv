@@ -25,7 +25,7 @@ xen_ChannelMapping* Configuration::getCvChannelMapping(uint8_t midiChannel) {
 xen_ControllerMapping* Configuration::getCvControllerMapping(int8_t midiChannel, int8_t midiController) {
     for(int i = 0; i < config.controllerConfig.controllerMapping_count; i++) {
         if(config.controllerConfig.controllerMapping[i].midiChannel == midiChannel &&
-          config.controllerConfig.controllerMapping[i].midiControllerCoarse == midiController) {
+          config.controllerConfig.controllerMapping[i].midiController == midiController) {
               return &config.controllerConfig.controllerMapping[i];
         }
     }
@@ -152,8 +152,7 @@ void Configuration::defaultControllerConfig() {
     // note bank 1
     for(int cvChannel = 0; cvChannel < CV_CHANNELS; cvChannel++) {
         config.controllerConfig.controllerMapping[cvIndex].midiChannel = cvChannel;
-        config.controllerConfig.controllerMapping[cvIndex].midiControllerCoarse = 0;
-        config.controllerConfig.controllerMapping[cvIndex].midiControllerFine = 33;
+        config.controllerConfig.controllerMapping[cvIndex].midiController = 1;
         config.controllerConfig.controllerMapping[cvIndex].cvChannel = cvChannel;
         config.controllerConfig.controllerMapping[cvIndex].cvBank = 1;
         cvIndex++;
@@ -161,8 +160,7 @@ void Configuration::defaultControllerConfig() {
     // note bank 2
     for(int cvChannel = 0; cvChannel < CV_CHANNELS; cvChannel++) {
         config.controllerConfig.controllerMapping[cvIndex].midiChannel = cvChannel;
-        config.controllerConfig.controllerMapping[cvIndex].midiControllerCoarse = 1;
-        config.controllerConfig.controllerMapping[cvIndex].midiControllerFine = 34;
+        config.controllerConfig.controllerMapping[cvIndex].midiController = 2;
         config.controllerConfig.controllerMapping[cvIndex].cvChannel = cvChannel;
         config.controllerConfig.controllerMapping[cvIndex].cvBank = 2;
         cvIndex++;
@@ -170,8 +168,7 @@ void Configuration::defaultControllerConfig() {
     // percussion bank 4
     for(int cvChannel = 0; cvChannel < CV_CHANNELS; cvChannel++) {
         config.controllerConfig.controllerMapping[cvIndex].midiChannel = config.percussionChannelConfig.midiChannel;
-        config.controllerConfig.controllerMapping[cvIndex].midiControllerCoarse = 0;
-        config.controllerConfig.controllerMapping[cvIndex].midiControllerFine = 33;
+        config.controllerConfig.controllerMapping[cvIndex].midiController = cvChannel+1;
         config.controllerConfig.controllerMapping[cvIndex].cvChannel = cvChannel;
         config.controllerConfig.controllerMapping[cvIndex].cvBank = 4;
         cvIndex++;

@@ -77,6 +77,7 @@ void MidiInputTask::execute() {
                 } else if(command == COMMAND_CHAN_PRESSURE) {
                       _midiEventProcessor.eventChannelPressure(channel, byte2);
                 } else if(command == COMMAND_CONTROL_CHANGE) {
+                    //TODO check if the next message is LSB for control change (first 32 controls only, LSB control = control number + 32)
                     _midiEventProcessor.eventControlChange(channel, byte2, byte3);
                 } else if(command == COMMAND_PITCH_BEND) {
                     int16_t pitch = ((byte3 * 128) + byte2) - 8192;

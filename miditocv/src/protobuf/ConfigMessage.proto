@@ -31,11 +31,10 @@ message ControllerConfig {
 }
 
 message ControllerMapping {
-    required int32 midiChannel = 1           [(nanopb).int_size = IS_8];
-    required int32 midiControllerCoarse = 2  [(nanopb).int_size = IS_8];
-    required int32 midiControllerFine = 3    [(nanopb).int_size = IS_8];
-    required int32 cvChannel = 4             [(nanopb).int_size = IS_8];
-    required int32 cvBank = 5                [(nanopb).int_size = IS_8];
+    required int32 midiChannel = 1    [(nanopb).int_size = IS_8];
+    required int32 midiController = 2 [(nanopb).int_size = IS_8];
+    required int32 cvChannel = 4      [(nanopb).int_size = IS_8];
+    required int32 cvBank = 5         [(nanopb).int_size = IS_8];
 }
 
 
