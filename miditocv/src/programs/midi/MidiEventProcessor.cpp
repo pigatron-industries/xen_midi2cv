@@ -110,6 +110,9 @@ void MidiEventProcessor::eventChannelPressure(uint8_t midiChannel, int8_t pressu
 
 
 void MidiEventProcessor::eventControlChange(uint8_t midiChannel, int8_t controlNumber, int8_t value) {
+
+    //TODO handle coarse and fine control changes
+
     xen_ControllerMapping* controllerMapping = _config.getCvControllerMapping(midiChannel, controlNumber);
     if(controllerMapping == NULL) {
         return;

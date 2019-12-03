@@ -1,3 +1,5 @@
+//#include "src/lib/nanopb/pb.h"
+
 syntax = "proto2";
 
 import "nanopb.proto";
@@ -18,9 +20,9 @@ message ChannelConfig {
 }
 
 message ChannelMapping {
-    required int32 midiChannel = 1;
-    required int32 cvChannelFrom = 2;
-    required int32 cvChannelTo = 3;
+    required int32 midiChannel = 1   [(nanopb).int_size = IS_8];
+    required int32 cvChannelFrom = 2 [(nanopb).int_size = IS_8];
+    required int32 cvChannelTo = 3   [(nanopb).int_size = IS_8];
 }
 
 
@@ -29,16 +31,17 @@ message ControllerConfig {
 }
 
 message ControllerMapping {
-    required int32 midiChannel = 1;
-    required int32 midiController = 2;
-    required int32 cvChannel = 3;
-    required int32 cvBank = 4;
+    required int32 midiChannel = 1           [(nanopb).int_size = IS_8];
+    required int32 midiControllerCoarse = 2  [(nanopb).int_size = IS_8];
+    required int32 midiControllerFine = 3    [(nanopb).int_size = IS_8];
+    required int32 cvChannel = 4             [(nanopb).int_size = IS_8];
+    required int32 cvBank = 5                [(nanopb).int_size = IS_8];
 }
 
 
 message PercussionChannelConfig {
-    required int32 midiChannel = 1;
-    repeated int32 midiNotes = 2 [(nanopb).max_count = 16];
+    required int32 midiChannel = 1  [(nanopb).int_size = IS_8];
+    repeated int32 midiNotes = 2    [(nanopb).int_size = IS_8, (nanopb).max_count = 16];
 }
 
 
