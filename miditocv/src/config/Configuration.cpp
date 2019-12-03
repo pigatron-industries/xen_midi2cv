@@ -33,6 +33,11 @@ xen_ControllerMapping* Configuration::getCvControllerMapping(int8_t midiChannel,
 }
 
 
+xen_PercussionChannelConfig* Configuration::getPercussionChannelConfig() {
+    return &config.percussionChannelConfig;
+}
+
+
 float Configuration::getNoteCents(int8_t noteNum) {
     if(noteNum == 0) {
         return 0;

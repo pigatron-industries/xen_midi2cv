@@ -43,8 +43,11 @@ private:
     void resetChannelMappings();
     int8_t getCvOutputChannel(int8_t midiChannel);
     int8_t getCvOutputChannelForNote(int8_t midiChannel, int8_t note);
+    int8_t getCvOutputChannelForPercussion(int8_t note);
     void saveNoteToChannel(int8_t cvChannel, int8_t note);
     bool clearNoteFromChannel(int8_t cvChannel, int8_t note);
+
+    void eventPercussionTrigger(int8_t note, uint8_t velocity);
 
 };
 

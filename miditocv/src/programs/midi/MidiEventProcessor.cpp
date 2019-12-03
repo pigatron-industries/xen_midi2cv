@@ -16,6 +16,10 @@ MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& sta
 
 
 void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t velocity) {
+    if(midiChannel == _config.getPercussionChannelConfig()->midiChannel) {
+        eventPercussionTrigger(note, velocity);
+    }
+
     int8_t cvChannel = getCvOutputChannel(midiChannel);
     if(cvChannel == -1) {
         return;
@@ -39,6 +43,22 @@ void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t v
     _cvOutputService.setTrigger(cvChannel);
 
     _statusLedTask.blinkGreen();
+}
+
+
+void MidiEventProcessor::eventPercussionTrigger(int8_t note, uint8_t velocity) {
+    int8_t cvChannel = getCvOutputChannelForPercussion(note);
+    if(cvChannel == -1) {
+        return;
+    }
+
+    // velocity cv
+    // float velocityVoltage = _midiToPitchConverter.convertVelocity(velocity);
+    // _cvOutputService.setControlValue(cvChannel, velocityVoltage);
+
+    //trigger
+    //_cvOutputService.setTrigger(cvChannel);
+
 }
 
 
@@ -101,7 +121,6 @@ int8_t MidiEventProcessor::getCvOutputChannel(int8_t midiChannel) {
             _channelMapping[midiChannel]++;
         }
     }
-
     return currentCvChannel;
 }
 
@@ -112,7 +131,17 @@ int8_t MidiEventProcessor::getCvOutputChannelForNote(int8_t midiChannel, int8_t 
             return i;
         }
     }
+    return -1;
+}
 
+
+int8_t MidiEventProcessor::getCvOutputChannelForPercussion(int8_t note) {
+    xen_PercussionChannelConfig* percussionConfig = _config.getPercussionChannelConfig();
+    for(int8_t i = 0; i < percussionConfig->midiNotes_count; i++) {
+        if(percussionConfig->midiNotes[i] == note) {
+            return i;
+        }
+    }
     return -1;
 }
 

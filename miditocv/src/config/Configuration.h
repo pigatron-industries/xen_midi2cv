@@ -22,12 +22,14 @@ public:
      */
     xen_ChannelMapping* getCvChannelMapping(uint8_t midiChannel);
     xen_ControllerMapping* getCvControllerMapping(int8_t midiChannel, int8_t midiController);
+    xen_PercussionChannelConfig* getPercussionChannelConfig();
 
     float getNoteCents(int8_t note);
     float getOctaveCents();
     int8_t getNoteCount();
 
     unsigned long getTriggerTime();
+
 
 
 private:
