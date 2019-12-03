@@ -149,22 +149,28 @@ void Configuration::defaultChannelConfig() {
 
 void Configuration::defaultControllerConfig() {
     int cvIndex = 0;
+    // note bank 1
     for(int cvChannel = 0; cvChannel < CV_CHANNELS; cvChannel++) {
         config.controllerConfig.controllerMapping[cvIndex].midiChannel = cvChannel;
         config.controllerConfig.controllerMapping[cvIndex].midiController = 0; //TODO;
-        config.controllerConfig.controllerMapping[cvIndex].cvIndex = cvIndex + CV_CHANNELS;
+        config.controllerConfig.controllerMapping[cvIndex].cvChannel = cvChannel;
+        config.controllerConfig.controllerMapping[cvIndex].cvBank = 1;
         cvIndex++;
     }
+    // note bank 2
     for(int cvChannel = 0; cvChannel < CV_CHANNELS; cvChannel++) {
         config.controllerConfig.controllerMapping[cvIndex].midiChannel = cvChannel;
         config.controllerConfig.controllerMapping[cvIndex].midiController = 0; //TODO;
-        config.controllerConfig.controllerMapping[cvIndex].cvIndex = cvIndex + CV_CHANNELS;
+        config.controllerConfig.controllerMapping[cvIndex].cvChannel = cvChannel;
+        config.controllerConfig.controllerMapping[cvIndex].cvBank = 2;
         cvIndex++;
     }
-    for(int cvController = 0; cvController < 16; cvController++) {
+    // percussion bank 4
+    for(int cvChannel = 0; cvChannel < CV_CHANNELS; cvChannel++) {
         config.controllerConfig.controllerMapping[cvIndex].midiChannel = config.percussionChannelConfig.midiChannel;
         config.controllerConfig.controllerMapping[cvIndex].midiController = 0; //TODO different for each one
-        config.controllerConfig.controllerMapping[cvIndex].cvIndex = cvIndex + CV_CHANNELS;
+        config.controllerConfig.controllerMapping[cvIndex].cvChannel = cvChannel;
+        config.controllerConfig.controllerMapping[cvIndex].cvBank = 4;
         cvIndex++;
     }
     config.controllerConfig.controllerMapping_count = cvIndex;

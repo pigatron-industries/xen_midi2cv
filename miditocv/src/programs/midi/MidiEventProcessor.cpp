@@ -110,7 +110,14 @@ void MidiEventProcessor::eventChannelPressure(uint8_t midiChannel, int8_t pressu
 
 
 void MidiEventProcessor::eventControlChange(uint8_t midiChannel, int8_t controlNumber, int8_t value) {
-    // TODO figure out how to map control number to output channel
+    xen_ControllerMapping* controllerMapping = _config.getCvControllerMapping(midiChannel, controlNumber);
+    if(controllerMapping == NULL) {
+        return;
+    }
+
+    // velocity cv
+    float controlVoltage = _midiToPitchConverter.convertVelocity(value);
+    _cvOutputService.setControlValue(controllerMapping->cvChannel, controllerMapping->cvBank, controlVoltage);
 }
 
 

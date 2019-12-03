@@ -31,7 +31,8 @@ message ControllerConfig {
 message ControllerMapping {
     required int32 midiChannel = 1;
     required int32 midiController = 2;
-    required int32 cvIndex = 3;
+    required int32 cvChannel = 3;
+    required int32 cvBank = 4;
 }
 
 
