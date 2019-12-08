@@ -4,6 +4,12 @@
 #include <inttypes.h>
 #include "src/lib/max11300/MAX11300.h"
 
+#define MIN_VOLTAGE -5
+#define MAX_VOLTAGE 5
+#define MIN_VALUE 0
+#define MAX_VALUE 4095
+
+
 class CvOutput {
 
 public:
@@ -11,7 +17,7 @@ public:
      * spi - class which defines spi pins MISO, MOSI, CLK
      * convertPin - pin attached to CNVT pin on all devices.
      * selectPins - list of pins connected to select each MAX11300 device.
-     * size - Number of MAX11300 dvices connected.
+     * devices - Number of MAX11300 dvices connected.
      */
     CvOutput(SPIClass* spi, uint8_t convertPin, uint8_t* selectPins, uint8_t devices);
 
@@ -28,7 +34,10 @@ public:
     void setVoltage(uint8_t index, float voltage);
 
 private:
-    MAX11300* _max11300;
+    MAX11300** _max11300;
+    SPIClass* _spiClass;
+    uint8_t* _selectPins;
+    uint8_t _convertPin;
     uint8_t _devices;
 
 };

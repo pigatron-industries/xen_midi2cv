@@ -3,7 +3,7 @@
 #include <Arduino.h>
 #include "math.h"
 
-#define MAX_VELOCITY 10
+#define MAX_VELOCITY 5
 
 
 MidiToPitchConverter::MidiToPitchConverter(Configuration& config) :

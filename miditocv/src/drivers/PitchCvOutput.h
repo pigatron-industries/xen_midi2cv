@@ -40,8 +40,6 @@ private:
 
     uint16_t* _data;
 
-    float _factor;
-
 };
 
 #endif

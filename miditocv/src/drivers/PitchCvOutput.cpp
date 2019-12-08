@@ -2,6 +2,8 @@
 
 #include <Arduino.h>
 
+#define FACTOR (MAX_VALUE / (MAX_VOLTAGE - MIN_VOLTAGE))
+
 PitchCvOutput::PitchCvOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, uint8_t size) :
         _latchPin(latchPin),
         _clockPin(clockPin),
@@ -14,7 +16,6 @@ PitchCvOutput::PitchCvOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin
     digitalWrite(_latchPin, LOW);
     digitalWrite(_dataPin, LOW);
     _data = new uint16_t[_size];
-    _factor = MAX_VALUE / (MAX_VOLTAGE - MIN_VOLTAGE);
 }
 
 void PitchCvOutput::setValue(uint8_t index, uint16_t value) {
@@ -23,7 +24,7 @@ void PitchCvOutput::setValue(uint8_t index, uint16_t value) {
 
 void PitchCvOutput::setVoltage(uint8_t index, float voltage) {
     float absVoltage = voltage - MIN_VOLTAGE;
-    float value = absVoltage * _factor;
+    float value = absVoltage * FACTOR;
     setValue(index, (uint16_t)value);
 }
 
