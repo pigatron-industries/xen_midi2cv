@@ -17,6 +17,7 @@ MAX11300::MAX11300(SPIClass *spi, uint8_t convertPin, uint8_t selectPin) {
 		digitalWrite(_select, HIGH);
 		_spiMode = new SPISettings(10000000L, MSBFIRST, SPI_MODE0);
 		_spi->begin();
+		setDefaults();
 }
 
 MAX11300::MAX11300(SPIClass *spi, uint8_t convertPin, uint8_t selectPin, uint8_t interruptNumber) {
@@ -32,14 +33,19 @@ MAX11300::MAX11300(SPIClass *spi, uint8_t convertPin, uint8_t selectPin, uint8_t
 		_spiMode = new SPISettings(10000000L, MSBFIRST, SPI_MODE0);
 		_spi->begin();
 		_spi->usingInterrupt(_interrupt);
+		setDefaults();
 }
 
-bool MAX11300::begin(void) {
+void MAX11300::setDefaults() {
+		setDACref(DACInternal);
+}
+
+bool MAX11300::begin() {
 		//if (_interrupt < 255) {attachInterrupt(_interrupt, MAX11300::serviceInterrupt, FALLING);}
 		return true;
 }
 
-bool MAX11300::end(void) {
+bool MAX11300::end() {
 		if (_interrupt < 255) detachInterrupt(_interrupt);
 		return true;
 }
@@ -87,6 +93,12 @@ bool MAX11300::setPinMode(uint8_t pin, pinMode_t mode, uint8_t differentialPin) 
 				default:
 						return false;
 		}
+		if (writeRegister((MAX_FUNC_BASE + pin), configuration)) return true;
+		return false;
+}
+
+bool MAX11300::setPinModeAnalogOut(uint8_t pin, DACRange_t range) {
+		uint16_t configuration = MAX_FUNCID_DAC | range;
 		if (writeRegister((MAX_FUNC_BASE + pin), configuration)) return true;
 		return false;
 }

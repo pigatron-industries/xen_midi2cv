@@ -64,8 +64,8 @@ enum ADCref_t {
 };
 
 enum DACref_t {
-	DACInternal = 	0x0000,
-	DACExternal = 	(1 << MAX_DACREF),
+	DACExternal = 	0x0000,
+	DACInternal = 	(1 << MAX_DACREF),
 	DACrefNONE = 	0xffff
 };
 
@@ -118,8 +118,9 @@ class MAX11300 {
 		MAX11300(SPIClass* spi, uint8_t convertPin, uint8_t selectPin);
 		MAX11300(SPIClass* spi, uint8_t convertPin, uint8_t selectPin, uint8_t interruptNumber);
 
-		bool begin(void);
-		bool end(void);
+		void setDefaults();
+		bool begin();
+		bool end();
 
 		/**
 		 * Set the given pin to the given mode
@@ -132,6 +133,8 @@ class MAX11300 {
 		 */
 		bool setPinMode(uint8_t pin, pinMode_t mode);
 		bool setPinMode(uint8_t pin, pinMode_t mode, uint8_t differentialPin);
+
+		bool setPinModeAnalogOut(uint8_t pin, DACRange_t range);
 
 		/**
 		 * Read the mode of the given pin
