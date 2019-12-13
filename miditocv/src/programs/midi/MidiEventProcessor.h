@@ -22,7 +22,7 @@ public:
 
     void eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t velocity);
     void eventNoteOff(uint8_t midiChannel, int8_t note);
-    void eventControlChange(uint8_t midiChannel, int8_t controlNumber, int8_t value);
+    void eventControlChange(uint8_t midiChannel, int8_t controlNumber, int16_t value);
     void eventNotePressure(uint8_t midiChannel, int8_t note, int8_t pressure);
     void eventChannelPressure(uint8_t midiChannel, int8_t pressure);
     void eventPitchBend(uint8_t channel, int16_t bend);

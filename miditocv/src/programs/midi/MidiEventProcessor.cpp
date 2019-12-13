@@ -109,7 +109,7 @@ void MidiEventProcessor::eventChannelPressure(uint8_t midiChannel, int8_t pressu
 }
 
 
-void MidiEventProcessor::eventControlChange(uint8_t midiChannel, int8_t controlNumber, int8_t value) {
+void MidiEventProcessor::eventControlChange(uint8_t midiChannel, int8_t controlNumber, int16_t value) {
 
     //TODO handle coarse and fine control changes
 
