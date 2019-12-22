@@ -16,7 +16,7 @@
 
 // hardware
 GateOutput gateOutput = GateOutput(GATE_DATA_PIN, GATE_LATCH_PIN, GATE_CLOCK_PIN, CV_CHANNELS);
-GateOutput triggerOutput = GateOutput(TRIG_DATA_PIN, TRIG_LATCH_PIN, TRIG_CLOCK_PIN, CV_CHANNELS);
+GateOutput triggerOutput = GateOutput(TRIG_DATA_PIN, TRIG_LATCH_PIN, TRIG_CLOCK_PIN, TRIGGER_CONTROLS);
 PitchCvOutput pitchCvOutput = PitchCvOutput(PITCHCV_DATA_PIN, PITCHCV_LATCH_PIN, PITCHCV_CLOCK_PIN, CV_CHANNELS);
 uint8_t cvSelectPins[CV_DEVICES] = CV_SELECT_PINS;
 CvOutput cvOutput = CvOutput(new SPIClass(CV_MOSI_PIN, CV_MISO_PIN, CV_SCLK_PIN), CV_CNVT_PIN, cvSelectPins, CV_DEVICES);

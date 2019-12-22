@@ -178,7 +178,7 @@ void Configuration::defaultControllerConfig() {
 
 
 void Configuration::defaultPercussionConfig() {
-    config.percussionChannelConfig.midiChannel = 10;
+    config.percussionChannelConfig.midiChannel = 9;
     for(int note = 0; note < CV_CHANNELS; note++) {
         config.percussionChannelConfig.midiNotes[note] = note+1; //TODO suitable defualts for midi notes
     }
