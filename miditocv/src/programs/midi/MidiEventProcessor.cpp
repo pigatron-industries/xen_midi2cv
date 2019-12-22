@@ -99,10 +99,14 @@ void MidiEventProcessor::eventChannelPressure(uint8_t midiChannel, int8_t pressu
         return;
     }
 
-    for(int8_t cvChannel = channelConfig->cvChannelFrom; cvChannel < channelConfig->cvChannelTo; cvChannel++) {
+    for(int8_t cvChannel = channelConfig->cvChannelFrom; cvChannel <= channelConfig->cvChannelTo; cvChannel++) {
         if(_channelNoteMapping[cvChannel].length > 0) {
+
             // velocity cv
             float velocityVoltage = _midiToPitchConverter.convertVelocity(pressure);
+            Serial.println("MidiEventProcessor::eventChannelPressure");
+            Serial.println(pressure);
+            Serial.println(velocityVoltage);
             _cvOutputService.setControlValue(cvChannel, CVBANK_NOTEVELOCITY, velocityVoltage);
         }
     }
@@ -110,16 +114,13 @@ void MidiEventProcessor::eventChannelPressure(uint8_t midiChannel, int8_t pressu
 
 
 void MidiEventProcessor::eventControlChange(uint8_t midiChannel, int8_t controlNumber, int16_t value) {
-
-    //TODO handle coarse and fine control changes
-
     xen_ControllerMapping* controllerMapping = _config.getCvControllerMapping(midiChannel, controlNumber);
     if(controllerMapping == NULL) {
         return;
     }
 
     // velocity cv
-    float controlVoltage = _midiToPitchConverter.convertVelocity(value);
+    float controlVoltage = _midiToPitchConverter.convertControl(value);
     _cvOutputService.setControlValue(controllerMapping->cvChannel, controllerMapping->cvBank, controlVoltage);
 }
 

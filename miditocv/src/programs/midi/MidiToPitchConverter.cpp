@@ -3,7 +3,7 @@
 #include <Arduino.h>
 #include "math.h"
 
-#define MAX_VELOCITY 5
+#define MAX_CONTROL_VOLTAGE 5
 
 
 MidiToPitchConverter::MidiToPitchConverter(Configuration& config) :
@@ -23,5 +23,9 @@ float MidiToPitchConverter::convertBend(int16_t bend) {
 }
 
 float MidiToPitchConverter::convertVelocity(uint8_t velocity) {
-    return (float(velocity) / 127) * MAX_VELOCITY;
+    return (float(velocity) / 127) * MAX_CONTROL_VOLTAGE;
+}
+
+float MidiToPitchConverter::convertControl(uint16_t value) {
+    return (float(value) / 16384) * MAX_CONTROL_VOLTAGE;
 }

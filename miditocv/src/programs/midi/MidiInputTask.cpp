@@ -68,9 +68,9 @@ void MidiInputTask::execute() {
                 // Serial.println("Data 2");
                 // Serial.println(byte3);
 
-                if(prevCCChannel != -1 && (command != COMMAND_CONTROL_CHANGE || prevCCChannel != channel && prevCCControl+32 != byte2)) {
-                    handleControlChange(channel, prevCCControl, prevCCValue, 0);
-                }
+                // if(prevCCChannel != -1 && (command != COMMAND_CONTROL_CHANGE || prevCCChannel != channel && prevCCControl+32 != byte2)) {
+                //     handleControlChange(channel, prevCCControl, prevCCValue, 0);
+                // }
 
                 if(command == COMMAND_NOTEON) {
                     _midiEventProcessor.eventNoteOn(channel, byte2, byte3);
@@ -79,15 +79,18 @@ void MidiInputTask::execute() {
                 } else if(command == COMMAND_POLY_PRESSURE) {
                     _midiEventProcessor.eventNotePressure(channel, byte2, byte3);
                 } else if(command == COMMAND_CHAN_PRESSURE) {
-                      _midiEventProcessor.eventChannelPressure(channel, byte2);
+                      if(byte2 <= 128) {
+                          _midiEventProcessor.eventChannelPressure(channel, byte2);
+                      }
                 } else if(command == COMMAND_CONTROL_CHANGE) {
-                    if(prevCCChannel == channel && prevCCControl+32 == byte2) {
-                        handleControlChange(channel, prevCCControl, prevCCValue, byte3);
-                    } else {
-                        prevCCChannel = channel;
-                        prevCCControl = byte2;
-                        prevCCValue = byte3;
-                    }
+                      handleControlChange(channel, byte2, byte3, 0);
+                      // if(prevCCChannel == channel && prevCCControl+32 == byte2) {
+                      //     handleControlChange(channel, prevCCControl, prevCCValue, byte3);
+                      // } else {
+                      //     prevCCChannel = channel;
+                      //     prevCCControl = byte2;
+                      //     prevCCValue = byte3;
+                      // }
                 } else if(command == COMMAND_PITCH_BEND) {
                     int16_t pitch = ((byte3 * 128) + byte2) - 8192;
                     _midiEventProcessor.eventPitchBend(channel, pitch);
