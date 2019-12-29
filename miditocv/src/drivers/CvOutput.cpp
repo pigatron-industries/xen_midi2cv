@@ -22,13 +22,18 @@ CvOutput::CvOutput(SPIClass* spiClass, uint8_t convertPin, uint8_t* selectPins, 
 }
 
 void CvOutput::setValue(uint8_t index, uint16_t value) {
-    _max11300[0]->writeAnalogPin(index, value);
+    uint8_t device = index / 20;
+    uint8_t devicePin = index % 20;
+    Serial.println("cvOutput::setValue");
+    Serial.println(device);
+    Serial.println(devicePin);
+    _max11300[device]->writeAnalogPin(devicePin, value);
 }
 
 void CvOutput::setVoltage(uint8_t index, float voltage) {
-    // Serial.println("cvOutput::setVoltage");
-    // Serial.println(index);
-    // Serial.println(voltage);
+    Serial.println("cvOutput::setVoltage");
+    Serial.println(index);
+    Serial.println(voltage);
     float absVoltage = voltage - MIN_VOLTAGE;
     float value = absVoltage * FACTOR;
     setValue(index, (uint16_t)value);
