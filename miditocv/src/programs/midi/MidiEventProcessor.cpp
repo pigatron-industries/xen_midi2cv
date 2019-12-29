@@ -4,6 +4,8 @@
 
 #define CVBANK_NOTEVELOCITY 0
 #define CVBANK_PERCUSSIONVELOCITY 2
+#define CVBANK_PERCUSSIONCTRL1 3
+#define CVBANK_PERCUSSIONCTRL2 4
 #define TRIGBANK_NOTE 0
 #define TRIGBANK_PERCUSSION 1
 
@@ -50,17 +52,21 @@ void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t v
 
 
 void MidiEventProcessor::eventPercussionTrigger(int8_t note, uint8_t velocity) {
-    int8_t cvChannel = getCvOutputChannelForPercussion(note);
-    if(cvChannel == -1) {
+    xen_PercussionMapping* percussionMapping = _config.getPercussionMapping(note);
+    if(percussionMapping == NULL) {
         return;
     }
 
     // velocity cv
     float velocityVoltage = _midiToPitchConverter.convertVelocity(velocity);
-    _cvOutputService.setControlValue(cvChannel, CVBANK_PERCUSSIONVELOCITY, velocityVoltage);
+    _cvOutputService.setControlValue(percussionMapping->cvChannel, CVBANK_PERCUSSIONVELOCITY, velocityVoltage);
+
+    // other control values
+    _cvOutputService.setControlValue(percussionMapping->cvChannel, CVBANK_PERCUSSIONCTRL1, percussionMapping->control1Value);
+    _cvOutputService.setControlValue(percussionMapping->cvChannel, CVBANK_PERCUSSIONCTRL2, percussionMapping->control2Value);
 
     //trigger
-    _cvOutputService.setTrigger(cvChannel, TRIGBANK_PERCUSSION);
+    _cvOutputService.setTrigger(percussionMapping->cvChannel, TRIGBANK_PERCUSSION);
 }
 
 
@@ -160,17 +166,6 @@ int8_t MidiEventProcessor::getCvOutputChannel(int8_t midiChannel) {
 int8_t MidiEventProcessor::getCvOutputChannelForNote(int8_t midiChannel, int8_t note) {
     for(uint8_t i = 0; i < CV_CHANNELS; i++) {
         if(_channelNoteMapping[i].find(note) != -1) {
-            return i;
-        }
-    }
-    return -1;
-}
-
-
-int8_t MidiEventProcessor::getCvOutputChannelForPercussion(int8_t note) {
-    xen_PercussionChannelConfig* percussionConfig = _config.getPercussionChannelConfig();
-    for(int8_t i = 0; i < percussionConfig->midiNotes_count; i++) {
-        if(percussionConfig->midiNotes[i] == note) {
             return i;
         }
     }

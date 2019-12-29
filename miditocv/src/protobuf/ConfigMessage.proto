@@ -39,8 +39,16 @@ message ControllerMapping {
 
 
 message PercussionChannelConfig {
-    required int32 midiChannel = 1  [(nanopb).int_size = IS_8];
-    repeated int32 midiNotes = 2    [(nanopb).int_size = IS_8, (nanopb).max_count = 16];
+    required int32 midiChannel = 1                   [(nanopb).int_size = IS_8];
+    repeated PercussionMapping percussionMapping = 2 [(nanopb).max_count = 32];
+}
+
+
+message PercussionMapping {
+    required int32 midiNote = 1      [(nanopb).int_size = IS_8];
+    required int32 cvChannel = 2     [(nanopb).int_size = IS_8];
+    required float control1Value = 3;
+    required float control2Value = 4;
 }
 
 

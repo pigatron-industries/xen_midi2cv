@@ -33,6 +33,16 @@ xen_ControllerMapping* Configuration::getCvControllerMapping(int8_t midiChannel,
 }
 
 
+xen_PercussionMapping* Configuration::getPercussionMapping(int8_t midiNote) {
+    for(int i = 0; i < config.percussionChannelConfig.percussionMapping_count; i++) {
+        if(config.percussionChannelConfig.percussionMapping[i].midiNote == midiNote) {
+              return &config.percussionChannelConfig.percussionMapping[i];
+        }
+    }
+    return NULL;
+}
+
+
 xen_PercussionChannelConfig* Configuration::getPercussionChannelConfig() {
     return &config.percussionChannelConfig;
 }
@@ -179,10 +189,30 @@ void Configuration::defaultControllerConfig() {
 
 void Configuration::defaultPercussionConfig() {
     config.percussionChannelConfig.midiChannel = 9;
-    for(int note = 0; note < CV_CHANNELS; note++) {
-        config.percussionChannelConfig.midiNotes[note] = note+1; //TODO suitable defualts for midi notes
+    int8_t index = 0;
+    for(int channel = 0; channel < CV_CHANNELS; channel++) {
+        config.percussionChannelConfig.percussionMapping[index].midiNote = index;
+        config.percussionChannelConfig.percussionMapping[index].cvChannel = channel;
+        config.percussionChannelConfig.percussionMapping[index].control1Value = -5;
+        config.percussionChannelConfig.percussionMapping[index].control2Value = -5;
+        index++;
+        config.percussionChannelConfig.percussionMapping[index].midiNote = index;
+        config.percussionChannelConfig.percussionMapping[index].cvChannel = channel;
+        config.percussionChannelConfig.percussionMapping[index].control1Value = -5;
+        config.percussionChannelConfig.percussionMapping[index].control2Value = 5;
+        index++;
+        config.percussionChannelConfig.percussionMapping[index].midiNote = index;
+        config.percussionChannelConfig.percussionMapping[index].cvChannel = channel;
+        config.percussionChannelConfig.percussionMapping[index].control1Value = 5;
+        config.percussionChannelConfig.percussionMapping[index].control2Value = -5;
+        index++;
+        config.percussionChannelConfig.percussionMapping[index].midiNote = index;
+        config.percussionChannelConfig.percussionMapping[index].cvChannel = channel;
+        config.percussionChannelConfig.percussionMapping[index].control1Value = 5;
+        config.percussionChannelConfig.percussionMapping[index].control2Value = 5;
+        index++;
     }
-    config.percussionChannelConfig.midiNotes_count = CV_CHANNELS;
+    config.percussionChannelConfig.percussionMapping_count = CV_CHANNELS*4;
 }
 
 

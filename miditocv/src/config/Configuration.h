@@ -22,6 +22,7 @@ public:
      */
     xen_ChannelMapping* getCvChannelMapping(uint8_t midiChannel);
     xen_ControllerMapping* getCvControllerMapping(int8_t midiChannel, int8_t midiController);
+    xen_PercussionMapping* getPercussionMapping(int8_t midiNote);
     xen_PercussionChannelConfig* getPercussionChannelConfig();
 
     float getNoteCents(int8_t note);
