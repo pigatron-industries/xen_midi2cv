@@ -40,7 +40,7 @@ message ControllerMapping {
 
 message PercussionChannelConfig {
     required int32 midiChannel = 1                   [(nanopb).int_size = IS_8];
-    repeated PercussionMapping percussionMapping = 2 [(nanopb).max_count = 32];
+    repeated PercussionMapping percussionMapping = 2 [(nanopb).max_count = 64];
 }
 
 
