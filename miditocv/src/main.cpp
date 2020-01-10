@@ -33,7 +33,7 @@ CvOutputService cvOutputService = CvOutputService(config, gateOutput,
 MidiToPitchConverter midiToPitchConverter = MidiToPitchConverter(config);
 MidiEventProcessor midiEventProcessor = MidiEventProcessor(config, statusLedTask,
     cvOutputService, midiToPitchConverter);
-MidiInputTask midiInputTask = MidiInputTask(midiEventProcessor);
+MidiInputTask midiInputTask = MidiInputTask(Serial2, midiEventProcessor);
 
 
 void bootstrap() {

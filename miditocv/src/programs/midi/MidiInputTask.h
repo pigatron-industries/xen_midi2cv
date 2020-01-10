@@ -12,11 +12,12 @@
 class MidiInputTask : public Task {
 
 public:
-    MidiInputTask(MidiEventProcessor& midiEventProcessor);
+    MidiInputTask(HardwareSerial& midiSerial, MidiEventProcessor& midiEventProcessor);
     void init();
     void execute();
 
 private:
+    HardwareSerial& _midiSerial;
     MidiEventProcessor& _midiEventProcessor;
 
     uint8_t sysexBuffer[SYSEX_BUFFER_SIZE];

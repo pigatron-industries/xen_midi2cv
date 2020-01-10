@@ -29,22 +29,23 @@
 #define LO_NYBBLE(b) ((b) & 0x0F)
 
 
-MidiInputTask::MidiInputTask(MidiEventProcessor& midiEventProcessor) :
+MidiInputTask::MidiInputTask(HardwareSerial& midiSerial, MidiEventProcessor& midiEventProcessor) :
+    _midiSerial(midiSerial),
     _midiEventProcessor(midiEventProcessor) {
 }
 
 void MidiInputTask::init() {
     Task::init();
-    Serial2.begin(MIDI_BAUD);
+    _midiSerial.begin(MIDI_BAUD);
 }
 
 byte MidiInputTask::getByte() {
-    while(!Serial2.available()){}
-    return Serial2.read();
+    while(!_midiSerial.available()){}
+    return _midiSerial.read();
 }
 
 void MidiInputTask::execute() {
-    while(Serial2.available()) {
+    while(_midiSerial.available()) {
         byte byte1 = getByte();
         if(byte1 >= 0x80) {
 
@@ -68,10 +69,6 @@ void MidiInputTask::execute() {
                 // Serial.println("Data 2");
                 // Serial.println(byte3);
 
-                // if(prevCCChannel != -1 && (command != COMMAND_CONTROL_CHANGE || prevCCChannel != channel && prevCCControl+32 != byte2)) {
-                //     handleControlChange(channel, prevCCControl, prevCCValue, 0);
-                // }
-
                 if(command == COMMAND_NOTEON) {
                     _midiEventProcessor.eventNoteOn(channel, byte2, byte3);
                 } else if(command == COMMAND_NOTEOFF || (command == COMMAND_POLY_PRESSURE && byte3 == 0)) {
@@ -84,13 +81,6 @@ void MidiInputTask::execute() {
                       }
                 } else if(command == COMMAND_CONTROL_CHANGE) {
                       handleControlChange(channel, byte2, byte3, 0);
-                      // if(prevCCChannel == channel && prevCCControl+32 == byte2) {
-                      //     handleControlChange(channel, prevCCControl, prevCCValue, byte3);
-                      // } else {
-                      //     prevCCChannel = channel;
-                      //     prevCCControl = byte2;
-                      //     prevCCValue = byte3;
-                      // }
                 } else if(command == COMMAND_PITCH_BEND) {
                     int16_t pitch = ((byte3 * 128) + byte2) - 8192;
                     _midiEventProcessor.eventPitchBend(channel, pitch);
@@ -119,7 +109,7 @@ void MidiInputTask::handleControlChange(uint8_t midiChannel, int8_t controlNumbe
 
 void MidiInputTask::handleSysex() {
     memset(sysexBuffer, 0, SYSEX_BUFFER_SIZE);
-    size_t size = Serial2.readBytesUntil(SYSTEM_EXCLUSIVE_END, sysexBuffer, SYSEX_BUFFER_SIZE);
+    size_t size = _midiSerial.readBytesUntil(SYSTEM_EXCLUSIVE_END, sysexBuffer, SYSEX_BUFFER_SIZE);
 
     Serial.println("System config message recieved:");
     Serial.print("     ");
