@@ -33,7 +33,8 @@ CvOutputService cvOutputService = CvOutputService(config, gateOutput,
 MidiToPitchConverter midiToPitchConverter = MidiToPitchConverter(config);
 MidiEventProcessor midiEventProcessor = MidiEventProcessor(config, statusLedTask,
     cvOutputService, midiToPitchConverter);
-MidiInputTask midiInputTask = MidiInputTask(Serial2, midiEventProcessor);
+MidiInputTask midiInputTask1 = MidiInputTask(Serial2, midiEventProcessor);
+MidiInputTask midiInputTask2 = MidiInputTask(Serial6, midiEventProcessor);
 
 
 void bootstrap() {
@@ -45,7 +46,7 @@ void bootstrap() {
     Serial.println();
     config.printConfig();
 
-    Task* tasks[] = { &statusLedTask, &midiInputTask, &triggerOutputTask };
-    TaskManager taskManager(tasks, 3);
+    Task* tasks[] = { &statusLedTask, &midiInputTask1, &midiInputTask2, &triggerOutputTask};
+    TaskManager taskManager(tasks, 4);
     taskManager.run();
 }
