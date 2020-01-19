@@ -5,20 +5,22 @@
 
 #include "src/lib/Task.h"
 #include "src/programs/midi/MidiEventProcessor.h"
+#include "src/programs/midi/MidiOutputService.h"
 
 #define SYSEX_BUFFER_SIZE 100
-
+#define MESSAGE_BUFFER_SIZE 3
 
 class MidiInputTask : public Task {
 
 public:
-    MidiInputTask(HardwareSerial& midiSerial, MidiEventProcessor& midiEventProcessor);
+    MidiInputTask(HardwareSerial& midiSerial, MidiEventProcessor& midiEventProcessor, MidiOutputService& midiOutputSevice);
     void init();
     void execute();
 
 private:
     HardwareSerial& _midiSerial;
     MidiEventProcessor& _midiEventProcessor;
+    MidiOutputService& _midiOutputService;
 
     uint8_t sysexBuffer[SYSEX_BUFFER_SIZE];
     uint8_t sysexBufferDecoded[SYSEX_BUFFER_SIZE];

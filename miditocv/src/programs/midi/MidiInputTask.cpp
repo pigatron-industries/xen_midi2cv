@@ -29,9 +29,10 @@
 #define LO_NYBBLE(b) ((b) & 0x0F)
 
 
-MidiInputTask::MidiInputTask(HardwareSerial& midiSerial, MidiEventProcessor& midiEventProcessor) :
+MidiInputTask::MidiInputTask(HardwareSerial& midiSerial, MidiEventProcessor& midiEventProcessor, MidiOutputService& midiOutputService) :
     _midiSerial(midiSerial),
-    _midiEventProcessor(midiEventProcessor) {
+    _midiEventProcessor(midiEventProcessor),
+    _midiOutputService(midiOutputService) {
 }
 
 void MidiInputTask::init() {
@@ -46,17 +47,25 @@ byte MidiInputTask::getByte() {
 
 void MidiInputTask::execute() {
     while(_midiSerial.available()) {
-        byte byte1 = getByte();
-        if(byte1 >= 0x80) {
 
-            byte command = HI_NYBBLE(byte1);
-            byte channel = LO_NYBBLE(byte1);
+        uint8_t messageBuffer[MESSAGE_BUFFER_SIZE];
+        messageBuffer[0] = getByte();
+
+        if(messageBuffer[0] >= 0x80) { // start of midi message
+            uint8_t length = 0;
+
+            byte command = HI_NYBBLE(messageBuffer[0]);
+            byte channel = LO_NYBBLE(messageBuffer[0]);
 
             if(command != COMMAND_SYSTEM) {
-                byte byte2 = getByte();
-                byte byte3 = 0;
+
+                messageBuffer[1] = getByte();
                 if(command != COMMAND_CHAN_PRESSURE && command != COMMAND_PROGRAM_CHANGE) {
-                    byte3 = getByte();
+                    messageBuffer[2] = getByte();
+                    length = 3;
+                } else {
+                    messageBuffer[2] = 0;
+                    length = 2;
                 }
 
                 // Serial.println("");
@@ -70,21 +79,23 @@ void MidiInputTask::execute() {
                 // Serial.println(byte3);
 
                 if(command == COMMAND_NOTEON) {
-                    _midiEventProcessor.eventNoteOn(channel, byte2, byte3);
-                } else if(command == COMMAND_NOTEOFF || (command == COMMAND_POLY_PRESSURE && byte3 == 0)) {
-                    _midiEventProcessor.eventNoteOff(channel, byte2);
+                    _midiEventProcessor.eventNoteOn(channel, messageBuffer[1], messageBuffer[2]);
+                } else if(command == COMMAND_NOTEOFF || (command == COMMAND_POLY_PRESSURE && messageBuffer[2] == 0)) {
+                    _midiEventProcessor.eventNoteOff(channel, messageBuffer[1]);
                 } else if(command == COMMAND_POLY_PRESSURE) {
-                    _midiEventProcessor.eventNotePressure(channel, byte2, byte3);
+                    _midiEventProcessor.eventNotePressure(channel, messageBuffer[1], messageBuffer[2]);
                 } else if(command == COMMAND_CHAN_PRESSURE) {
-                      if(byte2 <= 128) {
-                          _midiEventProcessor.eventChannelPressure(channel, byte2);
+                      if(messageBuffer[1] <= 128) {
+                          _midiEventProcessor.eventChannelPressure(channel, messageBuffer[1]);
                       }
                 } else if(command == COMMAND_CONTROL_CHANGE) {
-                      handleControlChange(channel, byte2, byte3, 0);
+                      handleControlChange(channel, messageBuffer[1], messageBuffer[2], 0);
                 } else if(command == COMMAND_PITCH_BEND) {
-                    int16_t pitch = ((byte3 * 128) + byte2) - 8192;
+                    int16_t pitch = ((messageBuffer[2] * 128) + messageBuffer[1]) - 8192;
                     _midiEventProcessor.eventPitchBend(channel, pitch);
                 }
+
+
 
             } else { // command == COMMAND_SYSTEM
 

@@ -9,6 +9,7 @@
 #include "src/drivers/CvOutputService.h"
 #include "src/programs/midi/MidiEventProcessor.h"
 #include "src/programs/midi/MidiInputTask.h"
+#include "src/programs/midi/MidiOutputService.h"
 #include "src/tasks/StatusLedTask.h"
 #include "src/tasks/TriggerOutputTask.h"
 #include "src/lib/TaskManager.h"
@@ -33,8 +34,9 @@ CvOutputService cvOutputService = CvOutputService(config, gateOutput,
 MidiToPitchConverter midiToPitchConverter = MidiToPitchConverter(config);
 MidiEventProcessor midiEventProcessor = MidiEventProcessor(config, statusLedTask,
     cvOutputService, midiToPitchConverter);
-MidiInputTask midiInputTask1 = MidiInputTask(Serial2, midiEventProcessor);
-MidiInputTask midiInputTask2 = MidiInputTask(Serial6, midiEventProcessor);
+MidiOutputService midiOutputSevice = MidiOutputService(Serial2);
+MidiInputTask midiInputTask1 = MidiInputTask(Serial2, midiEventProcessor, midiOutputSevice);
+MidiInputTask midiInputTask2 = MidiInputTask(Serial6, midiEventProcessor, midiOutputSevice);
 
 
 void bootstrap() {
