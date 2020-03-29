@@ -412,7 +412,7 @@ einem neuen Namen ab.</description>
 <param name="Efforts" value="2"/>
 <param name="TopRouterVariant" value="1"/>
 <param name="tpViaShape" value="round"/>
-<param name="PrefDir.1" value="a"/>
+<param name="PrefDir.1" value="*"/>
 <param name="PrefDir.2" value="0"/>
 <param name="PrefDir.3" value="0"/>
 <param name="PrefDir.4" value="0"/>
@@ -427,7 +427,7 @@ einem neuen Namen ab.</description>
 <param name="PrefDir.13" value="0"/>
 <param name="PrefDir.14" value="0"/>
 <param name="PrefDir.15" value="0"/>
-<param name="PrefDir.16" value="a"/>
+<param name="PrefDir.16" value="0"/>
 <param name="cfVia" value="8"/>
 <param name="cfNonPref" value="5"/>
 <param name="cfChangeDir" value="2"/>
@@ -523,29 +523,29 @@ einem neuen Namen ab.</description>
 <element name="LATCH" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="19.05" y="77.47" smashed="yes" rot="R270">
 <attribute name="NAME" x="18.796" y="75.565" size="1.016" layer="25" ratio="10" rot="R270"/>
 </element>
-<element name="OUT1" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="29.21" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="29.464" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="1" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="29.21" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="29.464" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT2" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="26.67" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="26.924" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="2" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="26.67" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="26.924" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT3" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="24.13" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="24.384" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="3" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="24.13" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="24.384" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT4" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="21.59" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="21.844" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="4" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="21.59" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="21.844" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT5" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="19.05" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="19.304" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="5" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="19.05" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="19.304" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT6" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="16.51" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="16.764" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="6" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="16.51" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="16.764" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT7" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="13.97" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="14.224" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="7" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="13.97" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="14.224" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT8" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="11.43" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="11.684" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="8" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="11.43" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="11.684" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
 <element name="IC2" library="ic_analogue" package="DIL14" value="TL074P" x="20.32" y="29.21" smashed="yes" rot="R180">
 <attribute name="NAME" x="19.431" y="28.448" size="1.27" layer="25" ratio="10"/>
@@ -620,29 +620,29 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="46.609" y="66.421" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="46.355" y="74.803" size="1.27" layer="27" ratio="10" rot="R270"/>
 </element>
-<element name="OUT9" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="52.07" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="52.324" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="9" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="52.07" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="52.324" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT10" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="49.53" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="49.784" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="10" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="49.53" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="49.784" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT11" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="46.99" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="47.244" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="11" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="46.99" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="47.244" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT12" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="44.45" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="44.704" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="12" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="44.45" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="44.704" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT13" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="41.91" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="42.164" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="13" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="41.91" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="42.164" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT14" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="39.37" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="39.624" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="14" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="39.37" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="39.624" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT15" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="36.83" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="37.084" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="15" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="36.83" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="37.084" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT16" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="34.29" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="34.544" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="16" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="34.29" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="34.544" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
 <element name="IC5" library="ic_analogue" package="DIL14" value="TL074P" x="43.18" y="29.21" smashed="yes" rot="R180">
 <attribute name="NAME" x="52.451" y="32.258" size="1.27" layer="25" ratio="10" rot="R270"/>
@@ -704,29 +704,29 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="60.579" y="67.691" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="61.595" y="74.803" size="1.27" layer="27" ratio="10" rot="R270"/>
 </element>
-<element name="OUT17" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="77.47" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="77.724" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="17" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="77.47" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="77.724" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT18" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="74.93" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="75.184" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="18" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="74.93" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="75.184" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT19" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="72.39" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="72.644" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="19" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="72.39" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="72.644" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT20" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="69.85" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="70.104" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="20" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="69.85" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="70.104" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT21" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="67.31" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="67.564" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="21" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="67.31" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="67.564" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT22" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="64.77" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="65.024" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="22" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="64.77" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="65.024" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT23" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="62.23" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="62.484" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="23" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="62.23" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="62.484" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT24" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="59.69" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="59.944" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="24" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="59.69" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="59.944" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
 <element name="IC8" library="ic_analogue" package="DIL14" value="TL074P" x="68.58" y="46.99" smashed="yes" rot="R180">
 <attribute name="NAME" x="77.851" y="50.038" size="1.27" layer="25" ratio="10" rot="R270"/>
@@ -791,29 +791,29 @@ einem neuen Namen ab.</description>
 <element name="DOUT" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="93.98" y="77.47" smashed="yes" rot="R270">
 <attribute name="NAME" x="93.726" y="75.565" size="1.016" layer="25" ratio="10" rot="R270"/>
 </element>
-<element name="OUT25" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="100.33" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="100.584" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="25" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="100.33" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="100.584" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT26" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="97.79" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="98.044" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="26" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="97.79" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="98.044" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT27" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="95.25" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="95.504" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="27" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="95.25" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="95.504" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT28" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="92.71" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="92.964" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="28" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="92.71" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="92.964" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT29" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="90.17" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="90.424" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="29" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="90.17" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="90.424" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT30" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="87.63" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="87.884" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="30" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="87.63" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="87.884" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT31" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="85.09" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="85.344" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="31" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="85.09" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="85.344" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
-<element name="OUT32" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="82.55" y="2.54" smashed="yes" rot="R90">
-<attribute name="NAME" x="82.804" y="4.445" size="1.016" layer="25" ratio="10" rot="R90"/>
+<element name="32" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="82.55" y="5.08" smashed="yes" rot="R90">
+<attribute name="NAME" x="82.804" y="6.985" size="1.016" layer="25" ratio="10" rot="R90"/>
 </element>
 <element name="IC11" library="ic_analogue" package="DIL14" value="TL074P" x="91.44" y="46.99" smashed="yes" rot="R180">
 <attribute name="NAME" x="100.711" y="50.038" size="1.27" layer="25" ratio="10" rot="R270"/>
@@ -877,18 +877,50 @@ einem neuen Namen ab.</description>
 <element name="LATCH2" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="91.44" y="77.47" smashed="yes" rot="R270">
 <attribute name="NAME" x="91.186" y="75.565" size="1.016" layer="25" ratio="10" rot="R270"/>
 </element>
+<element name="LED1" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="29.21" y="2.54" smashed="yes"/>
+<element name="LED2" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="26.67" y="2.54" smashed="yes"/>
+<element name="LED3" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="24.13" y="2.54" smashed="yes"/>
+<element name="LED4" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="21.59" y="2.54" smashed="yes"/>
+<element name="LED5" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="19.05" y="2.54" smashed="yes"/>
+<element name="LED6" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="16.51" y="2.54" smashed="yes"/>
+<element name="LED7" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="13.97" y="2.54" smashed="yes"/>
+<element name="LED8" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="11.43" y="2.54" smashed="yes"/>
+<element name="LED9" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="52.07" y="2.54" smashed="yes"/>
+<element name="LED10" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="49.53" y="2.54" smashed="yes"/>
+<element name="LED11" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="46.99" y="2.54" smashed="yes"/>
+<element name="LED12" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="44.45" y="2.54" smashed="yes"/>
+<element name="LED13" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="41.91" y="2.54" smashed="yes"/>
+<element name="LED14" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="39.37" y="2.54" smashed="yes"/>
+<element name="LED15" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="36.83" y="2.54" smashed="yes"/>
+<element name="LED16" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="34.29" y="2.54" smashed="yes"/>
+<element name="LED17" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="77.47" y="2.54" smashed="yes"/>
+<element name="LED18" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="74.93" y="2.54" smashed="yes"/>
+<element name="LED19" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="72.39" y="2.54" smashed="yes"/>
+<element name="LED20" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="69.85" y="2.54" smashed="yes"/>
+<element name="LED21" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="67.31" y="2.54" smashed="yes"/>
+<element name="LED22" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="64.77" y="2.54" smashed="yes"/>
+<element name="LED23" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="62.23" y="2.54" smashed="yes"/>
+<element name="LED24" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="59.69" y="2.54" smashed="yes"/>
+<element name="LED25" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="100.33" y="2.54" smashed="yes"/>
+<element name="LED26" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="97.79" y="2.54" smashed="yes"/>
+<element name="LED27" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="95.25" y="2.54" smashed="yes"/>
+<element name="LED28" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="92.71" y="2.54" smashed="yes"/>
+<element name="LED29" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="90.17" y="2.54" smashed="yes"/>
+<element name="LED30" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="87.63" y="2.54" smashed="yes"/>
+<element name="LED31" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="85.09" y="2.54" smashed="yes"/>
+<element name="LED32" library="connectors" package="HEADER/MALE/01" value="HEADER/MALE/01" x="82.55" y="2.54" smashed="yes"/>
 </elements>
 <signals>
 <signal name="N$4">
 <contactref element="IC1" pad="14"/>
 <contactref element="DIN" pad="1"/>
-<wire x1="35.3187" y1="71.3232" x2="35.56" y2="71.12" width="0.3048" layer="1"/>
 <wire x1="13.97" y1="77.47" x2="14.7857875" y2="77.47" width="0.3048" layer="1"/>
 <wire x1="14.7857875" y1="77.47" x2="16.0049875" y2="76.2508" width="0.3048" layer="1"/>
 <wire x1="19.5550125" y1="76.2508" x2="20.6218125" y2="77.3176" width="0.3048" layer="1"/>
-<wire x1="20.6218125" y1="77.3176" x2="29.3624" y2="77.3176" width="0.3048" layer="1"/>
-<wire x1="29.3624" y1="77.3176" x2="35.56" y2="71.12" width="0.3048" layer="1"/>
+<wire x1="20.6218125" y1="77.3176" x2="29.21" y2="77.3176" width="0.3048" layer="1"/>
 <wire x1="16.0049875" y1="76.2508" x2="19.5550125" y2="76.2508" width="0.3048" layer="1"/>
+<wire x1="29.21" y1="77.3176" x2="29.3624" y2="77.3176" width="0.3048" layer="1"/>
+<wire x1="29.3624" y1="77.3176" x2="35.56" y2="71.12" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$12">
 <contactref element="IC1" pad="9"/>
@@ -1012,10 +1044,12 @@ einem neuen Namen ab.</description>
 </signal>
 <signal name="N$14">
 <contactref element="R1" pad="2"/>
-<contactref element="OUT1" pad="1"/>
-<wire x1="29.4894" y1="2.7432" x2="29.4894" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="1" pad="1"/>
+<wire x1="29.4894" y1="5.2832" x2="29.4894" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="29.4894" y1="9.9441" x2="29.21" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="29.4894" y1="2.7432" x2="29.21" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="29.4894" y1="5.2832" x2="29.21" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED1" pad="1"/>
+<wire x1="29.21" y1="5.08" x2="29.21" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$15">
 <contactref element="IC2" pad="7"/>
@@ -1034,11 +1068,13 @@ einem neuen Namen ab.</description>
 <wire x1="12.6873" y1="32.9184" x2="12.7" y2="33.02" width="0.3048" layer="16"/>
 </signal>
 <signal name="N$16">
-<contactref element="OUT2" pad="1"/>
+<contactref element="2" pad="1"/>
 <contactref element="R2" pad="2"/>
-<wire x1="26.7462" y1="2.7432" x2="26.7462" y2="9.9441" width="0.3048" layer="1"/>
+<wire x1="26.7462" y1="5.2832" x2="26.7462" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="26.7462" y1="9.9441" x2="26.67" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="26.7462" y1="2.7432" x2="26.67" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="26.7462" y1="5.2832" x2="26.67" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED2" pad="1"/>
+<wire x1="26.67" y1="5.08" x2="26.67" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$17">
 <contactref element="+12V" pad="1"/>
@@ -1331,45 +1367,57 @@ einem neuen Namen ab.</description>
 </signal>
 <signal name="N$27">
 <contactref element="R3" pad="2"/>
-<contactref element="OUT3" pad="1"/>
-<wire x1="24.3459" y1="2.7432" x2="24.3459" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="3" pad="1"/>
+<wire x1="24.3459" y1="5.2832" x2="24.3459" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="24.3459" y1="9.9441" x2="24.13" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="24.3459" y1="2.7432" x2="24.13" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="24.3459" y1="5.2832" x2="24.13" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED3" pad="1"/>
+<wire x1="24.13" y1="5.08" x2="24.13" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$28">
 <contactref element="R4" pad="2"/>
-<contactref element="OUT4" pad="1"/>
-<wire x1="21.6027" y1="2.7432" x2="21.6027" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="4" pad="1"/>
+<wire x1="21.6027" y1="5.2832" x2="21.6027" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="21.6027" y1="9.9441" x2="21.59" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="21.6027" y1="2.7432" x2="21.59" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="21.6027" y1="5.2832" x2="21.59" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED4" pad="1"/>
+<wire x1="21.59" y1="5.08" x2="21.59" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$29">
 <contactref element="R5" pad="2"/>
-<contactref element="OUT5" pad="1"/>
-<wire x1="19.2024" y1="2.7432" x2="19.2024" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="5" pad="1"/>
+<wire x1="19.2024" y1="5.2832" x2="19.2024" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="19.2024" y1="9.9441" x2="19.05" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="19.2024" y1="2.7432" x2="19.05" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="19.2024" y1="5.2832" x2="19.05" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED5" pad="1"/>
+<wire x1="19.05" y1="5.08" x2="19.05" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$30">
 <contactref element="R6" pad="2"/>
-<contactref element="OUT6" pad="1"/>
-<wire x1="16.8021" y1="2.7432" x2="16.8021" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="6" pad="1"/>
+<wire x1="16.8021" y1="5.2832" x2="16.8021" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="16.8021" y1="9.9441" x2="16.51" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="16.8021" y1="2.7432" x2="16.51" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="16.8021" y1="5.2832" x2="16.51" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED6" pad="1"/>
+<wire x1="16.51" y1="5.08" x2="16.51" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$31">
 <contactref element="R7" pad="2"/>
-<contactref element="OUT7" pad="1"/>
-<wire x1="14.0589" y1="2.7432" x2="14.0589" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="7" pad="1"/>
+<wire x1="14.0589" y1="5.2832" x2="14.0589" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="14.0589" y1="9.9441" x2="13.97" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="14.0589" y1="2.7432" x2="13.97" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="14.0589" y1="5.2832" x2="13.97" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED7" pad="1"/>
+<wire x1="13.97" y1="5.08" x2="13.97" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$32">
 <contactref element="R8" pad="2"/>
-<contactref element="OUT8" pad="1"/>
-<wire x1="11.6586" y1="2.7432" x2="11.6586" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="8" pad="1"/>
+<wire x1="11.6586" y1="5.2832" x2="11.6586" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="11.6586" y1="9.9441" x2="11.43" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="11.6586" y1="2.7432" x2="11.43" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="11.6586" y1="5.2832" x2="11.43" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED8" pad="1"/>
+<wire x1="11.43" y1="5.08" x2="11.43" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="GND">
 <polygon width="0.3048" layer="16">
@@ -1728,10 +1776,12 @@ einem neuen Namen ab.</description>
 </signal>
 <signal name="N$44">
 <contactref element="R9" pad="2"/>
-<contactref element="OUT9" pad="1"/>
-<wire x1="52.1208" y1="2.7432" x2="52.1208" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="9" pad="1"/>
+<wire x1="52.1208" y1="5.2832" x2="52.1208" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="52.1208" y1="9.9441" x2="52.07" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="52.1208" y1="2.7432" x2="52.07" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="52.1208" y1="5.2832" x2="52.07" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED9" pad="1"/>
+<wire x1="52.07" y1="5.08" x2="52.07" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$45">
 <contactref element="IC5" pad="7"/>
@@ -1749,11 +1799,13 @@ einem neuen Namen ab.</description>
 <wire x1="49.3776" y1="17.8308" x2="49.53" y2="17.78" width="0.3048" layer="16"/>
 </signal>
 <signal name="N$46">
-<contactref element="OUT10" pad="1"/>
+<contactref element="10" pad="1"/>
 <contactref element="R10" pad="2"/>
-<wire x1="49.7205" y1="2.7432" x2="49.7205" y2="9.9441" width="0.3048" layer="1"/>
+<wire x1="49.7205" y1="5.2832" x2="49.7205" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="49.7205" y1="9.9441" x2="49.53" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="49.7205" y1="2.7432" x2="49.53" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="49.7205" y1="5.2832" x2="49.53" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED10" pad="1"/>
+<wire x1="49.53" y1="5.08" x2="49.53" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$49">
 <contactref element="IC5" pad="9"/>
@@ -1848,43 +1900,55 @@ einem neuen Namen ab.</description>
 </signal>
 <signal name="N$55">
 <contactref element="R11" pad="2"/>
-<contactref element="OUT11" pad="1"/>
-<wire x1="46.9773" y1="2.7432" x2="46.9773" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="11" pad="1"/>
+<wire x1="46.9773" y1="5.2832" x2="46.9773" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="46.9773" y1="9.9441" x2="46.99" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="46.9773" y1="2.7432" x2="46.99" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="46.9773" y1="5.2832" x2="46.99" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED11" pad="1"/>
+<wire x1="46.99" y1="5.08" x2="46.99" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$56">
 <contactref element="R12" pad="2"/>
-<contactref element="OUT12" pad="1"/>
-<wire x1="44.577" y1="2.7432" x2="44.577" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="12" pad="1"/>
+<wire x1="44.577" y1="5.2832" x2="44.577" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="44.577" y1="9.9441" x2="44.45" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="44.577" y1="2.7432" x2="44.45" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="44.577" y1="5.2832" x2="44.45" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED12" pad="1"/>
+<wire x1="44.45" y1="5.08" x2="44.45" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$57">
 <contactref element="R13" pad="2"/>
-<contactref element="OUT13" pad="1"/>
-<wire x1="42.1767" y1="2.7432" x2="42.1767" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="13" pad="1"/>
+<wire x1="42.1767" y1="5.2832" x2="42.1767" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="42.1767" y1="9.9441" x2="41.91" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="42.1767" y1="2.7432" x2="41.91" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="42.1767" y1="5.2832" x2="41.91" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED13" pad="1"/>
+<wire x1="41.91" y1="5.08" x2="41.91" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$58">
 <contactref element="R14" pad="2"/>
-<contactref element="OUT14" pad="1"/>
-<wire x1="39.4335" y1="2.7432" x2="39.4335" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="14" pad="1"/>
+<wire x1="39.4335" y1="5.2832" x2="39.4335" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="39.4335" y1="9.9441" x2="39.37" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="39.4335" y1="2.7432" x2="39.37" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="39.4335" y1="5.2832" x2="39.37" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED14" pad="1"/>
+<wire x1="39.37" y1="5.08" x2="39.37" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$59">
 <contactref element="R15" pad="2"/>
-<contactref element="OUT15" pad="1"/>
-<wire x1="37.0332" y1="2.7432" x2="37.0332" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="15" pad="1"/>
+<wire x1="37.0332" y1="5.2832" x2="37.0332" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="37.0332" y1="9.9441" x2="36.83" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="37.0332" y1="2.7432" x2="36.83" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="37.0332" y1="5.2832" x2="36.83" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED15" pad="1"/>
+<wire x1="36.83" y1="5.08" x2="36.83" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$60">
 <contactref element="R16" pad="2"/>
-<contactref element="OUT16" pad="1"/>
-<wire x1="34.29" y1="2.54" x2="34.29" y2="10.16" width="0.3048" layer="1"/>
+<contactref element="16" pad="1"/>
+<wire x1="34.29" y1="5.08" x2="34.29" y2="10.16" width="0.3048" layer="1"/>
+<contactref element="LED16" pad="1"/>
+<wire x1="34.29" y1="5.08" x2="34.29" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$47">
 <contactref element="IC7" pad="9"/>
@@ -2028,10 +2092,12 @@ einem neuen Namen ab.</description>
 </signal>
 <signal name="N$69">
 <contactref element="R17" pad="2"/>
-<contactref element="OUT17" pad="1"/>
-<wire x1="77.4954" y1="2.7432" x2="77.4954" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="17" pad="1"/>
+<wire x1="77.4954" y1="5.2832" x2="77.4954" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="77.4954" y1="9.9441" x2="77.47" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="77.4954" y1="2.7432" x2="77.47" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="77.4954" y1="5.2832" x2="77.47" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED17" pad="1"/>
+<wire x1="77.47" y1="5.08" x2="77.47" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$70">
 <contactref element="IC8" pad="7"/>
@@ -2049,11 +2115,13 @@ einem neuen Namen ab.</description>
 <wire x1="60.6933" y1="50.7492" x2="60.96" y2="50.8" width="0.3048" layer="16"/>
 </signal>
 <signal name="N$71">
-<contactref element="OUT18" pad="1"/>
+<contactref element="18" pad="1"/>
 <contactref element="R18" pad="2"/>
-<wire x1="75.0951" y1="2.7432" x2="75.0951" y2="9.9441" width="0.3048" layer="1"/>
+<wire x1="75.0951" y1="5.2832" x2="75.0951" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="75.0951" y1="9.9441" x2="74.93" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="75.0951" y1="2.7432" x2="74.93" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="75.0951" y1="5.2832" x2="74.93" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED18" pad="1"/>
+<wire x1="74.93" y1="5.08" x2="74.93" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$72">
 <contactref element="IC8" pad="9"/>
@@ -2141,45 +2209,57 @@ einem neuen Namen ab.</description>
 </signal>
 <signal name="N$78">
 <contactref element="R19" pad="2"/>
-<contactref element="OUT19" pad="1"/>
-<wire x1="72.6948" y1="2.7432" x2="72.6948" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="19" pad="1"/>
+<wire x1="72.6948" y1="5.2832" x2="72.6948" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="72.6948" y1="9.9441" x2="72.39" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="72.6948" y1="2.7432" x2="72.39" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="72.6948" y1="5.2832" x2="72.39" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED19" pad="1"/>
+<wire x1="72.39" y1="5.08" x2="72.39" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$79">
 <contactref element="R20" pad="2"/>
-<contactref element="OUT20" pad="1"/>
-<wire x1="69.9516" y1="2.7432" x2="69.9516" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="20" pad="1"/>
+<wire x1="69.9516" y1="5.2832" x2="69.9516" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="69.9516" y1="9.9441" x2="69.85" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="69.9516" y1="2.7432" x2="69.85" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="69.9516" y1="5.2832" x2="69.85" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED20" pad="1"/>
+<wire x1="69.85" y1="5.08" x2="69.85" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$80">
 <contactref element="R21" pad="2"/>
-<contactref element="OUT21" pad="1"/>
-<wire x1="67.5513" y1="2.7432" x2="67.5513" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="21" pad="1"/>
+<wire x1="67.5513" y1="5.2832" x2="67.5513" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="67.5513" y1="9.9441" x2="67.31" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="67.5513" y1="2.7432" x2="67.31" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="67.5513" y1="5.2832" x2="67.31" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED21" pad="1"/>
+<wire x1="67.31" y1="5.08" x2="67.31" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$81">
 <contactref element="R22" pad="2"/>
-<contactref element="OUT22" pad="1"/>
-<wire x1="64.8081" y1="2.7432" x2="64.8081" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="22" pad="1"/>
+<wire x1="64.8081" y1="5.2832" x2="64.8081" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="64.8081" y1="9.9441" x2="64.77" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="64.8081" y1="2.7432" x2="64.77" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="64.8081" y1="5.2832" x2="64.77" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED22" pad="1"/>
+<wire x1="64.77" y1="5.08" x2="64.77" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$82">
 <contactref element="R23" pad="2"/>
-<contactref element="OUT23" pad="1"/>
-<wire x1="62.4078" y1="2.7432" x2="62.4078" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="23" pad="1"/>
+<wire x1="62.4078" y1="5.2832" x2="62.4078" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="62.4078" y1="9.9441" x2="62.23" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="62.4078" y1="2.7432" x2="62.23" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="62.4078" y1="5.2832" x2="62.23" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED23" pad="1"/>
+<wire x1="62.23" y1="5.08" x2="62.23" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$83">
 <contactref element="R24" pad="2"/>
-<contactref element="OUT24" pad="1"/>
-<wire x1="60.0075" y1="2.7432" x2="60.0075" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="24" pad="1"/>
+<wire x1="60.0075" y1="5.2832" x2="60.0075" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="60.0075" y1="9.9441" x2="59.69" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="60.0075" y1="2.7432" x2="59.69" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="60.0075" y1="5.2832" x2="59.69" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED24" pad="1"/>
+<wire x1="59.69" y1="5.08" x2="59.69" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="+5V">
 <contactref element="IC10" pad="16"/>
@@ -2386,10 +2466,12 @@ einem neuen Namen ab.</description>
 </signal>
 <signal name="N$94">
 <contactref element="R25" pad="2"/>
-<contactref element="OUT25" pad="1"/>
-<wire x1="100.4697" y1="2.7432" x2="100.4697" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="25" pad="1"/>
+<wire x1="100.4697" y1="5.2832" x2="100.4697" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="100.4697" y1="9.9441" x2="100.33" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="100.4697" y1="2.7432" x2="100.33" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="100.4697" y1="5.2832" x2="100.33" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED25" pad="1"/>
+<wire x1="100.33" y1="5.08" x2="100.33" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$95">
 <contactref element="IC11" pad="7"/>
@@ -2407,11 +2489,13 @@ einem neuen Namen ab.</description>
 <wire x1="98.0694" y1="17.8308" x2="97.79" y2="17.78" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$96">
-<contactref element="OUT26" pad="1"/>
+<contactref element="26" pad="1"/>
 <contactref element="R26" pad="2"/>
-<wire x1="98.0694" y1="2.7432" x2="98.0694" y2="9.9441" width="0.3048" layer="1"/>
+<wire x1="98.0694" y1="5.2832" x2="98.0694" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="98.0694" y1="9.9441" x2="97.79" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="98.0694" y1="2.7432" x2="97.79" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="98.0694" y1="5.2832" x2="97.79" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED26" pad="1"/>
+<wire x1="97.79" y1="5.08" x2="97.79" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$97">
 <contactref element="IC11" pad="9"/>
@@ -2498,45 +2582,57 @@ einem neuen Namen ab.</description>
 </signal>
 <signal name="N$103">
 <contactref element="R27" pad="2"/>
-<contactref element="OUT27" pad="1"/>
-<wire x1="95.3262" y1="2.7432" x2="95.3262" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="27" pad="1"/>
+<wire x1="95.3262" y1="5.2832" x2="95.3262" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="95.3262" y1="9.9441" x2="95.25" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="95.3262" y1="2.7432" x2="95.25" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="95.3262" y1="5.2832" x2="95.25" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED27" pad="1"/>
+<wire x1="95.25" y1="5.08" x2="95.25" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$104">
 <contactref element="R28" pad="2"/>
-<contactref element="OUT28" pad="1"/>
-<wire x1="92.9259" y1="2.7432" x2="92.9259" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="28" pad="1"/>
+<wire x1="92.9259" y1="5.2832" x2="92.9259" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="92.9259" y1="9.9441" x2="92.71" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="92.9259" y1="2.7432" x2="92.71" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="92.9259" y1="5.2832" x2="92.71" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED28" pad="1"/>
+<wire x1="92.71" y1="5.08" x2="92.71" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$105">
 <contactref element="R29" pad="2"/>
-<contactref element="OUT29" pad="1"/>
-<wire x1="90.1827" y1="2.7432" x2="90.1827" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="29" pad="1"/>
+<wire x1="90.1827" y1="5.2832" x2="90.1827" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="90.1827" y1="9.9441" x2="90.17" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="90.1827" y1="2.7432" x2="90.17" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="90.1827" y1="5.2832" x2="90.17" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED29" pad="1"/>
+<wire x1="90.17" y1="5.08" x2="90.17" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$106">
 <contactref element="R30" pad="2"/>
-<contactref element="OUT30" pad="1"/>
-<wire x1="87.7824" y1="2.7432" x2="87.7824" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="30" pad="1"/>
+<wire x1="87.7824" y1="5.2832" x2="87.7824" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="87.7824" y1="9.9441" x2="87.63" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="87.7824" y1="2.7432" x2="87.63" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="87.7824" y1="5.2832" x2="87.63" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED30" pad="1"/>
+<wire x1="87.63" y1="5.08" x2="87.63" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$107">
 <contactref element="R31" pad="2"/>
-<contactref element="OUT31" pad="1"/>
-<wire x1="85.3821" y1="2.7432" x2="85.3821" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="31" pad="1"/>
+<wire x1="85.3821" y1="5.2832" x2="85.3821" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="85.3821" y1="9.9441" x2="85.09" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="85.3821" y1="2.7432" x2="85.09" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="85.3821" y1="5.2832" x2="85.09" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED31" pad="1"/>
+<wire x1="85.09" y1="5.08" x2="85.09" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 <signal name="N$108">
 <contactref element="R32" pad="2"/>
-<contactref element="OUT32" pad="1"/>
-<wire x1="82.6389" y1="2.7432" x2="82.6389" y2="9.9441" width="0.3048" layer="1"/>
+<contactref element="32" pad="1"/>
+<wire x1="82.6389" y1="5.2832" x2="82.6389" y2="9.9441" width="0.3048" layer="1"/>
 <wire x1="82.6389" y1="9.9441" x2="82.55" y2="10.16" width="0.3048" layer="1"/>
-<wire x1="82.6389" y1="2.7432" x2="82.55" y2="2.54" width="0.3048" layer="1"/>
+<wire x1="82.6389" y1="5.2832" x2="82.55" y2="5.08" width="0.3048" layer="1"/>
+<contactref element="LED32" pad="1"/>
+<wire x1="82.55" y1="5.08" x2="82.55" y2="2.54" width="0.3048" layer="1"/>
 </signal>
 </signals>
 <mfgpreviewcolors>

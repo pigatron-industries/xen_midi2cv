@@ -731,14 +731,14 @@ type 0207, grid 7.5 mm</description>
 <part name="DIN" library="connectors" deviceset="HEADER/MALE/01" device=""/>
 <part name="CLOCK" library="connectors" deviceset="HEADER/MALE/01" device=""/>
 <part name="LATCH" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT1" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT2" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT3" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT4" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT5" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT6" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT7" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT8" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="1" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="2" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="3" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="4" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="5" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="6" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="7" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="8" library="connectors" deviceset="HEADER/MALE/01" device=""/>
 <part name="IC2" library="ic_analogue" deviceset="TL074" device="P"/>
 <part name="IC3" library="ic_analogue" deviceset="TL074" device="P"/>
 <part name="R1" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="68R"/>
@@ -758,14 +758,14 @@ type 0207, grid 7.5 mm</description>
 <part name="C6" library="capacitors" deviceset="CAPACITOR" device="CERAMICDISC/5"/>
 <part name="C7" library="capacitors" deviceset="CAPACITOR" device="CERAMICDISC/5"/>
 <part name="IC4" library="ic_digital" deviceset="74*595" device="N" technology="HC"/>
-<part name="OUT9" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT10" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT11" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT12" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT13" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT14" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT15" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT16" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="9" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="10" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="11" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="12" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="13" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="14" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="15" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="16" library="connectors" deviceset="HEADER/MALE/01" device=""/>
 <part name="IC5" library="ic_analogue" deviceset="TL074" device="P"/>
 <part name="IC6" library="ic_analogue" deviceset="TL074" device="P"/>
 <part name="R9" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="68R"/>
@@ -781,14 +781,14 @@ type 0207, grid 7.5 mm</description>
 <part name="C13" library="capacitors" deviceset="CAPACITOR" device="CERAMICDISC/5"/>
 <part name="C14" library="capacitors" deviceset="CAPACITOR" device="CERAMICDISC/5"/>
 <part name="IC7" library="ic_digital" deviceset="74*595" device="N" technology="HC"/>
-<part name="OUT17" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT18" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT19" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT20" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT21" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT22" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT23" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT24" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="17" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="18" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="19" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="20" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="21" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="22" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="23" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="24" library="connectors" deviceset="HEADER/MALE/01" device=""/>
 <part name="IC8" library="ic_analogue" deviceset="TL074" device="P"/>
 <part name="IC9" library="ic_analogue" deviceset="TL074" device="P"/>
 <part name="R17" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="68R"/>
@@ -805,14 +805,14 @@ type 0207, grid 7.5 mm</description>
 <part name="C15" library="capacitors" deviceset="CAPACITOR" device="CERAMICDISC/5"/>
 <part name="IC10" library="ic_digital" deviceset="74*595" device="N" technology="HC"/>
 <part name="DOUT" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT25" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT26" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT27" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT28" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT29" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT30" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT31" library="connectors" deviceset="HEADER/MALE/01" device=""/>
-<part name="OUT32" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="25" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="26" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="27" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="28" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="29" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="30" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="31" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="32" library="connectors" deviceset="HEADER/MALE/01" device=""/>
 <part name="IC11" library="ic_analogue" deviceset="TL074" device="P"/>
 <part name="IC12" library="ic_analogue" deviceset="TL074" device="P"/>
 <part name="R25" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="68R"/>
@@ -829,6 +829,38 @@ type 0207, grid 7.5 mm</description>
 <part name="C16" library="capacitors" deviceset="CAPACITOR" device="CERAMICDISC/5"/>
 <part name="CLOCK2" library="connectors" deviceset="HEADER/MALE/01" device=""/>
 <part name="LATCH2" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED1" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED2" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED3" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED4" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED5" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED6" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED7" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED8" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED9" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED10" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED11" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED12" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED13" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED14" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED15" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED16" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED17" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED18" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED19" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED20" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED21" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED22" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED23" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED24" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED25" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED26" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED27" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED28" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED29" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED30" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED31" library="connectors" deviceset="HEADER/MALE/01" device=""/>
+<part name="LED32" library="connectors" deviceset="HEADER/MALE/01" device=""/>
 </parts>
 <sheets>
 <sheet>
@@ -863,28 +895,28 @@ type 0207, grid 7.5 mm</description>
 <instance part="LATCH" gate="HEADER" x="-38.1" y="106.68" smashed="yes">
 <attribute name="NAME" x="-51.816" y="105.664" size="1.778" layer="96"/>
 </instance>
-<instance part="OUT1" gate="HEADER" x="104.14" y="76.2" smashed="yes" rot="R180">
+<instance part="1" gate="HEADER" x="104.14" y="76.2" smashed="yes" rot="R180">
 <attribute name="NAME" x="117.856" y="77.216" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT2" gate="HEADER" x="104.14" y="60.96" smashed="yes" rot="R180">
+<instance part="2" gate="HEADER" x="104.14" y="60.96" smashed="yes" rot="R180">
 <attribute name="NAME" x="117.856" y="61.976" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT3" gate="HEADER" x="104.14" y="45.72" smashed="yes" rot="R180">
+<instance part="3" gate="HEADER" x="104.14" y="45.72" smashed="yes" rot="R180">
 <attribute name="NAME" x="117.856" y="46.736" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT4" gate="HEADER" x="104.14" y="30.48" smashed="yes" rot="R180">
+<instance part="4" gate="HEADER" x="104.14" y="30.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="117.856" y="31.496" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT5" gate="HEADER" x="104.14" y="15.24" smashed="yes" rot="R180">
+<instance part="5" gate="HEADER" x="104.14" y="15.24" smashed="yes" rot="R180">
 <attribute name="NAME" x="117.856" y="16.256" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT6" gate="HEADER" x="104.14" y="0" smashed="yes" rot="R180">
+<instance part="6" gate="HEADER" x="104.14" y="0" smashed="yes" rot="R180">
 <attribute name="NAME" x="117.856" y="1.016" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT7" gate="HEADER" x="104.14" y="-15.24" smashed="yes" rot="R180">
+<instance part="7" gate="HEADER" x="104.14" y="-15.24" smashed="yes" rot="R180">
 <attribute name="NAME" x="117.856" y="-14.224" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT8" gate="HEADER" x="104.14" y="-30.48" smashed="yes" rot="R180">
+<instance part="8" gate="HEADER" x="104.14" y="-30.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="117.856" y="-29.464" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="IC2" gate="A" x="71.12" y="76.2" smashed="yes">
@@ -988,28 +1020,28 @@ type 0207, grid 7.5 mm</description>
 <instance part="IC4" gate="P" x="154.94" y="55.88" smashed="yes">
 <attribute name="NAME" x="154.305" y="55.245" size="1.778" layer="95"/>
 </instance>
-<instance part="OUT9" gate="HEADER" x="284.48" y="76.2" smashed="yes" rot="R180">
+<instance part="9" gate="HEADER" x="284.48" y="76.2" smashed="yes" rot="R180">
 <attribute name="NAME" x="298.196" y="77.216" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT10" gate="HEADER" x="284.48" y="60.96" smashed="yes" rot="R180">
+<instance part="10" gate="HEADER" x="284.48" y="60.96" smashed="yes" rot="R180">
 <attribute name="NAME" x="298.196" y="61.976" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT11" gate="HEADER" x="284.48" y="45.72" smashed="yes" rot="R180">
+<instance part="11" gate="HEADER" x="284.48" y="45.72" smashed="yes" rot="R180">
 <attribute name="NAME" x="298.196" y="46.736" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT12" gate="HEADER" x="284.48" y="30.48" smashed="yes" rot="R180">
+<instance part="12" gate="HEADER" x="284.48" y="30.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="298.196" y="31.496" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT13" gate="HEADER" x="284.48" y="15.24" smashed="yes" rot="R180">
+<instance part="13" gate="HEADER" x="284.48" y="15.24" smashed="yes" rot="R180">
 <attribute name="NAME" x="298.196" y="16.256" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT14" gate="HEADER" x="284.48" y="0" smashed="yes" rot="R180">
+<instance part="14" gate="HEADER" x="284.48" y="0" smashed="yes" rot="R180">
 <attribute name="NAME" x="298.196" y="1.016" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT15" gate="HEADER" x="284.48" y="-15.24" smashed="yes" rot="R180">
+<instance part="15" gate="HEADER" x="284.48" y="-15.24" smashed="yes" rot="R180">
 <attribute name="NAME" x="298.196" y="-14.224" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT16" gate="HEADER" x="284.48" y="-30.48" smashed="yes" rot="R180">
+<instance part="16" gate="HEADER" x="284.48" y="-30.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="298.196" y="-29.464" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="IC5" gate="A" x="251.46" y="76.2" smashed="yes">
@@ -1101,28 +1133,28 @@ type 0207, grid 7.5 mm</description>
 <instance part="IC7" gate="P" x="353.06" y="55.88" smashed="yes">
 <attribute name="NAME" x="352.425" y="55.245" size="1.778" layer="95"/>
 </instance>
-<instance part="OUT17" gate="HEADER" x="482.6" y="76.2" smashed="yes" rot="R180">
+<instance part="17" gate="HEADER" x="482.6" y="76.2" smashed="yes" rot="R180">
 <attribute name="NAME" x="496.316" y="77.216" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT18" gate="HEADER" x="482.6" y="60.96" smashed="yes" rot="R180">
+<instance part="18" gate="HEADER" x="482.6" y="60.96" smashed="yes" rot="R180">
 <attribute name="NAME" x="496.316" y="61.976" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT19" gate="HEADER" x="482.6" y="45.72" smashed="yes" rot="R180">
+<instance part="19" gate="HEADER" x="482.6" y="45.72" smashed="yes" rot="R180">
 <attribute name="NAME" x="496.316" y="46.736" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT20" gate="HEADER" x="482.6" y="30.48" smashed="yes" rot="R180">
+<instance part="20" gate="HEADER" x="482.6" y="30.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="496.316" y="31.496" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT21" gate="HEADER" x="482.6" y="15.24" smashed="yes" rot="R180">
+<instance part="21" gate="HEADER" x="482.6" y="15.24" smashed="yes" rot="R180">
 <attribute name="NAME" x="496.316" y="16.256" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT22" gate="HEADER" x="482.6" y="0" smashed="yes" rot="R180">
+<instance part="22" gate="HEADER" x="482.6" y="0" smashed="yes" rot="R180">
 <attribute name="NAME" x="496.316" y="1.016" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT23" gate="HEADER" x="482.6" y="-15.24" smashed="yes" rot="R180">
+<instance part="23" gate="HEADER" x="482.6" y="-15.24" smashed="yes" rot="R180">
 <attribute name="NAME" x="496.316" y="-14.224" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT24" gate="HEADER" x="482.6" y="-30.48" smashed="yes" rot="R180">
+<instance part="24" gate="HEADER" x="482.6" y="-30.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="496.316" y="-29.464" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="IC8" gate="A" x="449.58" y="76.2" smashed="yes">
@@ -1217,28 +1249,28 @@ type 0207, grid 7.5 mm</description>
 <instance part="DOUT" gate="HEADER" x="601.98" y="30.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="615.696" y="31.496" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT25" gate="HEADER" x="668.02" y="76.2" smashed="yes" rot="R180">
+<instance part="25" gate="HEADER" x="668.02" y="76.2" smashed="yes" rot="R180">
 <attribute name="NAME" x="681.736" y="77.216" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT26" gate="HEADER" x="668.02" y="60.96" smashed="yes" rot="R180">
+<instance part="26" gate="HEADER" x="668.02" y="60.96" smashed="yes" rot="R180">
 <attribute name="NAME" x="681.736" y="61.976" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT27" gate="HEADER" x="668.02" y="45.72" smashed="yes" rot="R180">
+<instance part="27" gate="HEADER" x="668.02" y="45.72" smashed="yes" rot="R180">
 <attribute name="NAME" x="681.736" y="46.736" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT28" gate="HEADER" x="668.02" y="30.48" smashed="yes" rot="R180">
+<instance part="28" gate="HEADER" x="668.02" y="30.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="681.736" y="31.496" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT29" gate="HEADER" x="668.02" y="15.24" smashed="yes" rot="R180">
+<instance part="29" gate="HEADER" x="668.02" y="15.24" smashed="yes" rot="R180">
 <attribute name="NAME" x="681.736" y="16.256" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT30" gate="HEADER" x="668.02" y="0" smashed="yes" rot="R180">
+<instance part="30" gate="HEADER" x="668.02" y="0" smashed="yes" rot="R180">
 <attribute name="NAME" x="681.736" y="1.016" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT31" gate="HEADER" x="668.02" y="-15.24" smashed="yes" rot="R180">
+<instance part="31" gate="HEADER" x="668.02" y="-15.24" smashed="yes" rot="R180">
 <attribute name="NAME" x="681.736" y="-14.224" size="1.778" layer="96" rot="R180"/>
 </instance>
-<instance part="OUT32" gate="HEADER" x="668.02" y="-30.48" smashed="yes" rot="R180">
+<instance part="32" gate="HEADER" x="668.02" y="-30.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="681.736" y="-29.464" size="1.778" layer="96" rot="R180"/>
 </instance>
 <instance part="IC11" gate="A" x="635" y="76.2" smashed="yes">
@@ -1328,6 +1360,102 @@ type 0207, grid 7.5 mm</description>
 </instance>
 <instance part="LATCH2" gate="HEADER" x="617.22" y="106.68" smashed="yes" rot="R180">
 <attribute name="NAME" x="630.936" y="107.696" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED1" gate="HEADER" x="104.14" y="73.66" smashed="yes" rot="R180">
+<attribute name="NAME" x="117.856" y="74.676" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED2" gate="HEADER" x="104.14" y="58.42" smashed="yes" rot="R180">
+<attribute name="NAME" x="117.856" y="59.436" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED3" gate="HEADER" x="104.14" y="43.18" smashed="yes" rot="R180">
+<attribute name="NAME" x="117.856" y="44.196" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED4" gate="HEADER" x="104.14" y="27.94" smashed="yes" rot="R180">
+<attribute name="NAME" x="117.856" y="28.956" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED5" gate="HEADER" x="104.14" y="12.7" smashed="yes" rot="R180">
+<attribute name="NAME" x="117.856" y="13.716" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED6" gate="HEADER" x="104.14" y="-2.54" smashed="yes" rot="R180">
+<attribute name="NAME" x="117.856" y="-1.524" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED7" gate="HEADER" x="104.14" y="-17.78" smashed="yes" rot="R180">
+<attribute name="NAME" x="117.856" y="-16.764" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED8" gate="HEADER" x="104.14" y="-33.02" smashed="yes" rot="R180">
+<attribute name="NAME" x="117.856" y="-32.004" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED9" gate="HEADER" x="284.48" y="73.66" smashed="yes" rot="R180">
+<attribute name="NAME" x="298.196" y="74.676" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED10" gate="HEADER" x="284.48" y="58.42" smashed="yes" rot="R180">
+<attribute name="NAME" x="298.196" y="59.436" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED11" gate="HEADER" x="284.48" y="43.18" smashed="yes" rot="R180">
+<attribute name="NAME" x="298.196" y="44.196" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED12" gate="HEADER" x="284.48" y="27.94" smashed="yes" rot="R180">
+<attribute name="NAME" x="298.196" y="28.956" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED13" gate="HEADER" x="284.48" y="12.7" smashed="yes" rot="R180">
+<attribute name="NAME" x="298.196" y="13.716" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED14" gate="HEADER" x="284.48" y="-2.54" smashed="yes" rot="R180">
+<attribute name="NAME" x="298.196" y="-1.524" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED15" gate="HEADER" x="284.48" y="-17.78" smashed="yes" rot="R180">
+<attribute name="NAME" x="298.196" y="-16.764" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED16" gate="HEADER" x="284.48" y="-33.02" smashed="yes" rot="R180">
+<attribute name="NAME" x="298.196" y="-32.004" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED17" gate="HEADER" x="482.6" y="73.66" smashed="yes" rot="R180">
+<attribute name="NAME" x="496.316" y="74.676" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED18" gate="HEADER" x="482.6" y="58.42" smashed="yes" rot="R180">
+<attribute name="NAME" x="496.316" y="59.436" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED19" gate="HEADER" x="482.6" y="43.18" smashed="yes" rot="R180">
+<attribute name="NAME" x="496.316" y="44.196" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED20" gate="HEADER" x="482.6" y="27.94" smashed="yes" rot="R180">
+<attribute name="NAME" x="496.316" y="28.956" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED21" gate="HEADER" x="482.6" y="12.7" smashed="yes" rot="R180">
+<attribute name="NAME" x="496.316" y="13.716" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED22" gate="HEADER" x="482.6" y="-2.54" smashed="yes" rot="R180">
+<attribute name="NAME" x="496.316" y="-1.524" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED23" gate="HEADER" x="482.6" y="-17.78" smashed="yes" rot="R180">
+<attribute name="NAME" x="496.316" y="-16.764" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED24" gate="HEADER" x="482.6" y="-33.02" smashed="yes" rot="R180">
+<attribute name="NAME" x="496.316" y="-32.004" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED25" gate="HEADER" x="668.02" y="73.66" smashed="yes" rot="R180">
+<attribute name="NAME" x="681.736" y="74.676" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED26" gate="HEADER" x="668.02" y="58.42" smashed="yes" rot="R180">
+<attribute name="NAME" x="681.736" y="59.436" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED27" gate="HEADER" x="668.02" y="43.18" smashed="yes" rot="R180">
+<attribute name="NAME" x="681.736" y="44.196" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED28" gate="HEADER" x="668.02" y="27.94" smashed="yes" rot="R180">
+<attribute name="NAME" x="681.736" y="28.956" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED29" gate="HEADER" x="668.02" y="12.7" smashed="yes" rot="R180">
+<attribute name="NAME" x="681.736" y="13.716" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED30" gate="HEADER" x="668.02" y="-2.54" smashed="yes" rot="R180">
+<attribute name="NAME" x="681.736" y="-1.524" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED31" gate="HEADER" x="668.02" y="-17.78" smashed="yes" rot="R180">
+<attribute name="NAME" x="681.736" y="-16.764" size="1.778" layer="96" rot="R180"/>
+</instance>
+<instance part="LED32" gate="HEADER" x="668.02" y="-33.02" smashed="yes" rot="R180">
+<attribute name="NAME" x="681.736" y="-32.004" size="1.778" layer="96" rot="R180"/>
 </instance>
 </instances>
 <busses>
@@ -1436,8 +1564,10 @@ type 0207, grid 7.5 mm</description>
 <net name="N$14" class="0">
 <segment>
 <pinref part="R1" gate="G$1" pin="2"/>
-<pinref part="OUT1" gate="HEADER" pin="3"/>
+<pinref part="1" gate="HEADER" pin="3"/>
 <wire x1="99.06" y1="76.2" x2="101.6" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="LED1" gate="HEADER" pin="3"/>
+<wire x1="101.6" y1="76.2" x2="101.6" y2="73.66" width="0.1524" layer="91"/>
 </segment>
 </net>
 <net name="N$15" class="0">
@@ -1455,9 +1585,12 @@ type 0207, grid 7.5 mm</description>
 </net>
 <net name="N$16" class="0">
 <segment>
-<pinref part="OUT2" gate="HEADER" pin="3"/>
+<pinref part="2" gate="HEADER" pin="3"/>
 <pinref part="R2" gate="G$1" pin="2"/>
 <wire x1="101.6" y1="60.96" x2="99.06" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="LED2" gate="HEADER" pin="3"/>
+<wire x1="101.6" y1="58.42" x2="101.6" y2="60.96" width="0.1524" layer="91"/>
+<junction x="101.6" y="60.96"/>
 </segment>
 </net>
 <net name="N$17" class="0">
@@ -1676,43 +1809,61 @@ type 0207, grid 7.5 mm</description>
 <net name="N$27" class="0">
 <segment>
 <pinref part="R3" gate="G$1" pin="2"/>
-<pinref part="OUT3" gate="HEADER" pin="3"/>
+<pinref part="3" gate="HEADER" pin="3"/>
 <wire x1="101.6" y1="45.72" x2="99.06" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="LED3" gate="HEADER" pin="3"/>
+<wire x1="101.6" y1="43.18" x2="101.6" y2="45.72" width="0.1524" layer="91"/>
+<junction x="101.6" y="45.72"/>
 </segment>
 </net>
 <net name="N$28" class="0">
 <segment>
 <pinref part="R4" gate="G$1" pin="2"/>
-<pinref part="OUT4" gate="HEADER" pin="3"/>
+<pinref part="4" gate="HEADER" pin="3"/>
 <wire x1="101.6" y1="30.48" x2="99.06" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="LED4" gate="HEADER" pin="3"/>
+<wire x1="101.6" y1="27.94" x2="101.6" y2="30.48" width="0.1524" layer="91"/>
+<junction x="101.6" y="30.48"/>
 </segment>
 </net>
 <net name="N$29" class="0">
 <segment>
 <pinref part="R5" gate="G$1" pin="2"/>
-<pinref part="OUT5" gate="HEADER" pin="3"/>
+<pinref part="5" gate="HEADER" pin="3"/>
 <wire x1="101.6" y1="15.24" x2="99.06" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="LED5" gate="HEADER" pin="3"/>
+<wire x1="101.6" y1="12.7" x2="101.6" y2="15.24" width="0.1524" layer="91"/>
+<junction x="101.6" y="15.24"/>
 </segment>
 </net>
 <net name="N$30" class="0">
 <segment>
 <pinref part="R6" gate="G$1" pin="2"/>
-<pinref part="OUT6" gate="HEADER" pin="3"/>
+<pinref part="6" gate="HEADER" pin="3"/>
 <wire x1="101.6" y1="0" x2="99.06" y2="0" width="0.1524" layer="91"/>
+<pinref part="LED6" gate="HEADER" pin="3"/>
+<wire x1="101.6" y1="-2.54" x2="101.6" y2="0" width="0.1524" layer="91"/>
+<junction x="101.6" y="0"/>
 </segment>
 </net>
 <net name="N$31" class="0">
 <segment>
 <pinref part="R7" gate="G$1" pin="2"/>
-<pinref part="OUT7" gate="HEADER" pin="3"/>
+<pinref part="7" gate="HEADER" pin="3"/>
 <wire x1="101.6" y1="-15.24" x2="99.06" y2="-15.24" width="0.1524" layer="91"/>
+<pinref part="LED7" gate="HEADER" pin="3"/>
+<wire x1="101.6" y1="-17.78" x2="101.6" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="101.6" y="-15.24"/>
 </segment>
 </net>
 <net name="N$32" class="0">
 <segment>
 <pinref part="R8" gate="G$1" pin="2"/>
-<pinref part="OUT8" gate="HEADER" pin="3"/>
+<pinref part="8" gate="HEADER" pin="3"/>
 <wire x1="101.6" y1="-30.48" x2="99.06" y2="-30.48" width="0.1524" layer="91"/>
+<pinref part="LED8" gate="HEADER" pin="3"/>
+<wire x1="101.6" y1="-33.02" x2="101.6" y2="-30.48" width="0.1524" layer="91"/>
+<junction x="101.6" y="-30.48"/>
 </segment>
 </net>
 <net name="N$19" class="0">
@@ -1868,8 +2019,11 @@ type 0207, grid 7.5 mm</description>
 <net name="N$44" class="0">
 <segment>
 <pinref part="R9" gate="G$1" pin="2"/>
-<pinref part="OUT9" gate="HEADER" pin="3"/>
+<pinref part="9" gate="HEADER" pin="3"/>
 <wire x1="279.4" y1="76.2" x2="281.94" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="LED9" gate="HEADER" pin="3"/>
+<wire x1="281.94" y1="73.66" x2="281.94" y2="76.2" width="0.1524" layer="91"/>
+<junction x="281.94" y="76.2"/>
 </segment>
 </net>
 <net name="N$45" class="0">
@@ -1887,9 +2041,12 @@ type 0207, grid 7.5 mm</description>
 </net>
 <net name="N$46" class="0">
 <segment>
-<pinref part="OUT10" gate="HEADER" pin="3"/>
+<pinref part="10" gate="HEADER" pin="3"/>
 <pinref part="R10" gate="G$1" pin="2"/>
 <wire x1="281.94" y1="60.96" x2="279.4" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="LED10" gate="HEADER" pin="3"/>
+<wire x1="281.94" y1="58.42" x2="281.94" y2="60.96" width="0.1524" layer="91"/>
+<junction x="281.94" y="60.96"/>
 </segment>
 </net>
 <net name="N$49" class="0">
@@ -1967,43 +2124,61 @@ type 0207, grid 7.5 mm</description>
 <net name="N$55" class="0">
 <segment>
 <pinref part="R11" gate="G$1" pin="2"/>
-<pinref part="OUT11" gate="HEADER" pin="3"/>
+<pinref part="11" gate="HEADER" pin="3"/>
 <wire x1="281.94" y1="45.72" x2="279.4" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="LED11" gate="HEADER" pin="3"/>
+<wire x1="281.94" y1="43.18" x2="281.94" y2="45.72" width="0.1524" layer="91"/>
+<junction x="281.94" y="45.72"/>
 </segment>
 </net>
 <net name="N$56" class="0">
 <segment>
 <pinref part="R12" gate="G$1" pin="2"/>
-<pinref part="OUT12" gate="HEADER" pin="3"/>
+<pinref part="12" gate="HEADER" pin="3"/>
 <wire x1="281.94" y1="30.48" x2="279.4" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="LED12" gate="HEADER" pin="3"/>
+<wire x1="281.94" y1="27.94" x2="281.94" y2="30.48" width="0.1524" layer="91"/>
+<junction x="281.94" y="30.48"/>
 </segment>
 </net>
 <net name="N$57" class="0">
 <segment>
 <pinref part="R13" gate="G$1" pin="2"/>
-<pinref part="OUT13" gate="HEADER" pin="3"/>
+<pinref part="13" gate="HEADER" pin="3"/>
 <wire x1="281.94" y1="15.24" x2="279.4" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="LED13" gate="HEADER" pin="3"/>
+<wire x1="281.94" y1="12.7" x2="281.94" y2="15.24" width="0.1524" layer="91"/>
+<junction x="281.94" y="15.24"/>
 </segment>
 </net>
 <net name="N$58" class="0">
 <segment>
 <pinref part="R14" gate="G$1" pin="2"/>
-<pinref part="OUT14" gate="HEADER" pin="3"/>
+<pinref part="14" gate="HEADER" pin="3"/>
 <wire x1="281.94" y1="0" x2="279.4" y2="0" width="0.1524" layer="91"/>
+<pinref part="LED14" gate="HEADER" pin="3"/>
+<wire x1="281.94" y1="-2.54" x2="281.94" y2="0" width="0.1524" layer="91"/>
+<junction x="281.94" y="0"/>
 </segment>
 </net>
 <net name="N$59" class="0">
 <segment>
 <pinref part="R15" gate="G$1" pin="2"/>
-<pinref part="OUT15" gate="HEADER" pin="3"/>
+<pinref part="15" gate="HEADER" pin="3"/>
 <wire x1="281.94" y1="-15.24" x2="279.4" y2="-15.24" width="0.1524" layer="91"/>
+<pinref part="LED15" gate="HEADER" pin="3"/>
+<wire x1="281.94" y1="-17.78" x2="281.94" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="281.94" y="-15.24"/>
 </segment>
 </net>
 <net name="N$60" class="0">
 <segment>
 <pinref part="R16" gate="G$1" pin="2"/>
-<pinref part="OUT16" gate="HEADER" pin="3"/>
+<pinref part="16" gate="HEADER" pin="3"/>
 <wire x1="281.94" y1="-30.48" x2="279.4" y2="-30.48" width="0.1524" layer="91"/>
+<pinref part="LED16" gate="HEADER" pin="3"/>
+<wire x1="281.94" y1="-33.02" x2="281.94" y2="-30.48" width="0.1524" layer="91"/>
+<junction x="281.94" y="-30.48"/>
 </segment>
 </net>
 <net name="GND" class="0">
@@ -2200,8 +2375,11 @@ type 0207, grid 7.5 mm</description>
 <net name="N$69" class="0">
 <segment>
 <pinref part="R17" gate="G$1" pin="2"/>
-<pinref part="OUT17" gate="HEADER" pin="3"/>
+<pinref part="17" gate="HEADER" pin="3"/>
 <wire x1="477.52" y1="76.2" x2="480.06" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="LED17" gate="HEADER" pin="3"/>
+<wire x1="480.06" y1="73.66" x2="480.06" y2="76.2" width="0.1524" layer="91"/>
+<junction x="480.06" y="76.2"/>
 </segment>
 </net>
 <net name="N$70" class="0">
@@ -2219,9 +2397,12 @@ type 0207, grid 7.5 mm</description>
 </net>
 <net name="N$71" class="0">
 <segment>
-<pinref part="OUT18" gate="HEADER" pin="3"/>
+<pinref part="18" gate="HEADER" pin="3"/>
 <pinref part="R18" gate="G$1" pin="2"/>
 <wire x1="480.06" y1="60.96" x2="477.52" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="LED18" gate="HEADER" pin="3"/>
+<wire x1="480.06" y1="58.42" x2="480.06" y2="60.96" width="0.1524" layer="91"/>
+<junction x="480.06" y="60.96"/>
 </segment>
 </net>
 <net name="N$72" class="0">
@@ -2299,43 +2480,61 @@ type 0207, grid 7.5 mm</description>
 <net name="N$78" class="0">
 <segment>
 <pinref part="R19" gate="G$1" pin="2"/>
-<pinref part="OUT19" gate="HEADER" pin="3"/>
+<pinref part="19" gate="HEADER" pin="3"/>
 <wire x1="480.06" y1="45.72" x2="477.52" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="LED19" gate="HEADER" pin="3"/>
+<wire x1="480.06" y1="43.18" x2="480.06" y2="45.72" width="0.1524" layer="91"/>
+<junction x="480.06" y="45.72"/>
 </segment>
 </net>
 <net name="N$79" class="0">
 <segment>
 <pinref part="R20" gate="G$1" pin="2"/>
-<pinref part="OUT20" gate="HEADER" pin="3"/>
+<pinref part="20" gate="HEADER" pin="3"/>
 <wire x1="480.06" y1="30.48" x2="477.52" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="LED20" gate="HEADER" pin="3"/>
+<wire x1="480.06" y1="27.94" x2="480.06" y2="30.48" width="0.1524" layer="91"/>
+<junction x="480.06" y="30.48"/>
 </segment>
 </net>
 <net name="N$80" class="0">
 <segment>
 <pinref part="R21" gate="G$1" pin="2"/>
-<pinref part="OUT21" gate="HEADER" pin="3"/>
+<pinref part="21" gate="HEADER" pin="3"/>
 <wire x1="480.06" y1="15.24" x2="477.52" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="LED21" gate="HEADER" pin="3"/>
+<wire x1="480.06" y1="12.7" x2="480.06" y2="15.24" width="0.1524" layer="91"/>
+<junction x="480.06" y="15.24"/>
 </segment>
 </net>
 <net name="N$81" class="0">
 <segment>
 <pinref part="R22" gate="G$1" pin="2"/>
-<pinref part="OUT22" gate="HEADER" pin="3"/>
+<pinref part="22" gate="HEADER" pin="3"/>
 <wire x1="480.06" y1="0" x2="477.52" y2="0" width="0.1524" layer="91"/>
+<pinref part="LED22" gate="HEADER" pin="3"/>
+<wire x1="480.06" y1="-2.54" x2="480.06" y2="0" width="0.1524" layer="91"/>
+<junction x="480.06" y="0"/>
 </segment>
 </net>
 <net name="N$82" class="0">
 <segment>
 <pinref part="R23" gate="G$1" pin="2"/>
-<pinref part="OUT23" gate="HEADER" pin="3"/>
+<pinref part="23" gate="HEADER" pin="3"/>
 <wire x1="480.06" y1="-15.24" x2="477.52" y2="-15.24" width="0.1524" layer="91"/>
+<pinref part="LED23" gate="HEADER" pin="3"/>
+<wire x1="480.06" y1="-17.78" x2="480.06" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="480.06" y="-15.24"/>
 </segment>
 </net>
 <net name="N$83" class="0">
 <segment>
 <pinref part="R24" gate="G$1" pin="2"/>
-<pinref part="OUT24" gate="HEADER" pin="3"/>
+<pinref part="24" gate="HEADER" pin="3"/>
 <wire x1="480.06" y1="-30.48" x2="477.52" y2="-30.48" width="0.1524" layer="91"/>
+<pinref part="LED24" gate="HEADER" pin="3"/>
+<wire x1="480.06" y1="-33.02" x2="480.06" y2="-30.48" width="0.1524" layer="91"/>
+<junction x="480.06" y="-30.48"/>
 </segment>
 </net>
 <net name="+5V" class="0">
@@ -2478,8 +2677,11 @@ type 0207, grid 7.5 mm</description>
 <net name="N$94" class="0">
 <segment>
 <pinref part="R25" gate="G$1" pin="2"/>
-<pinref part="OUT25" gate="HEADER" pin="3"/>
+<pinref part="25" gate="HEADER" pin="3"/>
 <wire x1="662.94" y1="76.2" x2="665.48" y2="76.2" width="0.1524" layer="91"/>
+<pinref part="LED25" gate="HEADER" pin="3"/>
+<wire x1="665.48" y1="73.66" x2="665.48" y2="76.2" width="0.1524" layer="91"/>
+<junction x="665.48" y="76.2"/>
 </segment>
 </net>
 <net name="N$95" class="0">
@@ -2497,9 +2699,12 @@ type 0207, grid 7.5 mm</description>
 </net>
 <net name="N$96" class="0">
 <segment>
-<pinref part="OUT26" gate="HEADER" pin="3"/>
+<pinref part="26" gate="HEADER" pin="3"/>
 <pinref part="R26" gate="G$1" pin="2"/>
 <wire x1="665.48" y1="60.96" x2="662.94" y2="60.96" width="0.1524" layer="91"/>
+<pinref part="LED26" gate="HEADER" pin="3"/>
+<wire x1="665.48" y1="58.42" x2="665.48" y2="60.96" width="0.1524" layer="91"/>
+<junction x="665.48" y="60.96"/>
 </segment>
 </net>
 <net name="N$97" class="0">
@@ -2577,43 +2782,61 @@ type 0207, grid 7.5 mm</description>
 <net name="N$103" class="0">
 <segment>
 <pinref part="R27" gate="G$1" pin="2"/>
-<pinref part="OUT27" gate="HEADER" pin="3"/>
+<pinref part="27" gate="HEADER" pin="3"/>
 <wire x1="665.48" y1="45.72" x2="662.94" y2="45.72" width="0.1524" layer="91"/>
+<pinref part="LED27" gate="HEADER" pin="3"/>
+<wire x1="665.48" y1="43.18" x2="665.48" y2="45.72" width="0.1524" layer="91"/>
+<junction x="665.48" y="45.72"/>
 </segment>
 </net>
 <net name="N$104" class="0">
 <segment>
 <pinref part="R28" gate="G$1" pin="2"/>
-<pinref part="OUT28" gate="HEADER" pin="3"/>
+<pinref part="28" gate="HEADER" pin="3"/>
 <wire x1="665.48" y1="30.48" x2="662.94" y2="30.48" width="0.1524" layer="91"/>
+<pinref part="LED28" gate="HEADER" pin="3"/>
+<wire x1="665.48" y1="27.94" x2="665.48" y2="30.48" width="0.1524" layer="91"/>
+<junction x="665.48" y="30.48"/>
 </segment>
 </net>
 <net name="N$105" class="0">
 <segment>
 <pinref part="R29" gate="G$1" pin="2"/>
-<pinref part="OUT29" gate="HEADER" pin="3"/>
+<pinref part="29" gate="HEADER" pin="3"/>
 <wire x1="665.48" y1="15.24" x2="662.94" y2="15.24" width="0.1524" layer="91"/>
+<pinref part="LED29" gate="HEADER" pin="3"/>
+<wire x1="665.48" y1="12.7" x2="665.48" y2="15.24" width="0.1524" layer="91"/>
+<junction x="665.48" y="15.24"/>
 </segment>
 </net>
 <net name="N$106" class="0">
 <segment>
 <pinref part="R30" gate="G$1" pin="2"/>
-<pinref part="OUT30" gate="HEADER" pin="3"/>
+<pinref part="30" gate="HEADER" pin="3"/>
 <wire x1="665.48" y1="0" x2="662.94" y2="0" width="0.1524" layer="91"/>
+<pinref part="LED30" gate="HEADER" pin="3"/>
+<wire x1="665.48" y1="-2.54" x2="665.48" y2="0" width="0.1524" layer="91"/>
+<junction x="665.48" y="0"/>
 </segment>
 </net>
 <net name="N$107" class="0">
 <segment>
 <pinref part="R31" gate="G$1" pin="2"/>
-<pinref part="OUT31" gate="HEADER" pin="3"/>
+<pinref part="31" gate="HEADER" pin="3"/>
 <wire x1="665.48" y1="-15.24" x2="662.94" y2="-15.24" width="0.1524" layer="91"/>
+<pinref part="LED31" gate="HEADER" pin="3"/>
+<wire x1="665.48" y1="-17.78" x2="665.48" y2="-15.24" width="0.1524" layer="91"/>
+<junction x="665.48" y="-15.24"/>
 </segment>
 </net>
 <net name="N$108" class="0">
 <segment>
 <pinref part="R32" gate="G$1" pin="2"/>
-<pinref part="OUT32" gate="HEADER" pin="3"/>
+<pinref part="32" gate="HEADER" pin="3"/>
 <wire x1="665.48" y1="-30.48" x2="662.94" y2="-30.48" width="0.1524" layer="91"/>
+<pinref part="LED32" gate="HEADER" pin="3"/>
+<wire x1="665.48" y1="-33.02" x2="665.48" y2="-30.48" width="0.1524" layer="91"/>
+<junction x="665.48" y="-30.48"/>
 </segment>
 </net>
 </nets>
