@@ -1533,8 +1533,8 @@ Based on the following sources:
 <part name="AVSSIO1" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R21" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
-<part name="R22" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R21" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
+<part name="R22" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="D2" library="transistors" deviceset="1N4148" device="DO35-7" value="BZX55C12"/>
 <part name="SUPPLY10" library="supply" deviceset="+12V" device="">
 <attribute name="SPICEPREFIX" value="G"/>
@@ -1559,140 +1559,140 @@ Based on the following sources:
 <part name="PIXI_0" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R1" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R1" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_0" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_1" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R2" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R2" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_1" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_2" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R3" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R3" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_2" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_3" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R4" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R4" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_3" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_4" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R5" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R5" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_4" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_5" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R6" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R6" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_5" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_6" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R7" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R7" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_6" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_7" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R8" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R8" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_7" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_8" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R9" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R9" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_8" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_9" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R10" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R10" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_9" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_10" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R11" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R11" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_10" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_11" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R12" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R12" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_11" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_12" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R13" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R13" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_12" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_13" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R14" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R14" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_13" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_14" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R15" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R15" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_14" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_15" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R16" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R16" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_15" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_16" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R17" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R17" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_16" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_17" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R18" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R18" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_17" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_18" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R19" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R19" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_18" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
 <part name="PIXI_19" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
-<part name="R20" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5"/>
+<part name="R20" library="resistors" deviceset="RESISTOR" device="RESISTOR/UPRIGHT/7.5" value="1k"/>
 <part name="IO_19" library="connectors" deviceset="HEADER/MALE/01" device="">
 <attribute name="SPICEPREFIX" value="X"/>
 </part>
