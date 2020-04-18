@@ -905,11 +905,11 @@ einem neuen Namen ab.</description>
 <attribute name="NAME" x="45.72" y="25.908" size="1.27" layer="25" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="46.101" y="24.0538" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
-<element name="D2" library="transistors" package="DO35-7" value="" x="43.18" y="22.86" smashed="yes">
+<element name="D2" library="transistors" package="DO35-7" value="BZX55C12" x="43.18" y="22.86" smashed="yes">
 <attribute name="NAME" x="42.164" y="22.225" size="1.27" layer="25" ratio="10"/>
 <attribute name="VALUE" x="40.894" y="20.193" size="1.27" layer="27" ratio="10"/>
 </element>
-<element name="D3" library="transistors" package="DO35-7" value="" x="43.18" y="30.48" smashed="yes" rot="R180">
+<element name="D3" library="transistors" package="DO35-7" value="BZX55C12" x="43.18" y="30.48" smashed="yes" rot="R180">
 <attribute name="NAME" x="44.196" y="31.115" size="1.27" layer="25" ratio="10" rot="R180"/>
 <attribute name="VALUE" x="45.466" y="33.147" size="1.27" layer="27" ratio="10" rot="R180"/>
 </element>
