@@ -32,6 +32,7 @@ If any changes are made to the format, the .c and .h files in the protobuf folde
 This can be installed on Mac using the following commands:
 
 `brew install protobuf`
+
 `brew install nanopb-generator`
 
 Then running the build.sh script will do the compilation.
