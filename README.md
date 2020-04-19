@@ -15,13 +15,22 @@ Hardware functions are split into various PCBs.
 * PGTNX07 Gate Output - 32x Gate/Trigger outputs.
 * PGTNX08 Pitch Output - 8x 16-bit CV outputs for 1v/oct pitch control.
 
+## Features
+
+
 
 
 ## Compiling
 
 # Protobuf
 
-Protobuf is used as a lightweight way of sending configuration data over midi sysex messages. The protobuf compiler must be installed first. This can be done on mac using homebrew:
+Protobuf is used as a lightweight way of sending configuration data over midi sysex messages. The format of the message is specified in protobuf/ConfigMessage.proto.
+
+If any changes are made to the format, the .c and .h files in the protobuf folder will need to be regenerated using the protobuf compiler.
+
+This can be installed on Mac using the following commands:
 
 `brew install protobuf
 brew install nanopb-generator`
+
+Then running the build.sh script will do the compilation.
