@@ -19,6 +19,7 @@ Hardware functions are split into various PCBs.
 
 * 8 output channels each giving a Gate, Trigger, Pitch, Velocity and 2 Control Change outputs.
 * Can be configured for a single MIDI channel to be mapped to multiple output channels for polyphonic operation.
+* 8 separate percussion channel outputs with Trigger, and 2 Control Change outputs each, which can be mapped to individual notes on a single MIDI channel.
 
 
 ## Compiling
