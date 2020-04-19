@@ -2,7 +2,7 @@
 #define CvOutput_h
 
 #include <inttypes.h>
-#include "src/lib/max11300/MAX11300.h"
+#include "../lib/max11300/MAX11300.h"
 
 #define MIN_VOLTAGE -5
 #define MAX_VOLTAGE 5

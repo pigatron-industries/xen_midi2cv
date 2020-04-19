@@ -1,8 +1,8 @@
 #include "MidiInputTask.h"
 #include "HardwareSerial.h"
 
-#include "src/lib/base64/Base64.h"
-#include "src/hwconfig.h"
+#include "../../lib/base64/Base64.h"
+#include "../../hwconfig.h"
 
 #include <Arduino.h>
 
@@ -68,15 +68,15 @@ void MidiInputTask::execute() {
                     length = 2;
                 }
 
-                // Serial.println("");
-                // Serial.println("Command");
-                // Serial.println(command);
-                // Serial.println("Channel");
-                // Serial.println(channel);
-                // Serial.println("Data 1");
-                // Serial.println(byte2);
-                // Serial.println("Data 2");
-                // Serial.println(byte3);
+                Serial.println("");
+                Serial.println("Command");
+                Serial.println(command);
+                Serial.println("Channel");
+                Serial.println(channel);
+                Serial.println("Data 1");
+                Serial.println(messageBuffer[1]);
+                Serial.println("Data 2");
+                Serial.println(messageBuffer[2]);
 
                 if(command == COMMAND_NOTEON) {
                     _midiEventProcessor.eventNoteOn(channel, messageBuffer[1], messageBuffer[2]);
@@ -100,7 +100,7 @@ void MidiInputTask::execute() {
             } else { // command == COMMAND_SYSTEM
 
                 if(channel == SYSTEM_CLOCK) {
-                    //Serial.println("clock");
+                    //TODO handle clock output
                 }
                 else if(channel == SYSTEM_EXCLUSIVE) {
                     handleSysex();

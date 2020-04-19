@@ -1,13 +1,11 @@
 #ifndef MidiEventProcessor_h
 #define MidiEventProcessor_h
 
-#include "src/config/Configuration.h"
-#include "src/tasks/StatusLedTask.h"
-#include "src/tasks/TriggerOutputTask.h"
-#include "src/drivers/CvOutputService.h"
-#include "src/programs/midi/MidiToPitchConverter.h"
-#include "src/lib/List.h"
-#include "src/hwconfig.h"
+#include "../../config/Configuration.h"
+#include "../../drivers/CvOutputService.h"
+#include "../../programs/midi/MidiToPitchConverter.h"
+#include "../../lib/List.h"
+#include "../../hwconfig.h"
 
 #include <inttypes.h>
 
@@ -16,7 +14,7 @@
 class MidiEventProcessor {
 
 public:
-    MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask,
+    MidiEventProcessor(Configuration& config,
                        CvOutputService& cvOutputService,
                        MidiToPitchConverter& midiToPitchConverter);
 
@@ -31,7 +29,6 @@ public:
 
 private:
     Configuration& _config;
-    StatusLedTask& _statusLedTask;
     CvOutputService& _cvOutputService;
     MidiToPitchConverter _midiToPitchConverter;
 

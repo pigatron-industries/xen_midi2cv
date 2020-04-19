@@ -2,8 +2,8 @@
 
 #include <Arduino.h>
 
-#include "src/lib/nanopb/pb_decode.h"
-#include "src/hwconfig.h"
+#include "../lib/nanopb/pb_decode.h"
+#include "../hwconfig.h"
 
 
 

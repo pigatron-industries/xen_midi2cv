@@ -1,13 +1,11 @@
 #include "CvOutputService.h"
 
-#include "src/hwconfig.h"
+#include "../hwconfig.h"
 
 CvOutputService::CvOutputService(Configuration& config, GateOutput& gateOutput,
-                                 TriggerOutputTask& triggerOutputTask,
                                  PitchCvOutput& pitchCvOutput, CvOutput& cvOutput) :
         _config(config),
         _gateOutput(gateOutput),
-        _triggerOutputTask(triggerOutputTask),
         _pitchCvOutput(pitchCvOutput),
         _cvOutput(cvOutput) {
 }
@@ -19,14 +17,14 @@ void CvOutputService::setPitchValue(int8_t index, float value) {
 }
 
 
-void CvOutputService::setGateValue(int8_t index, bool value) {
-    _gateOutput.setValue(index, value);
+void CvOutputService::setGateValue(int8_t channel, int8_t bank, bool value) {
+    _gateOutput.setValue(getIndex(channel, bank), value);
     _gateOutput.sendData();
 }
 
 
 void CvOutputService::setTrigger(int8_t channel, int8_t bank) {
-    _triggerOutputTask.trigger(getIndex(channel, bank));
+    //TODO
 }
 
 

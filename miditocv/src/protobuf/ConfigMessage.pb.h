@@ -3,7 +3,7 @@
 
 #ifndef PB_XEN_CONFIGMESSAGE_PB_H_INCLUDED
 #define PB_XEN_CONFIGMESSAGE_PB_H_INCLUDED
-#include "src/lib/nanopb/pb.h"
+#include "../lib/nanopb/pb.h"
 
 /* @@protoc_insertion_point(includes) */
 #if PB_PROTO_HEADER_VERSION != 30

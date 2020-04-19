@@ -2,7 +2,11 @@
 
 #include <Arduino.h>
 
-#define FACTOR (MAX_VALUE / (MAX_VOLTAGE - MIN_VOLTAGE))
+#define CLOCKINTERVAL 0.5 //us
+
+#define MIN_VALUE 0
+#define MAX_VALUE 65535
+#define FACTOR (MAX_VALUE / (PITCH_MAX_VOLTAGE - PITCH_MIN_VOLTAGE))
 
 PitchCvOutput::PitchCvOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, uint8_t size) :
         _latchPin(latchPin),
@@ -23,7 +27,7 @@ void PitchCvOutput::setValue(uint8_t index, uint16_t value) {
 }
 
 void PitchCvOutput::setVoltage(uint8_t index, float voltage) {
-    float absVoltage = voltage - MIN_VOLTAGE;
+    float absVoltage = voltage - PITCH_MIN_VOLTAGE;
     float value = absVoltage * FACTOR;
     setValue(index, (uint16_t)value);
 }

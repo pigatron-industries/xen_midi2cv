@@ -1,7 +1,7 @@
 #include "src/main.h"
 
-// Board: Nucleo-144
-// Board part number: Nucleo F413ZH
+// Board: Teensy 4.0
+//
 
 
 void setup() {
@@ -9,4 +9,4 @@ void setup() {
 
 void loop() {
     bootstrap();
-} 
+}

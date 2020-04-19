@@ -1,7 +1,7 @@
 #ifndef MidiToPitchConverter_h
 #define MidiToPitchConverter_h
 
-#include "src/config/Configuration.h"
+#include "../../config/Configuration.h"
 
 #include <inttypes.h>
 

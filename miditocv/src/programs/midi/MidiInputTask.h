@@ -3,9 +3,9 @@
 
 #include <inttypes.h>
 
-#include "src/lib/Task.h"
-#include "src/programs/midi/MidiEventProcessor.h"
-#include "src/programs/midi/MidiOutputService.h"
+#include "../../lib/Task.h"
+#include "../../programs/midi/MidiEventProcessor.h"
+#include "../../programs/midi/MidiOutputService.h"
 
 #define SYSEX_BUFFER_SIZE 100
 #define MESSAGE_BUFFER_SIZE 3

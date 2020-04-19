@@ -6,14 +6,15 @@
 #define CVBANK_PERCUSSIONVELOCITY 2
 #define CVBANK_PERCUSSIONCTRL1 3
 #define CVBANK_PERCUSSIONCTRL2 4
-#define TRIGBANK_NOTE 0
-#define TRIGBANK_PERCUSSION 1
+#define GATEBANK_NOTEGATE 2
+#define GATEBANK_NOTETRIG 1
+#define GATEBANK_PERCTRIG 0
 
-MidiEventProcessor::MidiEventProcessor(Configuration& config, StatusLedTask& statusLedTask,
+
+MidiEventProcessor::MidiEventProcessor(Configuration& config,
                                        CvOutputService& cvOutputService,
                                        MidiToPitchConverter& midiToPitchConverter) :
         _config(config),
-        _statusLedTask(statusLedTask),
         _cvOutputService(cvOutputService),
         _midiToPitchConverter(midiToPitchConverter) {
     resetChannelMappings();
@@ -42,12 +43,10 @@ void MidiEventProcessor::eventNoteOn(uint8_t midiChannel, int8_t note, uint8_t v
     _cvOutputService.setControlValue(cvChannel, CVBANK_NOTEVELOCITY, velocityVoltage);
 
     //gate
-    _cvOutputService.setGateValue(cvChannel, HIGH);
+    _cvOutputService.setGateValue(cvChannel, GATEBANK_NOTEGATE, HIGH);
 
     //trigger
-    _cvOutputService.setTrigger(cvChannel, TRIGBANK_NOTE);
-
-    _statusLedTask.blinkGreen();
+    _cvOutputService.setTrigger(cvChannel, GATEBANK_NOTETRIG);
 }
 
 
@@ -66,7 +65,7 @@ void MidiEventProcessor::eventPercussionTrigger(int8_t note, uint8_t velocity) {
     _cvOutputService.setControlValue(percussionMapping->cvChannel, CVBANK_PERCUSSIONCTRL2, percussionMapping->control2Value);
 
     //trigger
-    _cvOutputService.setTrigger(percussionMapping->cvChannel, TRIGBANK_PERCUSSION);
+    _cvOutputService.setTrigger(percussionMapping->cvChannel, GATEBANK_PERCTRIG);
 }
 
 
@@ -80,9 +79,7 @@ void MidiEventProcessor::eventNoteOff(uint8_t midiChannel, int8_t note) {
 
     if(!notesStillPressed) {
         //gate
-        _cvOutputService.setGateValue(cvChannel, LOW);
-
-        _statusLedTask.blinkRed();
+        _cvOutputService.setGateValue(cvChannel, GATEBANK_NOTEGATE, LOW);
     }
 }
 

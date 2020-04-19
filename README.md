@@ -14,3 +14,14 @@ Hardware functions are split into various PCBs.
 * PGTNX06 IO Expander - Space for another 2x PIXI Click boards for up to 40 CV inputs or outputs.
 * PGTNX07 Gate Output - 32x Gate/Trigger outputs.
 * PGTNX08 Pitch Output - 8x 16-bit CV outputs for 1v/oct pitch control.
+
+
+
+## Compiling
+
+# Protobuf
+
+Protobuf is used as a lightweight way of sending configuration data over midi sysex messages. The protobuf compiler must be installed first. This can be done on mac using homebrew:
+
+`brew install protobuf
+brew install nanopb-generator`

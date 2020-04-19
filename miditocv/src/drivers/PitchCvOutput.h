@@ -3,13 +3,8 @@
 
 #include <inttypes.h>
 
-#define CLOCKINTERVAL 0.5 //us
-
-#define MIN_VALUE 0
-#define MAX_VALUE 65535
-#define MIN_VOLTAGE -10
-#define MAX_VOLTAGE 10
-
+#define PITCH_MIN_VOLTAGE -10
+#define PITCH_MAX_VOLTAGE 10
 
 class PitchCvOutput {
 

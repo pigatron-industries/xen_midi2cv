@@ -3,7 +3,7 @@
 
 #include <inttypes.h>
 
-#include "src/protobuf/ConfigMessage.pb.h"
+#include "../protobuf/ConfigMessage.pb.h"
 
 
 class Configuration {
