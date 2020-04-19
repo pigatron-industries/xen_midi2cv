@@ -23,7 +23,7 @@ Hardware functions are split into various PCBs.
 
 ## Compiling
 
-# Protobuf
+### Protobuf
 
 Protobuf is used as a lightweight way of sending configuration data over midi sysex messages. The format of the message is specified in protobuf/ConfigMessage.proto.
 
