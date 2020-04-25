@@ -10,21 +10,24 @@ CvOutputService::CvOutputService(Configuration& config, GateOutput& gateOutput,
         _cvOutput(cvOutput) {
 }
 
+void CvOutputService::update() {
+     _gateOutput.update();
+     _gateOutput.sendData();
+     _pitchCvOutput.sendData();
+}
 
 void CvOutputService::setPitchValue(int8_t index, float value) {
     _pitchCvOutput.setVoltage(index, value);
-    _pitchCvOutput.sendData();
 }
 
 
 void CvOutputService::setGateValue(int8_t channel, int8_t bank, bool value) {
     _gateOutput.setValue(getIndex(channel, bank), value);
-    _gateOutput.sendData();
 }
 
 
 void CvOutputService::setTrigger(int8_t channel, int8_t bank) {
-    //TODO
+    _gateOutput.setTrigger(getIndex(channel, bank));
 }
 
 

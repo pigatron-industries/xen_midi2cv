@@ -14,6 +14,7 @@ class CvOutputService {
 public:
     CvOutputService(Configuration& config, GateOutput& gateOutput,
                     PitchCvOutput& pitchCvOutput, CvOutput& cvOutput);
+    void update();
 
     void setPitchValue(int8_t channel, float value);
     void setGateValue(int8_t channel, int8_t bank, bool value);

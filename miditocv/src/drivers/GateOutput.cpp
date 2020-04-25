@@ -3,9 +3,9 @@
 #include <Arduino.h>
 
 GateOutput::GateOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, uint8_t size) :
+        _dataPin(dataPin),
         _latchPin(latchPin),
         _clockPin(clockPin),
-        _dataPin(dataPin),
         _size(size) {
     pinMode(_dataPin, OUTPUT);
     pinMode(_latchPin, OUTPUT);
@@ -14,8 +14,10 @@ GateOutput::GateOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, uint
     digitalWrite(_latchPin, LOW);
     digitalWrite(_dataPin, LOW);
     _data = new bool[_size];
+    _triggerTimer = new Timer[_size];
     for(uint8_t i=0; i < _size; i++) {
         _data[i] = LOW;
+        _triggerTimer[i] = Timer();
     }
     sendData();
 }
@@ -24,6 +26,18 @@ void GateOutput::setValue(uint8_t index, bool value) {
     _data[index] = value;
 }
 
+void GateOutput::setTrigger(uint8_t index) {
+    setValue(index, HIGH);
+    _triggerTimer[index].start(TRIGGER_TIME);
+}
+
+void GateOutput::update() {
+    for(uint8_t i=0; i < _size; i++) {
+        if(_triggerTimer[i].hasJustStopped()) {
+            setValue(i, LOW);
+        }
+    }
+}
 
 void GateOutput::sendData() {
     //start sequence

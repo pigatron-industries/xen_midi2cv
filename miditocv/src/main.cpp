@@ -6,6 +6,7 @@
 #include "drivers/pitchCvOutput.h"
 #include "drivers/CvOutput.h"
 #include "drivers/CvOutputService.h"
+#include "programs/OutputUpdateTask.h"
 #include "programs/midi/MidiEventProcessor.h"
 #include "programs/midi/MidiInputTask.h"
 #include "programs/midi/MidiOutputService.h"
@@ -27,7 +28,7 @@ MidiEventProcessor midiEventProcessor = MidiEventProcessor(config, cvOutputServi
 MidiOutputService midiOutputSevice = MidiOutputService(Serial2);
 MidiInputTask midiInputTask1 = MidiInputTask(Serial1, midiEventProcessor, midiOutputSevice);
 MidiInputTask midiInputTask2 = MidiInputTask(Serial2, midiEventProcessor, midiOutputSevice);
-
+OutputUpdateTask outputUpdateTask = OutputUpdateTask(cvOutputService);
 
 void bootstrap() {
     Serial.begin(SERIAL_BAUD);
@@ -38,7 +39,7 @@ void bootstrap() {
     Serial.println();
     config.printConfig();
 
-    Task* tasks[] = { &midiInputTask1, &midiInputTask2};
-    TaskManager taskManager(tasks, 2);
+    Task* tasks[] = { &midiInputTask1, &midiInputTask2, &outputUpdateTask};
+    TaskManager taskManager(tasks, 3);
     taskManager.run();
 }
