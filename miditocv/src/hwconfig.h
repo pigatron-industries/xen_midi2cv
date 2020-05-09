@@ -15,7 +15,7 @@
 #define CV_CNVT_PIN 9
 
 #define CV_CHANNELS 8 // number of output channels
-#define GATE_BANKS 3  // number of banks of gates
+#define GATE_BANKS 4  // number of banks of gates
 #define CV_DEVICES 2
 #define CV_CONTROLS 40
 #define TRIGGER_CONTROLS 16

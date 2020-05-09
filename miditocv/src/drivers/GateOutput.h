@@ -5,7 +5,7 @@
 #include "../lib/io/Timer.h"
 
 #define CLOCKINTERVAL 1 //us
-#define TRIGGER_TIME 1000 //us
+#define TRIGGER_TIME 4000 //us
 
 class GateOutput {
 

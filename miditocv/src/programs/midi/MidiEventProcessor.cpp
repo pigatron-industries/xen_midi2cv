@@ -9,6 +9,7 @@
 #define GATEBANK_NOTEGATE 2
 #define GATEBANK_NOTETRIG 1
 #define GATEBANK_PERCTRIG 0
+#define GATEBANK_CLOCK 3
 
 
 MidiEventProcessor::MidiEventProcessor(Configuration& config,
@@ -139,6 +140,11 @@ void MidiEventProcessor::eventPitchBend(uint8_t midiChannel, int16_t bend) {
     for(int8_t cvChannel = channelConfig->cvChannelFrom; cvChannel <= channelConfig->cvChannelTo; cvChannel++) {
         _cvOutputService.setPitchValue(cvChannel, _channelNotePitch[cvChannel] + _channelPitchBend[midiChannel]);
     }
+}
+
+
+void MidiEventProcessor::eventClock() {
+    _cvOutputService.setTrigger(0, GATEBANK_CLOCK);
 }
 
 

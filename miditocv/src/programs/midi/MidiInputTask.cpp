@@ -94,13 +94,11 @@ void MidiInputTask::execute() {
                     int16_t pitch = ((messageBuffer[2] * 128) + messageBuffer[1]) - 8192;
                     _midiEventProcessor.eventPitchBend(channel, pitch);
                 }
-
-
-
             } else { // command == COMMAND_SYSTEM
 
                 if(channel == SYSTEM_CLOCK) {
-                    //TODO handle clock output
+                    Serial.println("clock");
+                    _midiEventProcessor.eventClock();
                 }
                 else if(channel == SYSTEM_EXCLUSIVE) {
                     handleSysex();

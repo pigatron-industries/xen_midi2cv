@@ -24,6 +24,7 @@ public:
     void eventNotePressure(uint8_t midiChannel, int8_t note, int8_t pressure);
     void eventChannelPressure(uint8_t midiChannel, int8_t pressure);
     void eventPitchBend(uint8_t channel, int16_t bend);
+    void eventClock();
 
     void eventSystemConfig(uint8_t* message, size_t size);
 
