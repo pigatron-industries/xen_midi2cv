@@ -122,7 +122,7 @@ void MidiInputTask::handleSysex() {
 
     Serial.println("System config message recieved:");
     Serial.print("     ");
-    for(int i = 0; i < size; i++) {
+    for(unsigned int i = 0; i < size; i++) {
         Serial.print((char)sysexBuffer[i]);
     }
     Serial.println();
