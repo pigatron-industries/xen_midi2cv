@@ -145,6 +145,11 @@ void MidiEventProcessor::eventPitchBend(uint8_t midiChannel, int16_t bend) {
 
 void MidiEventProcessor::eventClock() {
     _cvOutputService.setTrigger(0, GATEBANK_CLOCK);
+    _clockCounter++;
+    if(_clockCounter == 24) {
+        _clockCounter = 0;
+        _cvOutputService.setTrigger(1, GATEBANK_CLOCK);
+    }
 }
 
 
