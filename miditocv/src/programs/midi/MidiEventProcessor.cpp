@@ -152,6 +152,21 @@ void MidiEventProcessor::eventClock() {
     }
 }
 
+void MidiEventProcessor::eventStart() {
+    _clockCounter = 0;
+}
+
+void MidiEventProcessor::eventStop() {
+    _clockCounter = 0;
+}
+
+void MidiEventProcessor::eventReset() {
+    for(uint8_t cvChannel = 0; cvChannel < CV_CHANNELS; cvChannel++) {
+        _channelNoteMapping[cvChannel].removeAll();
+        _cvOutputService.setGateValue(cvChannel, GATEBANK_NOTEGATE, LOW);
+    }
+}
+
 
 int8_t MidiEventProcessor::getCvOutputChannel(int8_t midiChannel) {
     uint8_t currentCvChannel = _channelMapping[midiChannel];

@@ -18,6 +18,10 @@
 
 #define SYSTEM_EXCLUSIVE 0x0
 #define SYSTEM_CLOCK 0x8
+#define SYSTEM_START 0xA
+#define SYSTEM_CONTINUE 0xA
+#define SYSTEM_STOP 0xC
+#define SYSTEM_RESET 0xF
 
 #define SYSTEM_EXCLUSIVE_ID 0x7D
 #define SYSTEM_EXCLUSIVE_END 0xF7
@@ -68,15 +72,15 @@ void MidiInputTask::execute() {
                     length = 2;
                 }
 
-                Serial.println("");
-                Serial.println("Command");
-                Serial.println(command);
-                Serial.println("Channel");
-                Serial.println(channel);
-                Serial.println("Data 1");
-                Serial.println(messageBuffer[1]);
-                Serial.println("Data 2");
-                Serial.println(messageBuffer[2]);
+                // Serial.println("");
+                // Serial.println("Command");
+                // Serial.println(command);
+                // Serial.println("Channel");
+                // Serial.println(channel);
+                // Serial.println("Data 1");
+                // Serial.println(messageBuffer[1]);
+                // Serial.println("Data 2");
+                // Serial.println(messageBuffer[2]);
 
                 if(command == COMMAND_NOTEON) {
                     _midiEventProcessor.eventNoteOn(channel, messageBuffer[1], messageBuffer[2]);
@@ -97,11 +101,15 @@ void MidiInputTask::execute() {
             } else { // command == COMMAND_SYSTEM
 
                 if(channel == SYSTEM_CLOCK) {
-                    Serial.println("clock");
                     _midiEventProcessor.eventClock();
-                }
-                else if(channel == SYSTEM_EXCLUSIVE) {
+                } else if(channel == SYSTEM_EXCLUSIVE) {
                     handleSysex();
+                } else if(channel == SYSTEM_START) {
+                    _midiEventProcessor.eventStart();
+                } else if(channel == SYSTEM_STOP) {
+                      _midiEventProcessor.eventStop();
+                } else if(channel == SYSTEM_RESET) {
+                      _midiEventProcessor.eventStop();
                 }
             }
         }

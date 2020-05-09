@@ -31,6 +31,10 @@ public:
         length--;
     }
 
+    void removeAll() {
+        length = 0;
+    }
+
     uint8_t get(int8_t index) {
         return data[index];
     }
