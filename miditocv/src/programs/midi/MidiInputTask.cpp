@@ -17,6 +17,7 @@
 #define COMMAND_SYSTEM 0xF
 
 #define SYSTEM_EXCLUSIVE 0x0
+#define SYSTEM_SONG_POSITION 0x2
 #define SYSTEM_CLOCK 0x8
 #define SYSTEM_START 0xA
 #define SYSTEM_CONTINUE 0xA
@@ -109,7 +110,7 @@ void MidiInputTask::execute() {
                 } else if(channel == SYSTEM_STOP) {
                       _midiEventProcessor.eventStop();
                 } else if(channel == SYSTEM_RESET) {
-                      _midiEventProcessor.eventStop();
+                      _midiEventProcessor.eventReset();
                 }
             }
         }

@@ -157,7 +157,6 @@ void MidiEventProcessor::eventStart() {
 }
 
 void MidiEventProcessor::eventStop() {
-    _clockCounter = 0;
 }
 
 void MidiEventProcessor::eventReset() {
