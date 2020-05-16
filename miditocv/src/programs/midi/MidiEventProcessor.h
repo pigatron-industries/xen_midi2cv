@@ -39,7 +39,7 @@ private:
     int8_t _channelMapping[MIDI_CHANNELS]; //midi channel -> cv channel
     float _channelPitchBend[MIDI_CHANNELS]; //midi channel -> pitch bend
     List _channelNoteMapping[CV_CHANNELS]; //cv channel -> note numbers currently held
-    float _channelNotePitch[CV_CHANNELS]; //cv channek -> last output pitch
+    float _channelNotePitch[CV_CHANNELS]; //cv channel -> last output pitch
     uint8_t _clockCounter = 0;
 
     void resetChannelMappings();
