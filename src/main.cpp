@@ -30,7 +30,7 @@ MidiInputTask midiInputTask1 = MidiInputTask(Serial1, midiEventProcessor, midiOu
 MidiInputTask midiInputTask2 = MidiInputTask(Serial2, midiEventProcessor, midiOutputSevice);
 OutputUpdateTask outputUpdateTask = OutputUpdateTask(cvOutputService);
 
-void bootstrap() {
+void setup() {
     Serial.begin(SERIAL_BAUD);
     Serial.println();
     Serial.println("======================================");
@@ -38,7 +38,9 @@ void bootstrap() {
     Serial.println("======================================");
     Serial.println();
     config.printConfig();
+}
 
+void loop() {
     Task* tasks[] = { &midiInputTask1, &midiInputTask2, &outputUpdateTask};
     TaskManager taskManager(tasks, 3);
     taskManager.run();
