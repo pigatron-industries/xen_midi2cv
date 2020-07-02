@@ -9,9 +9,9 @@
 #define FACTOR (MAX_VALUE / (PITCH_MAX_VOLTAGE - PITCH_MIN_VOLTAGE))
 
 PitchCvOutput::PitchCvOutput(uint8_t dataPin, uint8_t latchPin, uint8_t clockPin, uint8_t size) :
+        _dataPin(dataPin),
         _latchPin(latchPin),
         _clockPin(clockPin),
-        _dataPin(dataPin),
         _size(size) {
     pinMode(_dataPin, OUTPUT);
     pinMode(_latchPin, OUTPUT);
