@@ -28,6 +28,7 @@ MidiEventProcessor midiEventProcessor = MidiEventProcessor(config, cvOutputServi
 MidiOutputService midiOutputSevice = MidiOutputService(Serial2);
 MidiInputTask midiInputTask1 = MidiInputTask(Serial1, midiEventProcessor, midiOutputSevice);
 MidiInputTask midiInputTask2 = MidiInputTask(Serial2, midiEventProcessor, midiOutputSevice);
+MidiInputTask midiInputTask3 = MidiInputTask(Serial3, midiEventProcessor, midiOutputSevice);
 OutputUpdateTask outputUpdateTask = OutputUpdateTask(cvOutputService);
 
 void setup() {
@@ -38,10 +39,16 @@ void setup() {
     Serial.println("======================================");
     Serial.println();
     config.printConfig();
+
+    midiInputTask1.init();
+    midiInputTask2.init();
+    midiInputTask3.init();
+    outputUpdateTask.init();
 }
 
 void loop() {
-    Task* tasks[] = { &midiInputTask1, &midiInputTask2, &outputUpdateTask};
-    TaskManager taskManager(tasks, 3);
-    taskManager.run();
+    midiInputTask1.execute();
+    midiInputTask2.execute();
+    midiInputTask3.execute();
+    outputUpdateTask.execute();
 }

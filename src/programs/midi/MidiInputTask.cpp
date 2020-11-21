@@ -56,6 +56,8 @@ void MidiInputTask::execute() {
         uint8_t messageBuffer[MESSAGE_BUFFER_SIZE];
         messageBuffer[0] = getByte();
 
+Serial.println(messageBuffer[0]);
+
         if(messageBuffer[0] >= 0x80) { // start of midi message
             uint8_t length = 0;
 
@@ -73,15 +75,15 @@ void MidiInputTask::execute() {
                     length = 2;
                 }
 
-                // Serial.println("");
-                // Serial.println("Command");
-                // Serial.println(command);
-                // Serial.println("Channel");
-                // Serial.println(channel);
-                // Serial.println("Data 1");
-                // Serial.println(messageBuffer[1]);
-                // Serial.println("Data 2");
-                // Serial.println(messageBuffer[2]);
+                Serial.println("");
+                Serial.println("Command");
+                Serial.println(command);
+                Serial.println("Channel");
+                Serial.println(channel);
+                Serial.println("Data 1");
+                Serial.println(messageBuffer[1]);
+                Serial.println("Data 2");
+                Serial.println(messageBuffer[2]);
 
                 if(command == COMMAND_NOTEON) {
                     _midiEventProcessor.eventNoteOn(channel, messageBuffer[1], messageBuffer[2]);
