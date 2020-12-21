@@ -32,6 +32,7 @@ private:
     uint8_t getByte();
     void handleControlChange(uint8_t midiChannel, int8_t controlNumber, int8_t msbValue, int8_t lsbValue);
     void handleSysex();
+    void passThrough(byte byte);
 
 };
 

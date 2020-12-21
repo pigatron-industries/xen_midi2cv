@@ -48,8 +48,15 @@ void MidiInputTask::init() {
 byte MidiInputTask::getByte() {
     while(!_midiSerial.available()){}
     uint8_t byte = _midiSerial.read();
-    _midiOutputService.sendByte(byte);
+    passThrough(byte);
     return byte;
+}
+
+void MidiInputTask::passThrough(byte byte) {
+    Serial2.write(byte);
+    if(&_midiSerial != &Serial3) {
+        Serial3.write(byte);
+    }
 }
 
 void MidiInputTask::execute() {
