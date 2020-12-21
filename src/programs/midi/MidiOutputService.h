@@ -8,12 +8,14 @@
 class MidiOutputService {
 
 public:
-    MidiOutputService(HardwareSerial& midiSerial);
+    MidiOutputService(HardwareSerial& _midiSerial1, HardwareSerial& _midiSerial2);
 
     void sendMessage(uint8_t* buf, uint8_t length);
+    void sendByte(uint8_t byte);
 
 private:
-    HardwareSerial& _midiSerial;
+    HardwareSerial& midiSerial1;
+    HardwareSerial& midiSerial2;
 
 };
 

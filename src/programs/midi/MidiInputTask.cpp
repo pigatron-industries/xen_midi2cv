@@ -47,7 +47,9 @@ void MidiInputTask::init() {
 
 byte MidiInputTask::getByte() {
     while(!_midiSerial.available()){}
-    return _midiSerial.read();
+    uint8_t byte = _midiSerial.read();
+    _midiOutputService.sendByte(byte);
+    return byte;
 }
 
 void MidiInputTask::execute() {
@@ -55,8 +57,6 @@ void MidiInputTask::execute() {
 
         uint8_t messageBuffer[MESSAGE_BUFFER_SIZE];
         messageBuffer[0] = getByte();
-
-Serial.println(messageBuffer[0]);
 
         if(messageBuffer[0] >= 0x80) { // start of midi message
             uint8_t length = 0;
@@ -101,6 +101,7 @@ Serial.println(messageBuffer[0]);
                     int16_t pitch = ((messageBuffer[2] * 128) + messageBuffer[1]) - 8192;
                     _midiEventProcessor.eventPitchBend(channel, pitch);
                 }
+
             } else { // command == COMMAND_SYSTEM
 
                 if(channel == SYSTEM_CLOCK) {

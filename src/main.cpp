@@ -25,7 +25,7 @@ CvOutputService cvOutputService = CvOutputService(config, gateOutput, pitchCvOut
 
 MidiToPitchConverter midiToPitchConverter = MidiToPitchConverter(config);
 MidiEventProcessor midiEventProcessor = MidiEventProcessor(config, cvOutputService, midiToPitchConverter);
-MidiOutputService midiOutputSevice = MidiOutputService(Serial2);
+MidiOutputService midiOutputSevice = MidiOutputService(Serial2, Serial3);
 MidiInputTask midiInputTask1 = MidiInputTask(Serial1, midiEventProcessor, midiOutputSevice);
 MidiInputTask midiInputTask2 = MidiInputTask(Serial2, midiEventProcessor, midiOutputSevice);
 MidiInputTask midiInputTask3 = MidiInputTask(Serial3, midiEventProcessor, midiOutputSevice);
