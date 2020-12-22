@@ -157,13 +157,14 @@ void MidiEventProcessor::eventStart() {
 }
 
 void MidiEventProcessor::eventStop() {
-}
-
-void MidiEventProcessor::eventReset() {
     for(uint8_t cvChannel = 0; cvChannel < CV_CHANNELS; cvChannel++) {
         _channelNoteMapping[cvChannel].removeAll();
         _cvOutputService.setGateValue(cvChannel, GATEBANK_NOTEGATE, LOW);
     }
+}
+
+void MidiEventProcessor::eventReset() {
+    eventStop();
 }
 
 
