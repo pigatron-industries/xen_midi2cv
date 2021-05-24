@@ -187,7 +187,12 @@ int8_t MidiEventProcessor::getCvOutputChannel(int8_t midiChannel) {
 
 
 int8_t MidiEventProcessor::getCvOutputChannelForNote(int8_t midiChannel, int8_t note) {
-    for(uint8_t i = 0; i < CV_CHANNELS; i++) {
+    xen_ChannelMapping* channelConfig = _config.getCvChannelMapping(midiChannel);
+    if(channelConfig == NULL) {
+        return -1;
+    }
+
+    for(uint8_t i = channelConfig->cvChannelFrom; i <= channelConfig->cvChannelTo; i++) {
         if(_channelNoteMapping[i].find(note) != -1) {
             return i;
         }

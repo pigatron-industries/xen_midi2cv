@@ -99,11 +99,12 @@ void MidiInputTask::execute() {
                 } else if(command == COMMAND_POLY_PRESSURE) {
                     _midiEventProcessor.eventNotePressure(channel, messageBuffer[1], messageBuffer[2]);
                 } else if(command == COMMAND_CHAN_PRESSURE) {
-                      if(messageBuffer[1] <= 128) {
-                          _midiEventProcessor.eventChannelPressure(channel, messageBuffer[1]);
-                      }
+                    if(messageBuffer[1] <= 128) {
+                        _midiEventProcessor.eventChannelPressure(channel, messageBuffer[1]);
+                    }
                 } else if(command == COMMAND_CONTROL_CHANGE) {
-                      handleControlChange(channel, messageBuffer[1], messageBuffer[2], 0);
+                    // TODO handle LSB on same channel + 30
+                    handleControlChange(channel, messageBuffer[1], messageBuffer[2], 0);
                 } else if(command == COMMAND_PITCH_BEND) {
                     int16_t pitch = ((messageBuffer[2] * 128) + messageBuffer[1]) - 8192;
                     _midiEventProcessor.eventPitchBend(channel, pitch);
