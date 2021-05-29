@@ -154,6 +154,28 @@ void Configuration::defaultChannelConfig() {
         config.channelConfig.channelMapping[cvChannel].cvChannelTo = cvChannel;
     }
     config.channelConfig.channelMapping_count = CV_CHANNELS;
+
+    // config.channelConfig.channelMapping[0].midiChannel = 0;
+    // config.channelConfig.channelMapping[0].cvChannelFrom = 0;
+    // config.channelConfig.channelMapping[0].cvChannelTo = 3;
+
+    // config.channelConfig.channelMapping[1].midiChannel = 1;
+    // config.channelConfig.channelMapping[1].cvChannelFrom = 4;
+    // config.channelConfig.channelMapping[1].cvChannelTo = 4;
+
+    // config.channelConfig.channelMapping[2].midiChannel = 2;
+    // config.channelConfig.channelMapping[2].cvChannelFrom = 5;
+    // config.channelConfig.channelMapping[2].cvChannelTo = 5;
+
+    // config.channelConfig.channelMapping[3].midiChannel = 3;
+    // config.channelConfig.channelMapping[3].cvChannelFrom = 6;
+    // config.channelConfig.channelMapping[3].cvChannelTo = 6;
+
+    // config.channelConfig.channelMapping[4].midiChannel = 4;
+    // config.channelConfig.channelMapping[4].cvChannelFrom = 7;
+    // config.channelConfig.channelMapping[4].cvChannelTo = 7;
+
+    // config.channelConfig.channelMapping_count = 5;
 }
 
 
@@ -230,4 +252,25 @@ void Configuration::defaultScale() {
     config.scale.cents[9] = 1000;
     config.scale.cents[10] = 1100;
     config.scale.cents[11] = 1200;
+
+    // config.scale.cents_count = 19;
+    // config.scale.cents[0] = (1200.0/19.0)*1;
+    // config.scale.cents[1] = (1200.0/19.0)*2;
+    // config.scale.cents[2] = (1200.0/19.0)*3;
+    // config.scale.cents[3] = (1200.0/19.0)*4;
+    // config.scale.cents[4] = (1200.0/19.0)*5;
+    // config.scale.cents[5] = (1200.0/19.0)*6;
+    // config.scale.cents[6] = (1200.0/19.0)*7;
+    // config.scale.cents[7] = (1200.0/19.0)*8;
+    // config.scale.cents[8] = (1200.0/19.0)*9;
+    // config.scale.cents[9] = (1200.0/19.0)*10;
+    // config.scale.cents[10] = (1200.0/19.0)*11;
+    // config.scale.cents[11] = (1200.0/19.0)*12;
+    // config.scale.cents[12] = (1200.0/19.0)*13;
+    // config.scale.cents[13] = (1200.0/19.0)*14;
+    // config.scale.cents[14] = (1200.0/19.0)*15;
+    // config.scale.cents[15] = (1200.0/19.0)*16;
+    // config.scale.cents[16] = (1200.0/19.0)*17;
+    // config.scale.cents[17] = (1200.0/19.0)*18;
+    // config.scale.cents[18] = 1200;
 }

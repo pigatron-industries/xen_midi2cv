@@ -11,7 +11,7 @@
 #define CV_MOSI_PIN 11
 #define CV_MISO_PIN 12
 #define CV_SCLK_PIN 13
-#define CV_SELECT_PINS {10, 14}
+#define CV_SELECT_PINS {10, 16}
 #define CV_CNVT_PIN 9
 
 #define CV_CHANNELS 8 // number of output channels
