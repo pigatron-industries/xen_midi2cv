@@ -6,7 +6,6 @@ OutputUpdateTask::OutputUpdateTask(CvOutputService& cvOutputService) :
 }
 
 void OutputUpdateTask::init() {
-    Task::init();
 }
 
 void OutputUpdateTask::execute() {

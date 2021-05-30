@@ -3,11 +3,10 @@
 
 #include <inttypes.h>
 
-#include "../lib/Task.h"
 #include "../drivers/CvOutputService.h"
 
 
-class OutputUpdateTask : public Task {
+class OutputUpdateTask {
 
 public:
     OutputUpdateTask(CvOutputService& cvOutputService);
