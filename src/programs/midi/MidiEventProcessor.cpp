@@ -147,13 +147,14 @@ void MidiEventProcessor::eventClock() {
     _cvOutputService.setTrigger(0, GATEBANK_CLOCK);
     _clockCounter++;
     if(_clockCounter == 24) {
-        _clockCounter = 0;
-        _cvOutputService.setTrigger(1, GATEBANK_CLOCK);
+         _clockCounter = 0;
+    //     _cvOutputService.setTrigger(1, GATEBANK_CLOCK);
     }
 }
 
 void MidiEventProcessor::eventStart() {
     _clockCounter = 0;
+    _cvOutputService.setTrigger(1, GATEBANK_CLOCK);
 }
 
 void MidiEventProcessor::eventStop() {

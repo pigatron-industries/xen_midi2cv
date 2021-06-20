@@ -148,34 +148,34 @@ void Configuration::resetDefault() {
 
 
 void Configuration::defaultChannelConfig() {
-    for(int cvChannel = 0; cvChannel < CV_CHANNELS; cvChannel++) {
-        config.channelConfig.channelMapping[cvChannel].midiChannel = cvChannel;
-        config.channelConfig.channelMapping[cvChannel].cvChannelFrom = cvChannel;
-        config.channelConfig.channelMapping[cvChannel].cvChannelTo = cvChannel;
-    }
-    config.channelConfig.channelMapping_count = CV_CHANNELS;
+    // for(int cvChannel = 0; cvChannel < CV_CHANNELS; cvChannel++) {
+    //     config.channelConfig.channelMapping[cvChannel].midiChannel = cvChannel;
+    //     config.channelConfig.channelMapping[cvChannel].cvChannelFrom = cvChannel;
+    //     config.channelConfig.channelMapping[cvChannel].cvChannelTo = cvChannel;
+    // }
+    // config.channelConfig.channelMapping_count = CV_CHANNELS;
 
-    // config.channelConfig.channelMapping[0].midiChannel = 0;
-    // config.channelConfig.channelMapping[0].cvChannelFrom = 0;
-    // config.channelConfig.channelMapping[0].cvChannelTo = 3;
+    config.channelConfig.channelMapping[0].midiChannel = 0;
+    config.channelConfig.channelMapping[0].cvChannelFrom = 0;
+    config.channelConfig.channelMapping[0].cvChannelTo = 3;
 
-    // config.channelConfig.channelMapping[1].midiChannel = 1;
-    // config.channelConfig.channelMapping[1].cvChannelFrom = 4;
-    // config.channelConfig.channelMapping[1].cvChannelTo = 4;
+    config.channelConfig.channelMapping[1].midiChannel = 1;
+    config.channelConfig.channelMapping[1].cvChannelFrom = 4;
+    config.channelConfig.channelMapping[1].cvChannelTo = 4;
 
-    // config.channelConfig.channelMapping[2].midiChannel = 2;
-    // config.channelConfig.channelMapping[2].cvChannelFrom = 5;
-    // config.channelConfig.channelMapping[2].cvChannelTo = 5;
+    config.channelConfig.channelMapping[2].midiChannel = 2;
+    config.channelConfig.channelMapping[2].cvChannelFrom = 5;
+    config.channelConfig.channelMapping[2].cvChannelTo = 5;
 
-    // config.channelConfig.channelMapping[3].midiChannel = 3;
-    // config.channelConfig.channelMapping[3].cvChannelFrom = 6;
-    // config.channelConfig.channelMapping[3].cvChannelTo = 6;
+    config.channelConfig.channelMapping[3].midiChannel = 3;
+    config.channelConfig.channelMapping[3].cvChannelFrom = 6;
+    config.channelConfig.channelMapping[3].cvChannelTo = 6;
 
-    // config.channelConfig.channelMapping[4].midiChannel = 4;
-    // config.channelConfig.channelMapping[4].cvChannelFrom = 7;
-    // config.channelConfig.channelMapping[4].cvChannelTo = 7;
+    config.channelConfig.channelMapping[4].midiChannel = 4;
+    config.channelConfig.channelMapping[4].cvChannelFrom = 7;
+    config.channelConfig.channelMapping[4].cvChannelTo = 7;
 
-    // config.channelConfig.channelMapping_count = 5;
+    config.channelConfig.channelMapping_count = 5;
 }
 
 
